@@ -78,7 +78,6 @@
 |user|references|null: false, foreign_key: true|
 |product|references|null: false, foreign_key: true|
 |text|text|null: false|
-|created_at|timestamp|
 ### Association
 - belongs_to :user
 - belongs_to :product
