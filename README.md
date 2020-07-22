@@ -21,7 +21,7 @@
 - has_many :user_evaluations
 - has_one :deliver_address, dependent: :destroy
 - has_one :creditcard, dependent: :destroy
-- has_many :products
+- has_many :products, dependent: :destroy
 
 
 
