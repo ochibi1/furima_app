@@ -116,7 +116,7 @@
 - has_many :comments, dependent: :destroy
 - has_many :favorites, dependent: :destroy
 - has_many :users, through: :favorites
-- has_one :user_evaluations
+- has_one :user_evaluation
 - belongs_to :category
 - belongs_to :brand
 - belongs_to_active_hash :size
