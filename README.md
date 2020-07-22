@@ -21,8 +21,7 @@
 - has_many :user_evaluations
 - has_one :deliver_address, dependent: :destroy
 - has_one :creditcard, dependent: :destroy
-- has_many :seller, foreign_key: "seller_id", class_name: "products"
-- has_many :buyer, foreign_key: "buyer_id", class_name :"products"
+- has_many :products
 
 
 
