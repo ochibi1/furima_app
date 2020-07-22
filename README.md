@@ -48,7 +48,7 @@
 |house_number|string|null: false|
 |building_name|string||
 |phone_number|integer|unique: true|
-|user|references|null: false|
+|user|references|null: false, foreign_key: true|
 |destination_first_name|string|null: false|
 |destination_family_name|string|null:false|
 |destination_first_name_kana|string|null: false|
