@@ -105,7 +105,6 @@
 |category|references|foreign_key: true|
 |seller|references|null: false, foreign_key: true|
 |buyer|references|null: false, foreign_key: true|
-|photos|references|null: false, foreign_key: true|
 |trading_status|enum|null: false|
 |closed_deal_date|string|
 |prep_date|string|null: false|
