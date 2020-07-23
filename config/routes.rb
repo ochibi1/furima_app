@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'items#index'
+  root 'items#indexxxxxx'
   resources: users
   resources: deliver_addresses, only: [:create, :update, :edit]
   resources: creditcards, only: [:create, :update, :edit]
