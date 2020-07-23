@@ -12,4 +12,5 @@ class User < ApplicationRecord
   validates :first_name_kana, :family_name_kana,
             format: { with: /\A[ァ-ヶー－]+\z/ }
   has_one :deliver_address, dependent: :destroy
+  accepts_nested_attributes_for :deliver_address
 end
