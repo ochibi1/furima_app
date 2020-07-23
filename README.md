@@ -38,7 +38,7 @@
 
 
 
-## Deliver_addressテーブル
+## Deliver_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |post_code|integer(7)|null: false|
