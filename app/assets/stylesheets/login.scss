@@ -1,0 +1,30 @@
+$color-item1: white;
+$color-item2: whitesmoke;
+.LoginPages {
+  box-sizing: border-box;
+  background-color: $color-item2;
+  .Login-header {
+    width: 100vw;
+    height: 100px;
+    padding-bottom: 50px;
+    background-color: $color-item1;
+  }
+  .Login-main {
+    height: 900px;
+    width: 100vw;
+    &__information {
+      background-color: $color-item1;
+      width: 380px;
+      height: 400px;
+      margin: auto;
+      &__titile {
+        height: 30px;
+        font-size: 20px;
+        text-align: center;
+        border-bottom: 1px $color-item2 solid;
+        padding: 15px;
+        font-weight: bolder;
+      }
+    }
+  }
+}

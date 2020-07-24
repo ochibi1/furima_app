@@ -1,6 +1,6 @@
 .SignupPage
   %header.Signup-header
-    = render "layout/header"
+    -# = render "layouts/header"
 
   %main.Signup-main
     %section.Signup-main__information
@@ -50,34 +50,4 @@
               .Clearfix
             .FormField__content
               %p.FormField__content__text--center
-            .FormField__content
-              %lavel 郵便番号
-              %span.FormField__content__require 必須
-              %br
-              %input{"type": "text", "placeholder": "例）810-0801"}
-            .FormField__content
-              %lavel 都道府県
-              %span.FormField__content__require 必須
-              %br
-              %input{"type": "text"}
-            .FormField__content
-              %lavel 市町村
-              %span.FormField__content__require 必須
-              %br
-              %input{"type": "text", "placeholder": "例) 福岡市"}
-            .FormField__content
-              %lavel 番地
-              %span.FormField__content__require 必須
-              %br
-              %input{"type": "text", "placeholder": "例) 博多区中洲5丁目4-18"}
-            .FormField__content
-              %lavel 建物名
-              %span.FormField__content__optional 任意
-              %br
-              %input{"type": "text", "placeholder": "例) 吉本ビル101"}
-            .FormField__content
-              %lavel 電話番号
-              %span.FormField__content__optional 任意
-              %br
-              %input{"type": "text", "placeholder": "例）090-XXXX-XXXX"}
-            %input.Signup-btn{"type": "submit", "value": "登録"}
+            %input.Next-btn{"type": "submit", "value": "次へ", url: "deliver_address_path"}
