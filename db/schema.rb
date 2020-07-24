@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_132716) do
+ActiveRecord::Schema.define(version: 2020_07_24_165433) do
 
   create_table "deliver_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "post_code", null: false
-    t.integer "prefectuer_code", null: false
+    t.string "post_code", null: false
+    t.integer "prefecture_code", null: false
     t.string "city", null: false
     t.string "house_number", null: false
     t.string "building_name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.bigint "user_id", null: false
     t.string "destination_first_name", null: false
     t.string "destination_family_name", null: false
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2020_07_23_132716) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-
     t.string "nickname", null: false
     t.string "email", null: false
     t.string "encrypted_password", null: false
@@ -39,12 +38,9 @@ ActiveRecord::Schema.define(version: 2020_07_23_132716) do
     t.string "family_name", null: false
     t.string "first_name_kana", null: false
     t.string "family_name_kana", null: false
-    t.date "birth_year", null: false
-    t.date "birth_month", null: false
-    t.date "birth_day", null: false
+    t.date "birth_date", null: false
     t.text "introduction"
     t.string "icon"
-    
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
