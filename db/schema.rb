@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_07_23_132716) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+
     t.string "nickname", null: false
     t.string "email", null: false
     t.string "encrypted_password", null: false
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_07_23_132716) do
     t.date "birth_day", null: false
     t.text "introduction"
     t.string "icon"
+    
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

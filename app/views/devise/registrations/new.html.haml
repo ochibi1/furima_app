@@ -1,21 +1,87 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.SignupPage
+  %header.Signup-header
+    -# = render "layouts/header"
+
+  %main.Signup-main
+    %section.Signup-main__information
+      %h2.Signup-main__information__title
+        会員情報入力
+      .Signup-main__information__form
+        .FormField
+          %form
+            .FormField__content
+              %label ニックネーム
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "例) フリマ太郎"}
+            .FormField__content
+              %label メールアドレス
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "PC・携帯どちらでも可"}
+            .FormField__content
+              %label パスワード
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "7文字以上の半角英数字"}
+              -# ↑例: f.password_field :password,
+            .FormField__content
+              %lavel パスワード(確認)
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "7文字以上の半角英数字"}
+              -# ↑例: f.password_field :password_confirmation,
+
+            .FormField__content
+              %lavel 名前(全角)
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input--left{"type": "text", "size": "10", "placeholder": "例) 山田"}
+              %input.FormField__content__input--right{"type": "text", "size": "10", "placeholder": "例) 太郎"}
+            .FormField__content
+              %lavel 名前(ふりがな)
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input--left{"type": "text", "size": "10", "placeholder": "例) ヤマダ"}
+              %input.FormField__content__input--right{"type": "text", "size": "10", "placeholder": "例) タロウ"}
+            .FormField__content
+              %lavel 生年月日
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__birth__input--left{"type": "text", "size": "10"}
+              %input.FormField__content__birth__input--center{"type": "text", "size": "10"}
+              %input.FormField__content__birth__input--right{"type": "text", "size": "10"}
+              -# = f.date_select :birth_day, { use_month_numbers:true, prompt:"--", end_year:1900}
+
+            .FormField__content
+              %lavel 郵便番号
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "例）810-0801"}
+            .FormField__content
+              %lavel 都道府県
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input{"type": "text"}
+            .FormField__content
+              %lavel 市町村
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "例) 福岡市"}
+            .FormField__content
+              %lavel 番地
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "例) 博多区中洲5丁目4-18"}
+            .FormField__content
+              %lavel .建物名
+              %span.FormField__content__optional 任意
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "例) 吉本ビル101"}
+            .FormField__content
+              %lavel 電話番号
+              %span.FormField__content__optional 任意
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "例）090-XXXX-XXXX"}
+            .FormField__content       
+              %input.SignUp-btn{"type": "submit", "value": "新規登録"}

@@ -1,0 +1,28 @@
+.LoginPages {
+  box-sizing: border-box;
+  background-color: whitesmoke;
+  .Login-header {
+    width: 100vw;
+    height: 100px;
+    padding-bottom: 50px;
+    background-color: white;
+  }
+  .Login-main {
+    height: 900px;
+    width: 100vw;
+    &__information {
+      background-color: white;
+      width: 380px;
+      height: 400px;
+      margin: auto;
+      &__titile {
+        height: 30px;
+        font-size: 20px;
+        text-align: center;
+        border-bottom: 1px whitesmoke solid;
+        padding: 15px;
+        font-weight: bolder;
+      }
+    }
+  }
+}
