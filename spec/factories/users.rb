@@ -9,9 +9,7 @@ FactoryBot.define do
     family_name             { "tanaka" }
     first_name_kana         { "taro" }
     family_name_kana        { "tanaka" }
-    birth_year              { '1995-01-01' }  
-    birth_month             { '1995-01-01' }
-    birth_day               { '1995-01-01' }
+    birth_date              { '1995-01-01' }  
   end
   
 end

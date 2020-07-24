@@ -74,22 +74,10 @@ describe User do
       expect(user.errors[:family_name_kana]).to include("を入力してください")
     end
 
-    it "is invalid without a birth_year" do
-      user = build(:user, birth_year: nil)
+    it "is invalid without a birth_date" do
+      user = build(:user, birth_date: nil)
       user.valid?
-      expect(user.errors[:birth_year]).to include("を入力してください")
-    end
-
-    it "is invalid without a birth_month" do
-      user = build(:user, birth_month: nil)
-      user.valid?
-      expect(user.errors[:birth_month]).to include("を入力してください")
-    end
-
-    it "is invalid wihtout a birth_day" do
-      user = build(:user, birth_day: nil)
-      user.valid?
-      expect(user.errors[:birth_day]).to include("を入力してください")
+      expect(user.errors[:birth_date]).to include("を入力してください")
     end
 
   end
