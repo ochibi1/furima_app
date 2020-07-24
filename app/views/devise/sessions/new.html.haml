@@ -7,8 +7,9 @@
         ログイン
       .Login-main__information__form
         .FormField
-          .FormField__adress
-            %input.input{"placeholder": "メールアドレス", "type": "text"}
-          .FormField__password
-            %input.input{"placeholder": "パスワード", "type": "text"}
-          %input.Login-btn{"type": "submit", "value": "ログイン"}
+          %form
+            .FormField__adress
+              %input.input{"placeholder": "メールアドレス", "type": "text"}
+            .FormField__password
+              %input.input{"placeholder": "パスワード", "type": "text"}
+            %input.Login-btn{"type": "submit", "value": "ログイン"}

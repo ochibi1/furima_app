@@ -1,19 +1,17 @@
-$color-item1: white;
-$color-item2: whitesmoke;
 .LoginPages {
   box-sizing: border-box;
-  background-color: $color-item2;
+  background-color: whitesmoke;
   .Login-header {
     width: 100vw;
     height: 100px;
     padding-bottom: 50px;
-    background-color: $color-item1;
+    background-color: white;
   }
   .Login-main {
     height: 900px;
     width: 100vw;
     &__information {
-      background-color: $color-item1;
+      background-color: white;
       width: 380px;
       height: 400px;
       margin: auto;
@@ -21,7 +19,7 @@ $color-item2: whitesmoke;
         height: 30px;
         font-size: 20px;
         text-align: center;
-        border-bottom: 1px $color-item2 solid;
+        border-bottom: 1px whitesmoke solid;
         padding: 15px;
         font-weight: bolder;
       }
