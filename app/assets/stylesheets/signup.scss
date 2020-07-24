@@ -1,6 +1,6 @@
-$color-item1: white;
+$color-item1: #fff;
 $color-item2: #f8f8f8;
-$color-item3: turquoise;
+$color-item3: #3ccace;
 
 .SignupPage {
   box-sizing: border-box;
@@ -14,7 +14,7 @@ $color-item3: turquoise;
     width: 100vw;
 
     &__information {
-      background-color: white;
+      background-color: $color-item1;
       width: 600px;
       margin: 50px auto;
       padding-bottom: 50px;
@@ -82,8 +82,8 @@ $color-item3: turquoise;
             .SignUp-btn {
               width: 280px;
               height: 40px;
-              background-color: turquoise;
-              color: white;
+              background-color: $color-item3;
+              color: $color-item1;
             }
           }
         }
