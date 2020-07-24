@@ -4,7 +4,7 @@ describe User do
   describe "#create" do
 
     it "is valid with a nickname, email, password, password_confirmation, first_name, family_name, first_name_kana, family_name_kana, birth_year, birth_month and birth_day" do
-      user = build(:user)
+      user = create(:user)
       expect(user).to be_valid
     end
 
@@ -46,7 +46,7 @@ describe User do
     end
 
     it "is valid with a password that has more than 7 characters" do
-      user = build(:user, password: "2222222")
+      user = create(:user, password: "2222222")
       expect(user).to be_valid
     end
 
