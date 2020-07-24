@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :nickname, :email, :first_name, :family_name,
             :first_name_kana, :family_name_kana,
-            :birth_year, :birth_month, :birth_day, presence: true
+            :birth_date, presence: true
   validates :email, uniqueness: true
 end
