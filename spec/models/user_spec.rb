@@ -20,10 +20,15 @@ describe User do
       expect(user.errors[:email]).to include("を入力してください")
     end
 
-    it "is invalid with an email that without domain" do
-      user = build(:user, email: user)
+    it "is invalid with an email that without proper domain" do
+      user = build(:user, email: %w[user@example,com user_at_foo.org user.name@example.foo@bar_baz.com foo@bar+baz.com foo@bar..com])
       user.valid?
-      expect(user.errors[:email]).to include("を入力してください")
+      expect(user.errors[:email]).to include("は不正な値です")
+    end
+
+    it "is valid with an email that with proper domain" do
+      user = build(:user, email: %w[example@test.com])
+      expect(user).to be_valid
     end
 
     it "is invalid with a duplicate email" do
