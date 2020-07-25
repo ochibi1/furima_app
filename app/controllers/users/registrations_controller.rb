@@ -55,7 +55,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def deliver_address_params
-    params.require(:deliver_address).permit(:user_id, :post_code, :prefecture_code,
+    params.require(:deliver_address).permit(:post_code, :prefecture_code,
                                             :city, :house_number, :building_name,
                                             :destination_family_name, :destination_first_name,
                                             :destination_family_name_kana, :destination_first_name_kana,
