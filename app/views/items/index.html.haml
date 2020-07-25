@@ -2796,13 +2796,6 @@
             %a{href: "#"}ログイン
           %li.right-item2
             %a{href: "#"}新規会員登録
-      .header-list
-        .main-header
-          .icon
-          .searchbox
-        .sub-header
-          %ul.listleft
-          %ul.listrigth
 
 
 .main
@@ -2812,7 +2805,7 @@
         %br
           人生を変えるフリマアプリ
       %p.content_text
-        フリマは誰でも簡単に購入できる
+        FURIMAは誰でもかんたんに出品・購入できる
         %br/
         フリマアプリです
       .content_btn
@@ -2824,7 +2817,7 @@
 
   %section.topIntroduction
     %h2.title
-      フリマが選ばれる三つの理由
+      FURIMAが選ばれる三つの理由
     %ul.lists
       %li.list
         .list__pict
@@ -2922,7 +2915,7 @@
                   %li
                     1000円
                   %li
-                    %i.fa.fa-star.likeIcon
+                    %i.fa.fa-star.likeIcon 0
                 %p
                   (税込)
         .productList
@@ -2937,7 +2930,7 @@
                   %li
                     30000円
                   %li
-                    %i.fa.fa-star.likeIcon
+                    %i.fa.fa-star.likeIcon 0
                 %p
                   (税込)
         .productList
@@ -2952,7 +2945,7 @@
                   %li
                     20000円
                   %li
-                    %i.fa.fa-star.likeIcon
+                    %i.fa.fa-star.likeIcon 0
                 %p
                   (税込)
         .productList
@@ -2967,7 +2960,7 @@
                   %li
                     100000円
                   %li
-                    %i.fa.fa-star.likeIcon
+                    %i.fa.fa-star.likeIcon 1
                 %p
                   (税込)
 
@@ -2993,7 +2986,7 @@
                   %li
                     1000円
                   %li
-                    %i.fa.fa-star.likeIcon
+                    %i.fa.fa-star.likeIcon 0
                 %p
                   (税込)
         .productList
@@ -3008,7 +3001,7 @@
                   %li
                     30000円
                   %li
-                    %i.fa.fa-star.likeIcon
+                    %i.fa.fa-star.likeIcon 0
                 %p
                   (税込)
         .productList
@@ -3023,7 +3016,7 @@
                   %li
                     20000円
                   %li
-                    %i.fa.fa-star.likeIcon
+                    %i.fa.fa-star.likeIcon 0
                 %p
                   (税込)
         .productList
@@ -3038,7 +3031,7 @@
                   %li
                     100000円
                   %li
-                    %i.fa.fa-star.likeIcon
+                    %i.fa.fa-star.likeIcon 1
                 %p 
                   (税込)
 
@@ -3058,8 +3051,7 @@
 .footer
   %ul.contents
     %li.content
-      FURIMAについて
-      %h2.content_header
+      %h2.content_header FURIMAについて
       %ul
         %li 
           %a{href: "#"} 会社概要（運営会社）
@@ -3069,19 +3061,15 @@
           %a{href: "#"} FURIMA利用規約
         %li
           %a{href: "#"} ポイントに関する特約
-
     %li.content
-      FURIMAを見る
-      %h2.content_header
+      %h2.content_header FURIMAを見る
       %ul
         %li
           %a{href: "#"} カテゴリー一覧
         %li
           %a{href: "#"} ブランド一覧
-
     %li.content
-      ヘルプ＆ガイド
-      %h2.content_header
+      %h2.content_header ヘルプ＆ガイド
       %ul
         %li
           %a{href: "#"} FURIMAガイド
@@ -3089,9 +3077,15 @@
           %a{href: "#"} FURIMAロゴ利用ガイドライン
         %li
           %a{href: "#"} お知らせ
-
   .footer-logo
-
+    %a{href: "#"}
+      = image_tag ("logo-white.png")
   %p @ FURIMA
 
-  .exhibition_btn
+
+.exhibition
+  = link_to "#", class:'link' do
+    .exhibition_btn
+      %span.text
+        出品する
+      = image_tag 'icon_camera.png', class: 'camera'
