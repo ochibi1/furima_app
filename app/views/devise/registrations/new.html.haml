@@ -46,49 +46,6 @@
               = f.label '生年月日'
               %span.FormField__content__require 必須
               %br
-              = f.date_select :birth_date, use_month_numbers: true, prompt: "--", end_year: 1920, class: "FormField__content__birth__input--left", size: "10"
-            = fields_for :deliver_address, @user.build_deliver_address do |i|
-              .FormField__content
-                = i.label '郵便番号(ハイフン(-)なし)'
-                %span.FormField__content__require 必須
-                %br
-                = i.text_field :post_code, class: "FormField__content__input", size: "7" ,placeholder: "例）810-0801"
-              .FormField__content
-                = i.label '都道府県'
-                %span.FormField__content__require 必須
-                %br
-                = i.select :prefecture_code, DeliverAddress.prefecture_codes.keys.to_a, class: "FormField__content__input"
-              .FormField__content
-                = i.label '市町村'
-                %span.FormField__content__require 必須
-                %br
-                = i.text_field :city, class: "FormField__content__input", placeholder: "例) 福岡市"
-              .FormField__content
-                = i.label '番地'
-                %span.FormField__content__require 必須
-                %br
-                = i.text_field :house_number, class: "FormField__content__input", placeholder: "例) 博多区中洲5丁目4-18"
-              .FormField__content
-                = i.label '建物名'
-                %span.FormField__content__optional (任意)
-                %br
-                = i.text_field :building_name, class: "FormField__content__input", placeholder: "例) 吉本ビル101"
-              .FormField__content
-                = i.label '送付先氏名(全角)'
-                %span.FormField__content__require 必須
-                %br
-                = i.text_field :destination_family_name, class: "FormField__content__input--left", size: "10", placeholder: "例) 山田"
-                = i.text_field :destination_first_name, class: "FormField__content__input--right", size: "10", placeholder: "例) 太郎"
-              .FormField__content
-                = i.label '送付先氏名(ふりがな)'
-                %span.FormField__content__require 必須
-                %br
-                = i.text_field :destination_family_name_kana, class: "FormField__content__input--left", size: "10", placeholder: "例) ヤマダ"
-                = i.text_field :destination_first_name_kana, class: "FormField__content__input--right", size: "10", placeholder: "例) タロウ"
-              .FormField__content
-                = i.label '電話番号(ハイフン(-)なし)'
-                %span.FormField__content__optional 任意
-                %br
-                = i.text_field :phone_number, class: "FormField__content__input", size: "11" , placeholder: "例）090XXXXXXXX"
+              != sprintf(f.date_select(:birth_date, use_month_numbers: true, prompt: "--", start_year:Time.now.year, end_year: 1920, class: "FormField__content__birth__input--left", date_separator: '%s'),'年','月')+'日'
             .FormField__content       
-              = f.submit '新規登録', class: "SignUp-btn"
+              = f.submit '次へ', class: "SignUp-btn", url: deliver_addresses_path
