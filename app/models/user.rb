@@ -7,4 +7,11 @@ class User < ApplicationRecord
             :first_name_kana, :family_name_kana,
             :birth_date, presence: true
   validates :email, uniqueness: true
+  validates :first_name, :family_name,
+            format: { with: /\A[ぁ-んァ-ン一-龥]/ }
+  validates :first_name_kana, :family_name_kana,
+            format: { with: /\A[ァ-ヶー－]+\z/ }
+  validates :birth_date, format: { with: /\A\d{1,4}(\/|-)\d{1,2}\1\d{1,2}\z/ }
+  has_one :deliver_address, dependent: :destroy
+  # accepts_nested_attributes_for :deliver_address
 end
