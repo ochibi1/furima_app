@@ -1,4 +1,4 @@
-.LoginPage
+.LoginPages
   %header.Login-header
     -# = render "layouts/header"
   %main.Login-main
@@ -6,10 +6,10 @@
       %h2.Login-main__information__title
         ログイン
       .Login-main__information__form
-        .FormField
-          %form
-            .FormField__adress
-              %input.input{"placeholder": "メールアドレス", "type": "text"}
-            .FormField__password
-              %input.input{"placeholder": "パスワード", "type": "text"}
+        %form
+          .Address
+            %input.Login__input{"placeholder": "メールアドレス", "type": "text"}
+          .Password
+            %input.Login__input{"placeholder": "パスワード", "type": "text"}
+          .Button
             %input.Login-btn{"type": "submit", "value": "ログイン"}
