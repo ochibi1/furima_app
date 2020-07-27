@@ -1,15 +1,16 @@
 class DeliverAddress < ApplicationRecord
   validates :post_code, :prefecture_code, :city,
-            :house_number, :user, :destination_first_name,
+            :house_number, :destination_first_name,
             :destination_family_name, :destination_first_name_kana,
             :destination_family_name_kana, presence: true
   validates :phone_number,                 uniqueness: { case_sensitive: false }
+  validates :phone_number,                 format: { with: /\A(\d{10,11})?\z/}
   validates :post_code,                    format: { with: /\A\d{7}\z/ }
   validates :destination_first_name, :destination_family_name,
                                            format: { with: /\A[ぁ-んァ-ン一-龥]/ }
   validates :destination_first_name_kana, :destination_family_name_kana,
                                            format: { with: /\A[ァ-ヶー－]+\z/ }
-  belongs_to :user
+  belongs_to :user, optional: true
 
   enum prefecture_code: {
     北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
