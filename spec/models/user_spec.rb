@@ -27,7 +27,7 @@ describe User do
     end
 
     it "is valid with an email that with proper domain" do
-      user = build(:user, email: %w[example@test.com])
+      user = build(:user, email: %[example@example.com])
       expect(user).to be_valid
     end
 
