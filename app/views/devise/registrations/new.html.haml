@@ -1,51 +1,87 @@
 .SignupPage
   %header.Signup-header
     -# = render "layouts/header"
+
   %main.Signup-main
     %section.Signup-main__information
       %h2.Signup-main__information__title
         会員情報入力
       .Signup-main__information__form
         .FormField
-          = form_with model: @user, local: true do |f|
-            = render 'devise/shared/error_messages', resource: resource
+          %form
+            .FormField__content
+              %label ニックネーム
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "例) フリマ太郎"}
+            .FormField__content
+              %label メールアドレス
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "PC・携帯どちらでも可"}
+            .FormField__content
+              %label パスワード
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "7文字以上の半角英数字"}
+              -# ↑例: f.password_field :password,
+            .FormField__content
+              %lavel パスワード(確認)
+              %span.FormField__content__require 必須
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "7文字以上の半角英数字"}
+              -# ↑例: f.password_field :password_confirmation,
 
             .FormField__content
-              = f.label 'ニックネーム'
+              %lavel 名前(全角)
               %span.FormField__content__require 必須
               %br
-              = f.text_field :nickname, class: "FormField__content__input", placeholder: "例) フリマ太郎"
+              %input.FormField__content__input--left{"type": "text", "size": "10", "placeholder": "例) 山田"}
+              %input.FormField__content__input--right{"type": "text", "size": "10", "placeholder": "例) 太郎"}
             .FormField__content
-              = f.label 'メールアドレス'
+              %lavel 名前(ふりがな)
               %span.FormField__content__require 必須
               %br
-              = f.email_field :email, class: "FormField__content__input", placeholder: "PC・携帯どちらでも可"
+              %input.FormField__content__input--left{"type": "text", "size": "10", "placeholder": "例) ヤマダ"}
+              %input.FormField__content__input--right{"type": "text", "size": "10", "placeholder": "例) タロウ"}
             .FormField__content
-              = f.label 'パスワード'
+              %lavel 生年月日
               %span.FormField__content__require 必須
               %br
-              = f.password_field :password, class: "FormField__content__input", placeholder: "7文字以上の半角英数字"
+              %input.FormField__content__birth__input--left{"type": "text", "size": "10"}
+              %input.FormField__content__birth__input--center{"type": "text", "size": "10"}
+              %input.FormField__content__birth__input--right{"type": "text", "size": "10"}
+              -# = f.date_select :birth_day, { use_month_numbers:true, prompt:"--", end_year:1900}
+
             .FormField__content
-              = f.label 'パスワード(確認)'
+              %lavel 郵便番号
               %span.FormField__content__require 必須
               %br
-              = f.password_field :password_confirmation, class: "FormField__content__input", placeholder: "7文字以上の半角英数字"
+              %input.FormField__content__input{"type": "text", "placeholder": "例）810-0801"}
             .FormField__content
-              = f.label '名前(全角)'
+              %lavel 都道府県
               %span.FormField__content__require 必須
               %br
-              = f.text_field :family_name, class: "FormField__content__input--left", size: "10", placeholder: "例) 山田"
-              = f.text_field :first_name, class: "FormField__content__input--right", size: "10", placeholder: "例) 太郎"
+              %input.FormField__content__input{"type": "text"}
             .FormField__content
-              = f.label '名前(フリガナ)'
+              %lavel 市町村
               %span.FormField__content__require 必須
               %br
-              = f.text_field :family_name_kana, class: "FormField__content__input--left", size: "10", placeholder: "例) ヤマダ"
-              = f.text_field :first_name_kana, class: "FormField__content__input--right", size: "10", placeholder: "例) タロウ"
+              %input.FormField__content__input{"type": "text", "placeholder": "例) 福岡市"}
             .FormField__content
-              = f.label '生年月日'
+              %lavel 番地
               %span.FormField__content__require 必須
               %br
-              != sprintf(f.date_select(:birth_date, use_month_numbers: true, prompt: "--", start_year:Time.now.year, end_year: 1920, class: "FormField__content__birth__input--left", date_separator: '%s'),'年','月')+'日'
+              %input.FormField__content__input{"type": "text", "placeholder": "例) 博多区中洲5丁目4-18"}
+            .FormField__content
+              %lavel .建物名
+              %span.FormField__content__optional 任意
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "例) 吉本ビル101"}
+            .FormField__content
+              %lavel 電話番号
+              %span.FormField__content__optional 任意
+              %br
+              %input.FormField__content__input{"type": "text", "placeholder": "例）090-XXXX-XXXX"}
             .FormField__content       
-              = f.submit '次へ', class: "SignUp-btn", url: deliver_addresses_path
+              %input.SignUp-btn{"type": "submit", "value": "新規登録"}
