@@ -15,5 +15,5 @@
             = f.submit "ログイン", class: 'Login-btn'
           %h5.SignupToPage
             アカウントをお持ちでない方はこちら
-          .SignupBtn
-            = f.submit "新規会員登録", class: "SignupBtn__btn", url: new_user_registration_path
+          %button.SignupBtn
+            = link_to "新規会員登録", new_user_registration_path,{class: "SignupBtn__btn"}
