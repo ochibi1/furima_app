@@ -15,7 +15,7 @@ $color-item3: #3ccace;
   }
   .Login-main {
     height: 900px;
-    width: 100vw;
+    width: 100%;
     &__information {
       background-color: $color-item1;
       width: 380px;
@@ -43,14 +43,14 @@ $color-item3: #3ccace;
         }
         .Login__input {
           width: 300px;
-          height: 50px;
+          height: 225%;
           border-radius: 5px;
         }
         .Login-btn {
           color: $color-item1;
           background-color: $color-item3;
           width: 308px;
-          height: 56px;
+          height: 225%;
           border-radius: 5px;
         }
       }
