@@ -1,0 +1,29 @@
+.wrapper
+  .Left
+    .Title
+      .Title__mypage
+        マイページ
+    %ul.Item
+      .ItemText
+        設定
+      %li.ItemList
+        = link_to "#",class: "ItemList__profile" do
+          プロフフィール
+      %li.ItemList
+        = link_to "#",class: "ItemList__credit" do
+          クレジットカードの登録
+      %li.ItemList
+        = link_to "#", class: "ItemList__logaut" do
+          ログアウト
+  .Right
+    .Icon
+      = image_tag 'cat.jpg', alt: 'img', height: '100px', width: '100px', class: "Icon__img"
+    .nickname
+      sample
+    %ul.Item
+      %li.ItemList
+        = link_to "#", class: "ItemList__sell" do
+          出品する
+      %li.ItemList
+        = link_to "#", class: "ItemList__buyhistory" do
+          購入した商品

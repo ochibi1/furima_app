@@ -1,0 +1,69 @@
+.wrapper{
+  height: 100vh;
+  display: flex;
+  margin: 0 40px;
+  background-color: #f8f8f8;
+  .Left{
+    width: 35vw;
+    .Title{
+      height: 40vh;
+      padding-top: 100px;
+      &__mypage{
+        text-align: center;
+      }
+    }
+    .Item{
+      .ItemText{
+        text-align: center;
+        padding-bottom: 10px;
+      }
+      .ItemList{
+        list-style: none;
+        display: block;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px #eee;
+        padding: 1em;
+        &__profile{
+          text-decoration: none;
+        }
+        &__credit{
+          text-decoration: none;
+        }
+        &__logaut{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .Right{
+    width: 65vw;
+    .Icon{
+      padding-top: 100px;
+      text-align: center;
+      &__img{
+        border-radius: 50%;
+      }
+    }
+    .nickname{
+      padding: 20px;
+      text-align: center;
+    }
+    .Item{
+      .ItemList{
+        list-style: none;
+        display: block;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px #eee;
+        padding: 1em;
+        margin-top: 50px;
+        margin-bottom: 70px;
+        &__sell{
+          text-decoration: none;
+        }
+        &__buyhistory{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
