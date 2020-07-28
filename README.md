@@ -25,10 +25,8 @@
 ## CreditCardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false, unique: true|
-|expiration_month|integer|null: false|
-|expiration_year|integer|null: false|
-|security_code|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 |user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
