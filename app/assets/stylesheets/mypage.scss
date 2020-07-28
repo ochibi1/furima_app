@@ -1,7 +1,7 @@
 .wrapper{
   height: 100vh;
   display: flex;
-  .Left{
+  &__Left{
     width: 35vw;
     margin-left: 80px;
     background-color: #f8f8f8;
@@ -38,7 +38,7 @@
       }
     }
   }
-  .Right{
+  &__Right{
     width: 65vw;
     margin-right: 80px;
     background-color: #f8f8f8;
