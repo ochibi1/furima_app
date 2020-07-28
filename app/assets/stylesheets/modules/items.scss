@@ -1,14 +1,14 @@
 .header {
   width: 100%;
-  .serch-pcheader {
+  .serch-header {
     padding: 0 60px;
-    .headerinner {
+    .headermain {
       max-width: 1040px;
       width: 100%;
       min-height: 82px;
       margin: 0 auto;
       padding: 15px 0 0;
-      .mainheader {
+      .header-list {
         background-color: #fff;
         position: relative;
         display: flex;
@@ -60,7 +60,7 @@
           display: flex;
           height: 2rem;
           z-index: 1;
-          .left-item1 {
+          .left-itemA {
             width: 100px;
           }
           > li {
@@ -172,7 +172,7 @@
         }
       }
 
-      .left-item2 {
+      .left-itemB {
         display: flex;
         line-height: 38px;
         padding: 0 0 0 16px;
@@ -192,7 +192,7 @@
         display: flex;
         height: 2rem;
         justify-items: right;
-        .right-item1 {
+        .right-item-log {
           color: #333;
           line-height: 38px;
           padding: 0 0 0 16px;
@@ -204,7 +204,7 @@
             line-height: 32px;
           }
         }
-        .right-item2 {
+        .right-item-new {
           line-height: 38px;
           padding: 0 0 0 16px;
           a {
@@ -221,7 +221,7 @@
 }
 
 .main {
-  .mainVisual {
+  .mainvisual {
     background-color: gray;
     height: 560px;
     background-image: url(bg-mainVisual-pict_pc.jpg);
@@ -247,8 +247,8 @@
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
         color: #ffffff;
         font-size: 18px;
-        line-height: 1.77;
-        margin-top: 16px;
+        line-height: 1.77778;
+        margin: 16px 0 0 0;
       }
       .content_btn {
         display: flex;
@@ -282,6 +282,16 @@
       padding-bottom: 15px;
       position: relative;
     }
+    .title::after {
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: #3ccace;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
     .lists {
       text-align: center;
       display: flex;
@@ -295,7 +305,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        .list__pict {
+        &__pict {
           position: relative;
           margin-bottom: 20px;
           .number {
@@ -314,12 +324,11 @@
             vertical-align: bottom;
           }
         }
-        .list__text {
+        &__text {
           font-weight: bold;
           font-size: 24px;
           line-height: 50px;
           margin: 0 0 0 2;
-          // span(.text)の命名見直す
           .text {
             color: #3ccace;
           }
@@ -329,9 +338,6 @@
           margin-top: 16px;
           line-height: 1.5;
         }
-      }
-      .list.list--last {
-        margin: 16px 0 0;
       }
     }
   }
@@ -350,17 +356,17 @@
       width: 100%;
       margin: 0 auto;
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-      .topMiddleDl_title {
+      .title {
         font-size: 27px;
         font-weight: bold;
         line-height: 1.4;
       }
-      .topMiddleDl_text {
+      .text {
         font-size: 18px;
         margin: 20px 0 30px;
         line-height: 1.5;
       }
-      .topMiddleDl_btn {
+      .btn {
         display: flex;
         margin-top: 24px;
         .btn_app {
@@ -393,12 +399,21 @@
       padding-bottom: 15px;
       position: relative;
     }
+    .head::after {
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: #3ccace;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
     .items {
       max-width: calc(1040px + 20px);
       width: 100%;
       margin: 0 auto;
       display: flex;
-      // flex-wrap: wrap;
       .item {
         display: flex;
         flex-direction: column;
@@ -409,18 +424,17 @@
           width: 70%;
           margin: 0 auto;
           line-height: 120px;
-          // svgの画像反映させる
           &__icon {
             width: 100%;
             vertical-align: bottom;
           }
         }
-        &__subtitle {
+        &__title {
           margin: 38px 0 10px;
           font-size: 19px;
           font-weight: bold;
         }
-        &__detail {
+        &__content {
           margin: 0 0 40px;
           font-size: 17px;
           font-weight: 200;
@@ -440,8 +454,8 @@
       line-height: 1.4;
       font-weight: bold;
     }
-    .productBox {
-      .productHead {
+    .box {
+      .head {
         text-align: center;
         a {
           font-size: 24px;
@@ -452,20 +466,19 @@
           }
         }
       }
-      .productLists {
+      .lists {
         width: 780px;
         margin: 26px auto;
         display: flex;
         justify-content: space-around;
-        .productList {
+        .list {
           width: 220px;
           display: inline-block;
-          float: left;
           a {
             display: inline-block;
             background-color: white;
             text-decoration: none;
-            .productList--img {
+            .list--img {
               width: 220px;
               height: 150px;
               position: relative;
@@ -484,17 +497,17 @@
                 object-fit: cover;
               }
             }
-            .productList--body {
+            .list--body {
               background-color: white;
               color: #333333;
               padding: 16px;
-              .product--name {
+              .name {
                 overflow: hidden;
                 line-height: 1.5;
                 font-size: 16px;
                 text-align: left;
               }
-              .details {
+              .content {
                 font-size: 16px;
                 ul {
                   display: flex;
@@ -601,9 +614,6 @@
         vertical-align: bottom;
       }
     }
-  }
-  &__copyright {
-    font-size: 14px;
   }
 }
 
