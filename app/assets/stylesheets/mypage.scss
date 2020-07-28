@@ -1,10 +1,10 @@
 .wrapper{
   height: 100vh;
   display: flex;
-  margin: 0 40px;
-  background-color: #f8f8f8;
   .Left{
     width: 35vw;
+    margin-left: 80px;
+    background-color: #f8f8f8;
     .Title{
       height: 40vh;
       padding-top: 100px;
@@ -22,21 +22,26 @@
         display: block;
         border: 2px solid #fff;
         box-shadow: 0 0 0 2px #eee;
-        padding: 1em;
+        padding: 16px;
         &__profile{
           text-decoration: none;
+          color: #000;
         }
         &__credit{
           text-decoration: none;
+          color: #000;
         }
         &__logaut{
           text-decoration: none;
+          color: #000;
         }
       }
     }
   }
   .Right{
     width: 65vw;
+    margin-right: 80px;
+    background-color: #f8f8f8;
     .Icon{
       padding-top: 100px;
       text-align: center;
@@ -54,14 +59,16 @@
         display: block;
         border: 2px solid #fff;
         box-shadow: 0 0 0 2px #eee;
-        padding: 1em;
+        padding: 16px;
         margin-top: 50px;
         margin-bottom: 70px;
         &__sell{
           text-decoration: none;
+          color: #000;
         }
         &__buyhistory{
           text-decoration: none;
+          color: #000;
         }
       }
     }
