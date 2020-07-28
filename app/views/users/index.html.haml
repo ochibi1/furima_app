@@ -6,14 +6,14 @@
     %ul.Item
       .ItemText
         設定
-      %li.ItemList
-        = link_to "#",class: "ItemList__profile" do
+      %li.ItemLeft
+        = link_to "#",class: "ItemLeft__profile" do
           プロフフィール
-      %li.ItemList
-        = link_to "#",class: "ItemList__credit" do
+      %li.ItemLeft
+        = link_to "#",class: "ItemLeft__credit" do
           クレジットカードの登録
-      %li.ItemList
-        = link_to "#", class: "ItemList__logaut" do
+      %li.ItemLeft
+        = link_to "#", class: "ItemLeft__logaut" do
           ログアウト
   .wrapper__Right
     .Icon
@@ -21,9 +21,9 @@
     .nickname
       sample
     %ul.Item
-      %li.ItemList
-        = link_to "#", class: "ItemList__sell" do
+      %li.ItemRight
+        = link_to "#", class: "ItemRight__sell" do
           出品する
-      %li.ItemList
-        = link_to "#", class: "ItemList__buyhistory" do
+      %li.ItemRight
+        = link_to "#", class: "ItemRight__buyhistory" do
           購入した商品
