@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :users
   # resources :deliver_addresses, only: [:create, :update, :edit]
-  resources :creditcards, only: [:create, :update, :edit]
+  resources :credit_cards
   resources :brands, only: [:create]
   resources :products do 
     resources :comments
