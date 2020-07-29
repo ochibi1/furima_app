@@ -84,14 +84,15 @@
               height: 10rem;
               background: $color_item2;
               border: 1px dashed $color_item4;
-              position: relative;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
             }
 
             i {
               font-size: 1.5rem;
-              position: absolute;
-              top: 35%;
-              left: 47%;
             }
 
             input#filearea {
@@ -190,7 +191,7 @@
       }
     }
   }
-  
+
   &__footer {
     width: 100%;
     height: 6rem;
