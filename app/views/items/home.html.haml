@@ -11,7 +11,7 @@
           %span 必須
           %h3 最大10枚までアップロードできます
           .ProductsNew__main__form__group__field__file-input
-            %input#filearea{ type: "file" }
+            %input#filearea{ type: "file", name: "images[]", multiple: true }
             %label.filelabel{ for: "filearea" }
               = icon('fa', 'camera')
               %p クリックしてファイルをアップロード
