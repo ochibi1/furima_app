@@ -56,21 +56,21 @@
         font-size: 14px;
         display: flex;
         margin-bottom: 10px;
-        .left-items {
+        ul.left-items {
           display: flex;
           height: 2rem;
-          z-index: 1;
-          .left-itemA {
+          z-index: 2;
+          position: absolute;
+          li.left-itemA {
             width: 100px;
+            display: block;
+            position: relative;
+            padding-right: 140px;
           }
-          > li {
-            width: 25%;
-          }
-
           li {
+            width: 25%;
             list-style: none;
             width: 240px;
-            position: relative;
             a {
               color: #333;
               display: block;
@@ -106,68 +106,6 @@
             &:hover a {
               background: #ffffff;
             }
-
-            li {
-              a {
-                background: #ffffff;
-              }
-
-              &:hover a {
-                background: #ffffff;
-              }
-            }
-
-            ul li ul {
-              li {
-                a {
-                  background: #ffffff;
-                }
-
-                &:hover a {
-                  background: #ffffff;
-                }
-
-                ul li {
-                  a {
-                    background: #ffffff;
-                  }
-
-                  &:hover a {
-                    background: #ffffff;
-                  }
-                }
-              }
-
-              &:before {
-                border: 5px solid transparent;
-                border-left: 5px solid #fff;
-                content: "";
-                left: -20px;
-                position: absolute;
-                top: 1em;
-              }
-            }
-
-            &:nth-child(5) ul li ul:before {
-              border: 5px solid transparent;
-              border-right: 5px solid #fff;
-              left: auto;
-              right: -20px;
-            }
-          }
-
-          > li:nth-child(5) ul li ul {
-            left: -100%;
-          }
-
-          > li > ul:before {
-            border: 5px solid transparent;
-            border-top: 5px solid #fff;
-            content: "";
-            right: 1rem;
-            position: absolute;
-            top: 1rem;
-            transform: translateY(-40%);
           }
         }
       }
@@ -175,7 +113,7 @@
       .left-itemB {
         display: flex;
         line-height: 38px;
-        padding: 0 0 0 16px;
+        padding: 0 0 0 120px;
         width: 100px;
         a {
           color: black;
