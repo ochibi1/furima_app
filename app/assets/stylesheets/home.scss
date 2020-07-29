@@ -78,6 +78,16 @@
               padding: 0.7rem;
               @include border();
             }
+          }
+
+          &__file-input {
+            width: 100%;
+            height: auto;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
             label.filelabel {
               width: 100%;
@@ -124,6 +134,7 @@
                 width: 100%;
                 padding: 0.7rem;
                 @include border();
+                
                 &::placeholder {
                   text-align: right;
                 }
