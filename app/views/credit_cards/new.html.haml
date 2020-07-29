@@ -1,17 +1,19 @@
 .SignupCard
   .SignupCard-header
   .SignupCard-body
-    %h2.SignupCard-body__title クレジットカード新規登録
-    = form_with model: @credit_card, url: creditcards_path, method: :post, local: true do |f|
+    %h2.SignupCard-body__title カード情報入力
+    = form_with model: @credit_card, url: credit_cards_path, method: :post, local: true do |f|
       .SignupCard-body__form
         .SignupCard-body__form__content
           %label.card__info カード番号
           %span 必須
+          %br
           = f.text_field :credit_card, class: "SignupCard-body__form__content__input", size: "16", placeholder: "半角数字のみ"
       .SignupCard-body__form
         .SignupCard-body__form__content
           %label.card__info 有効期限
           %span.notify 必須
+          %br
           %select#exp_month{name: "exp_month", type: "text"}
             %option{value: ""} --
             %option{value: "1"}01
@@ -45,6 +47,7 @@
         .SignupCard-body__form__content
           %label.card__info セキュリティコード
           %span.notify 必須
+          %br
           = text_field "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
           #card_token
-          = f.submit 'クレジットカードを登録する', class: "SignUp-btn", url: credit_cards_path
+          = f.submit 'カードを登録する', class: "SignUp-btn", url: credit_cards_path
