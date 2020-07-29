@@ -9,9 +9,7 @@
 |family_name|string|null: false|
 |first_name_kana|string|null: false|
 |family_name_kana|string|null: false|
-|birth_year|date|null: false|
-|birth_month|date|null: false|
-|birth_day|date|null: false|
+|birth_date|date|null: false|
 |introduction|text||
 |icon|string||
 ### Association
@@ -27,10 +25,8 @@
 ## CreditCardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false, unique: true|
-|expiration_month|integer|null: false|
-|expiration_year|integer|null: false|
-|security_code|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 |user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
@@ -40,7 +36,7 @@
 ## Deliver_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_code|integer(7)|null: false|
+|post_code|integer|null: false|
 |prefecture_code|integer|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
