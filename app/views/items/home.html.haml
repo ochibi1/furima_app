@@ -3,8 +3,6 @@
 -# = link_to 'ログアウト', destroy_user_session_path, method: :delete
 .ProductsNew
   .ProductsNew__header
-    %span (^o^)
-    %h2 仮ヘッダーです
   .ProductsNew__main
     .ProductsNew__main__form
       .ProductsNew__main__form__group
@@ -13,9 +11,9 @@
           %span 必須
           %h3 最大10枚までアップロードできます
           .ProductsNew__main__form__group__field__input
-            %label.filelabel
+            %input#filearea{ type: "file" }
+            %label.filelabel{ for: "filearea" }
               = icon('fa', 'camera')
-              %input.filearea{ type: "file" }
 
       .ProductsNew__main__form__group
         .ProductsNew__main__form__group__field
@@ -91,5 +89,3 @@
             = link_to 'もどる', '#'
 
     .ProductsNew__footer
-      %span (-_-)
-      %h2 仮フッターです
