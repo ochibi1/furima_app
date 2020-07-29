@@ -1,4 +1,4 @@
-class CreditcardsController < ApplicationController
+class CreditCardsController < ApplicationController
 
   require "payjp"
 
