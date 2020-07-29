@@ -4,18 +4,21 @@ $color-item3: #3ccace;
 
 .SignupCard {
   box-sizing: border-box;
-  display: flex;
-  .SignupCard__box{
+  &__box{
+    display: flex;
+    justify-content: center;
     align-items: center;
     margin: 0 auto;
-    padding: 30px;
-    background-color: $color-item2;
-    &__body__title {
-      border-bottom-style: ridge;
-      text-align: center;
-    }
-    &__body__form {
-      padding-top: 20px;
+    &__body {
+      background-color: $color-item2;
+      padding: 30px;
+      &__title {
+        border-bottom-style: ridge;
+        text-align: center;
+      }
+      &__form {
+        padding-top: 20px;
+      }
     }
   }
   .notify {
@@ -27,20 +30,20 @@ $color-item3: #3ccace;
     border-radius: 5px;
   }
   .SignUp-btn {
-    width: 30vw;
+    width: 350px;
     height: 40px;
-    margin-top: 20px;
+    margin-top: 50px;
     background-color: $color-item3;
     color: $color-item1;
     cursor: pointer;
   }
   .input {
     padding: 8px;
-    width: 30vw;
+    width: 320px;
   }
   .input_half{
     padding: 8px;
-    width: 10vw;
+    width: 120px;
   }
 
 }
