@@ -9,11 +9,12 @@
     = form_with model: product, url: '#', class: ".ProductsNew__main__form", local: true do |product|
       = fields_for :photo, class: "ProductsNew__main__form__group" do |photo|
         .ProductsNew__main__form__group__field
-          = photo.label '出品画像'
+          %label '出品画像'
           %span 必須
           %h3 最大10枚までアップロードできます
           .ProductsNew__main__form__group__field__input
-            = photo.text_field :image
+            = photo.file_field :image, id: "filearea"
+            = photo.label '', class: "filelabel", for: "filearea"
 
       .ProductsNew__main__form__group
         .ProductsNew__main__form__group__field
