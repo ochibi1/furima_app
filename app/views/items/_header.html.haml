@@ -2,7 +2,8 @@
   .headermain
     .header-list
       .icon
-        = image_tag ("logo.png")
+        = link_to '#', class: 'logo' do
+          = image_tag "logo.png"
       .searchBox
         = form_with(url: "#", local: true, method: :get, class: "form") do |form|
           = form.text_field :keyword, placeholder: "キーワードから探す", class: "searchBox-input"
@@ -12,2939 +13,2936 @@
     .nav
       %ul.left-items
         %li.left-itemA
-          %a{href: "#", class: "category-btn"}カテゴリー
+          = link_to "カテゴリー", "#" , class: 'category-btn' 
           %ul
             %li
-              %a{href: "#"}レディース
+              = link_to "レディース" , "#"
               %ul
                 %li
-                  %a{href: "#"}トップス
+                  = link_to "トップス" , "#"
                   %ul
                     %li
-                      %a{href: "#"}Tシャツ/カットソー(半袖/袖なし)
+                      = link_to "Tシャツ/カットソー(半袖/袖なし)" , "#"
                     %li
-                      %a{href: "#"}Tシャツ/カットソー(七分/長袖)
+                      = link_to "Tシャツ/カットソー(七分/長袖)" , "#"
                     %li
-                      %a{href: "#"}シャツ/ブラウス(半袖/袖なし)
+                      = link_to "シャツ/ブラウス(半袖/袖なし)" , "#"
                     %li
-                      %a{href: "#"}シャツ/ブラウス(七部/長袖)
+                      = link_to "シャツ/ブラウス(七部/長袖)" , "#"
                     %li
-                      %a{href: "#"}ポロシャツ
+                      = link_to "ポロシャツ" , "#"
                     %li
-                      %a{href: "#"}キャミソール
+                      = link_to "キャミソール" , "#"
                     %li
-                      %a{href: "#"}タンクトップ
+                      = link_to "タンクトップ" , "#"
                     %li
-                      %a{href: "#"}ホルターネック
+                      = link_to "ホルターネック" , "#"
                     %li
-                      %a{href: "#"}ニット/セーター
+                      = link_to "ニット/セーター" , "#"
                     %li
-                      %a{href: "#"}チュニック
+                      = link_to "チュニック" , "#"
                     %li
-                      %a{href: "#"}カーディガン/ボレロ
+                      = link_to "カーディガン/ボレロ" , "#"
                     %li
-                      %a{href: "#"}アンサブル
+                      = link_to "アンサブル" , "#"
                     %li
-                      %a{href: "#"}ベスト/ジレ
+                      = link_to "ベスト/ジレ" , "#"
                     %li
-                      %a{href: "#"}パーカー
+                      = link_to "パーカー" , "#"
                     %li
-                      %a{href: "#"}トレーナー/スウェット
+                      = link_to "トレーナー/スウェット" , "#"
                     %li
-                      %a{href: "#"}ベアトップ/チューブトップ
+                      = link_to "ベアトップ/チューブトップ" , "#"
                     %li
-                      %a{href: "#"}ジャージ
+                      = link_to "ジャージ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                     %li
-                      %a{href: "#"}Tシャツ/カットソー(半袖/袖なし)
+                      = link_to "Tシャツ/カットソー(半袖/袖なし)" , "#"
                     %li
-                      %a{href: "#"}Tシャツ/カットソー(七分/長袖)
+                      = link_to "Tシャツ/カットソー(七分/長袖)" , "#"
                     %li
-                      %a{href: "#"}シャツ/ブラウス(半袖/袖なし)
+                      = link_to "シャツ/ブラウス(半袖/袖なし)" , "#"
                     %li
-                      %a{href: "#"}シャツ/ブラウス(七部/長袖)
+                      = link_to "シャツ/ブラウス(七部/長袖)" , "#"
                     %li
-                      %a{href: "#"}ポロシャツ
+                      = link_to "ポロシャツ" , "#"
                     %li
-                      %a{href: "#"}キャミソール
+                      = link_to "キャミソール" , "#"
                     %li
-                      %a{href: "#"}タンクトップ
+                      = link_to "タンクトップ" , "#"
                     %li
-                      %a{href: "#"}ホルターネック
+                      = link_to "ホルターネック" , "#"
                     %li
-                      %a{href: "#"}ニット/セーター
+                      = link_to "ニット/セーター" , "#"
                     %li
-                      %a{href: "#"}チュニック
+                      = link_to "チュニック" , "#"
                     %li
-                      %a{href: "#"}カーディガン/ボレロ
+                      = link_to "カーディガン/ボレロ" , "#"
                     %li
-                      %a{href: "#"}アンサブル
+                      = link_to "アンサブル" , "#"
                     %li
-                      %a{href: "#"}ベスト/ジレ
+                      = link_to "ベスト/ジレ" , "#"
                     %li
-                      %a{href: "#"}パーカー
+                      = link_to "パーカー" , "#"
                     %li
-                      %a{href: "#"}トレーナー/スウェット
+                      = link_to "トレーナー/スウェット" , "#"
                     %li
-                      %a{href: "#"}ベアトップ/チューブトップ
+                      = link_to "ベアトップ/チューブトップ" , "#"
                     %li
-                      %a{href: "#"}ジャージ
+                      = link_to "ジャージ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}ジャケット/アウター
+                  = link_to "ジャケット/アウター" , "#"
                   %ul
                     %li
-                      %a{href: "#"}テーラードジャケット
+                      = link_to "テーラードジャケット" , "#"
                     %li
-                      %a{href: "#"}ノーカラージャケット
+                      = link_to "ノーカラージャケット" , "#"
                     %li
-                      %a{href: "#"}Gジャン/デニム
+                      = link_to "Gジャン/デニム" , "#"
                     %li
-                      %a{href: "#"}レザージャケット
+                      = link_to "レザージャケット" , "#"
                     %li
-                      %a{href: "#"}ダウンジャケット
+                      = link_to "ダウンジャケット" , "#"
                     %li
-                      %a{href: "#"}ライダースジャケット
+                      = link_to "ライダースジャケット" , "#"
                     %li
-                      %a{href: "#"}ミリタリージャケット
+                      = link_to "ミリタリージャケット" , "#"
                     %li
-                      %a{href: "#"}ダウンベスト
+                      = link_to "ダウンベスト" , "#"
                     %li
-                      %a{href: "#"}ジャンパー/ブルゾン
+                      = link_to "ジャンパー/ブルゾン" , "#"
                     %li
-                      %a{href: "#"}ポンチョ
+                      = link_to "ポンチョ" , "#"
                     %li
-                      %a{href: "#"}ロングコート
+                      = link_to "ロングコート" , "#"
                     %li
-                      %a{href: "#"}トレンチコート
+                      = link_to "トレンチコート" , "#"
                     %li
-                      %a{href: "#"}ダッフルコート
+                      = link_to "ダッフルコート" , "#"
                     %li
-                      %a{href: "#"}ピーコート
+                      = link_to "ピーコート" , "#"
                     %li
-                      %a{href: "#"}チェスターコート
+                      = link_to "チェスターコート" , "#"
                     %li
-                      %a{href: "#"}モッズコート
+                      = link_to "モッズコート" , "#"
                     %li
-                      %a{href: "#"}スタジャン
+                      = link_to "スタジャン" , "#"
                     %li
-                      %a{href: "#"}毛皮/ファーコート
+                      = link_to "毛皮/ファーコート" , "#"
                     %li
-                      %a{href: "#"}スプリングコード
+                      = link_to "スプリングコード" , "#"
                     %li
-                      %a{href: "#"}スカジャン
+                      = link_to "スカジャン" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                     %li
-                      %a{href: "#"}テーラードジャケット
+                      = link_to "テーラードジャケット" , "#"
                     %li
-                      %a{href: "#"}ノーカラージャケット
+                      = link_to "ノーカラージャケット" , "#"
                     %li
-                      %a{href: "#"}Gジャン/デニム
+                      = link_to "Gジャン/デニム" , "#"
                     %li
-                      %a{href: "#"}レザージャケット
+                      = link_to "レザージャケット" , "#"
                     %li
-                      %a{href: "#"}ダウンジャケット
+                      = link_to "ダウンジャケット" , "#"
                     %li
-                      %a{href: "#"}ライダースジャケット
+                      = link_to "ライダースジャケット" , "#"
                     %li
-                      %a{href: "#"}ミリタリージャケット
+                      = link_to "ミリタリージャケット" , "#"
                     %li
-                      %a{href: "#"}ダウンベスト
+                      = link_to "ダウンベスト" , "#"
                     %li
-                      %a{href: "#"}ジャンパー/ブルゾン
+                      = link_to "ジャンパー/ブルゾン" , "#"
                     %li
-                      %a{href: "#"}ポンチョ
+                      = link_to "ポンチョ" , "#"
                     %li
-                      %a{href: "#"}ロングコート
+                      = link_to "ロングコート" , "#"
                     %li
-                      %a{href: "#"}トレンチコート
+                      = link_to "トレンチコート" , "#"
                     %li
-                      %a{href: "#"}ダッフルコート
+                      = link_to "ダッフルコート" , "#"
                     %li
-                      %a{href: "#"}ピーコート
+                      = link_to "ピーコート" , "#"
                     %li
-                      %a{href: "#"}チェスターコート
+                      = link_to "チェスターコート" , "#"
                     %li
-                      %a{href: "#"}モッズコート
+                      = link_to "モッズコート" , "#"
                     %li
-                      %a{href: "#"}スタジャン
+                      = link_to "スタジャン" , "#"
                     %li
-                      %a{href: "#"}毛皮/ファーコート
+                      = link_to "毛皮/ファーコート" , "#"
                     %li
-                      %a{href: "#"}スプリングコード
+                      = link_to "スプリングコード" , "#"
                     %li
-                      %a{href: "#"}スカジャン
+                      = link_to "スカジャン" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}パンツ
+                  = link_to "パンツ" , "#"
                   %ul
                     %li
-                      %a{href: "#"}デニム/ジーンズ
+                      = link_to "デニム/ジーンズ" , "#"
                     %li
-                      %a{href: "#"}ショートパンツ
+                      = link_to "ショートパンツ" , "#"
                     %li
-                      %a{href: "#"}カジュアルパンツ
+                      = link_to "カジュアルパンツ" , "#"
                     %li
-                      %a{href: "#"}ハーフパンツ
+                      = link_to "ハーフパンツ" , "#"
                     %li
-                      %a{href: "#"}チノパン
+                      = link_to "チノパン" , "#"
                     %li
-                      %a{href: "#"}ワークパンツ/カーゴパンツ
+                      = link_to "ワークパンツ/カーゴパンツ" , "#"
                     %li
-                      %a{href: "#"}クロップドパンツ
+                      = link_to "クロップドパンツ" , "#"
                     %li
-                      %a{href: "#"}サロペット/オーバーオール
+                      = link_to "サロペット/オーバーオール" , "#"
                     %li
-                      %a{href: "#"}オールインワン
+                      = link_to "オールインワン" , "#"
                     %li
-                      %a{href: "#"}サルエルパンツ
+                      = link_to "サルエルパンツ" , "#"
                     %li
-                      %a{href: "#"}ガウチョパンツ
+                      = link_to "ガウチョパンツ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                     %li
-                      %a{href: "#"}デニム/ジーンズ
+                      = link_to "デニム/ジーンズ" , "#"
                     %li
-                      %a{href: "#"}ショートパンツ
+                      = link_to "ショートパンツ" , "#"
                     %li
-                      %a{href: "#"}カジュアルパンツ
+                      = link_to "カジュアルパンツ" , "#"
                     %li
-                      %a{href: "#"}ハーフパンツ
+                      = link_to "ハーフパンツ" , "#"
                     %li
-                      %a{href: "#"}チノパン
+                      = link_to "チノパン" , "#"
                     %li
-                      %a{href: "#"}ワークパンツ/カーゴパンツ
+                      = link_to "ワークパンツ/カーゴパンツ" , "#"
                     %li
-                      %a{href: "#"}クロップドパンツ
+                      = link_to "クロップドパンツ" , "#"
                     %li
-                      %a{href: "#"}サロペット/オーバーオール
+                      = link_to "サロペット/オーバーオール" , "#"
                     %li
-                      %a{href: "#"}オールインワン
+                      = link_to "オールインワン" , "#"
                     %li
-                      %a{href: "#"}サルエルパンツ
+                      = link_to "サルエルパンツ" , "#"
                     %li
-                      %a{href: "#"}ガウチョパンツ
+                      = link_to "ガウチョパンツ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}スカート
+                  = link_to "スカート" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ミニスカート
+                      = link_to "ミニスカート" , "#"
                     %li
-                      %a{href: "#"}膝丈スカート
+                      = link_to "膝丈スカート" , "#"
                     %li
-                      %a{href: "#"}ロングスカート
+                      = link_to "ロングスカート" , "#"
                     %li
-                      %a{href: "#"}キュロット
+                      = link_to "キュロット" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                     %li
-                      %a{href: "#"}ミニスカート
+                      = link_to "ミニスカート" , "#"
                     %li
-                      %a{href: "#"}膝丈スカート
+                      = link_to "膝丈スカート" , "#"
                     %li
-                      %a{href: "#"}ロングスカート
+                      = link_to "ロングスカート" , "#"
                     %li
-                      %a{href: "#"}キュロット
+                      = link_to "キュロット" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}ワンピース
+                  = link_to "ワンピース" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ミニワンピース
+                      = link_to "ミニワンピース" , "#"
                     %li
-                      %a{href: "#"}ひざ丈ワンピース
+                      = link_to "ひざ丈ワンピース" , "#"
                     %li
-                      %a{href: "#"}ロングワンピース
+                      = link_to "ロングワンピース" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}靴
+                  = link_to "靴" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ハイヒール/パンプス
+                      = link_to "ハイヒール/パンプス" , "#"
                     %li
-                      %a{href: "#"}ブーツ
+                      = link_to "ブーツ" , "#"
                     %li
-                      %a{href: "#"}サンダル
+                      = link_to "サンダル" , "#"
                     %li
-                      %a{href: "#"}スニーカー
+                      = link_to "スニーカー" , "#"
                     %li
-                      %a{href: "#"}ミュール
+                      = link_to "ミュール" , "#"
                     %li
-                      %a{href: "#"}モカシン
+                      = link_to "モカシン" , "#"
                     %li
-                      %a{href: "#"}ローファー/革靴
+                      = link_to "ローファー/革靴" , "#"
                     %li
-                      %a{href: "#"}フラッシュシューズ/バレエシューズ
+                      = link_to "フラッシュシューズ/バレエシューズ" , "#"
                     %li
-                      %a{href: "#"}長靴/レインシューズ
+                      = link_to "長靴/レインシューズ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}ルームウェア/パジャマ
+                  = link_to "ルームウェア/パジャマ" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ルームウェア
+                      = link_to "ルームウェア" , "#"
                     %li
-                      %a{href: "#"}パジャマ
+                      = link_to "パジャマ" , "#"
                 %li
-                  %a{href:"#"}レッグウェア
+                  = link_to "レッグウェア" ,"#"
                   %ul
                     %li
-                      %a{href: "#"}ソックス
+                      = link_to "ソックス" , "#"
                     %li
-                      %a{href: "#"}スパッツ/レギンス
+                      = link_to "スパッツ/レギンス" , "#"
                     %li
-                      %a{href: "#"}ストッキング/タイツ
+                      = link_to "ストッキング/タイツ" , "#"
                     %li
-                      %a{href: "#"}レッグウォーマー
+                      = link_to "レッグウォーマー" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}帽子
+                  = link_to "帽子" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ニットキャップ/ビーニー
+                      = link_to "ニットキャップ/ビーニー" , "#"
                     %li
-                      %a{href: "#"}ハット
+                      = link_to "ハット" , "#"
                     %li
-                      %a{href: "#"}ハンチング/ベレー帽
+                      = link_to "ハンチング/ベレー帽" , "#"
                     %li
-                      %a{href: "#"}キャップ
+                      = link_to "キャップ" , "#"
                     %li
-                      %a{href: "#"}キャスケット
+                      = link_to "キャスケット" , "#"
                     %li
-                      %a{href: "#"}麦わら帽子
+                      = link_to "麦わら帽子" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}バッグ
+                  = link_to "バッグ" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ハンドバッグ
+                      = link_to "ハンドバッグ" , "#"
                     %li
-                      %a{href: "#"}トートバッグ
+                      = link_to "トートバッグ" , "#"
                     %li
-                      %a{href: "#"}エコバッグ
+                      = link_to "エコバッグ" , "#"
                     %li
-                      %a{href: "#"}リュック/バックパック
+                      = link_to "リュック/バックパック" , "#"
                     %li
-                      %a{href: "#"}ボストンバック
+                      = link_to "ボストンバック" , "#"
                     %li
-                      %a{href: "#"}スポーツバック
+                      = link_to "スポーツバック" , "#"
                     %li
-                      %a{href: "#"}ショルダーバック
+                      = link_to "ショルダーバック" , "#"
                     %li
-                      %a{href: "#"}クラッチバック
+                      = link_to "クラッチバック" , "#"
                     %li
-                      %a{href: "#"}ポーチ/バニティ
+                      = link_to "ポーチ/バニティ" , "#"
                     %li
-                      %a{href: "#"}ボディバック/ウエストバック
+                      = link_to "ボディバック/ウエストバック" , "#"
                     %li
-                      %a{href: "#"} マザーズバック
+                      = link_to "マザーズバック" , "#" 
                     %li
-                      %a{href: "#"}メッセンジャーバック
+                      = link_to "メッセンジャーバック" , "#"
                     %li
-                      %a{href: "#"}ビジネスバック
+                      = link_to "ビジネスバック" , "#"
                     %li
-                      %a{href: "#"}旅行用バック/キャリーバック
+                      = link_to "旅行用バック/キャリーバック" , "#"
                     %li
-                      %a{href: "#"}ショップ袋
+                      = link_to "ショップ袋" , "#"
                     %li
-                      %a{href: "#"}和装用バッグ
+                      = link_to "和装用バッグ" , "#"
                     %li
-                      %a{href: "#"}かごバック
+                      = link_to "かごバック" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}アクセサリー
+                  = link_to "アクセサリー" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ネックレス
+                      = link_to "ネックレス" , "#"
                     %li
-                      %a{href: "#"}ブレスレット
+                      = link_to "ブレスレット" , "#"
                     %li
-                      %a{href: "#"}バングル/リストバンド
+                      = link_to "バングル/リストバンド" , "#"
                     %li
-                      %a{href: "#"}リング
+                      = link_to "リング" , "#"
                     %li
-                      %a{href: "#"}ピアス(片耳用)
+                      = link_to "ピアス(片耳用)" , "#"
                     %li
-                      %a{href: "#"}ピアス(両耳用)
+                      = link_to "ピアス(両耳用)" , "#"
                     %li
-                      %a{href: "#"}イヤリング
+                      = link_to "イヤリング" , "#"
                     %li
-                      %a{href: "#"}アンクレット
+                      = link_to "アンクレット" , "#"
                     %li
-                      %a{href: "#"}ブローチ/コサージュ
+                      = link_to "ブローチ/コサージュ" , "#"
                     %li
-                      %a{href: "#"}チャーム
+                      = link_to "チャーム" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}ヘアアクセサリー
+                  = link_to "ヘアアクセサリー" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ヘアゴム/シュシュ
+                      = link_to "ヘアゴム/シュシュ" , "#"
                     %li
-                      %a{href: "#"}ヘアバンド/カチューシャ
+                      = link_to "ヘアバンド/カチューシャ" , "#"
                     %li
-                      %a{href: "#"}ヘアピン
+                      = link_to "ヘアピン" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}小物
+                  = link_to "小物" , "#"
                   %ul
                     %li
-                      %a{href: "#"}長財布
+                      = link_to "長財布" , "#"
                     %li
-                      %a{href: "#"}折り財布
+                      = link_to "折り財布" , "#"
                     %li
-                      %a{href: "#"}コインケース/小銭入れ
+                      = link_to "コインケース/小銭入れ" , "#"
                     %li
-                      %a{href: "#"}名刺入れ/定期入れ
+                      = link_to "名刺入れ/定期入れ" , "#"
                     %li
-                      %a{href: "#"}キーケース
+                      = link_to "キーケース" , "#"
                     %li
-                      %a{href: "#"}キーホルダー
+                      = link_to "キーホルダー" , "#"
                     %li
-                      %a{href: "#"}手袋/アームカバー
+                      = link_to "手袋/アームカバー" , "#"
                     %li
-                      %a{href: "#"}ハンカチ
+                      = link_to "ハンカチ" , "#"
                     %li
-                      %a{href: "#"}ベルト
+                      = link_to "ベルト" , "#"
                     %li
-                      %a{href: "#"}マフラー/ショール
+                      = link_to "マフラー/ショール" , "#"
                     %li
-                      %a{href: "#"}ストール/スヌード
+                      = link_to "ストール/スヌード" , "#"
                     %li
-                      %a{href: "#"}バンダナ/スカーフ
+                      = link_to "バンダナ/スカーフ" , "#"
                     %li
-                      %a{href: "#"}ネックウォーマー
+                      = link_to "ネックウォーマー" , "#"
                     %li
-                      %a{href: "#"}サスペンダー
+                      = link_to "サスペンダー" , "#"
                     %li
-                      %a{href: "#"}サングラス/メガネ
+                      = link_to "サングラス/メガネ" , "#"
                     %li
-                      %a{href: "#"}モバイルケース/カバー
+                      = link_to "モバイルケース/カバー" , "#"
                     %li
-                      %a{href: "#"}手帳
+                      = link_to "手帳" , "#"
                     %li
-                      %a{href: "#"}イヤーマフラー
+                      = link_to "イヤーマフラー" , "#"
                     %li
-                      %a{href: "#"}傘
+                      = link_to "傘" , "#"
                     %li
-                      %a{href: "#"}レインコート/ポンチョ
+                      = link_to "レインコート/ポンチョ" , "#"
                     %li
-                      %a{href: "#"}ミラー
+                      = link_to "ミラー" , "#"
                     %li
-                      %a{href: "#"}タバコグッズ
+                      = link_to "タバコグッズ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}時計
+                  = link_to "時計" , "#"
                   %ul
                     %li
-                      %a{href: "#"}腕時計(アナログ)
+                      = link_to "腕時計(アナログ)" , "#"
                     %li
-                      %a{href: "#"}腕時計(デジタル)
+                      = link_to "腕時計(デジタル)" , "#"
                     %li
-                      %a{href: "#"}ラバーベルト
+                      = link_to "ラバーベルト" , "#"
                     %li
-                      %a{href: "#"}レザーベルト
+                      = link_to "レザーベルト" , "#"
                     %li
-                      %a{href: "#"}金属ベルト
+                      = link_to "金属ベルト" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}ウィッグ/エクステ
+                  = link_to "ウィッグ/エクステ" , "#"
                   %ul
                     %li
-                      %a{href: "#"}前髪ウィッグ
+                      = link_to "前髪ウィッグ" , "#"
                     %li
-                      %a{href: "#"}ロングストレート
+                      = link_to "ロングストレート" , "#"
                     %li
-                      %a{href: "#"}ロングカール
+                      = link_to "ロングカール" , "#"
                     %li
-                      %a{href: "#"}ショートストレート
+                      = link_to "ショートストレート" , "#"
                     %li
-                      %a{href: "#"}ショートカール
+                      = link_to "ショートカール" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}浴衣/水着
+                  = link_to "浴衣/水着" , "#"
                   %ul
                     %li
-                      %a{href: "#"}浴衣
+                      = link_to "浴衣" , "#"
                     %li
-                      %a{href: "#"}着物
+                      = link_to "着物" , "#"
                     %li
-                      %a{href: "#"}振袖
+                      = link_to "振袖" , "#"
                     %li
-                      %a{href: "#"}長襦袢/半襦袢
+                      = link_to "長襦袢/半襦袢" , "#"
                     %li
-                      %a{href: "#"}水着セパレート
+                      = link_to "水着セパレート" , "#"
                     %li
-                      %a{href: "#"}水着ワンピース
+                      = link_to "水着ワンピース" , "#"
                     %li
-                      %a{href: "#"}水着スポーツ用
+                      = link_to "水着スポーツ用" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}スーツ/フォーマル/ドレス
+                  = link_to "スーツ/フォーマル/ドレス" , "#"
                   %ul
                     %li
-                      %a{href: "#"}スカートスーツ上下
+                      = link_to "スカートスーツ上下" , "#"
                     %li
-                      %a{href: "#"}パンツスーツ上下
+                      = link_to "パンツスーツ上下" , "#"
                     %li
-                      %a{href: "#"}ドレス
+                      = link_to "ドレス" , "#"
                     %li
-                      %a{href: "#"}パーティーシューズ
+                      = link_to "パーティーシューズ" , "#"
                     %li
-                      %a{href: "#"}シューズ
+                      = link_to "シューズ" , "#"
                     %li
-                      %a{href: "#"}ウエディング
+                      = link_to "ウエディング" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}マタニティー
+                  = link_to "マタニティー" , "#"
                   %ul
                     %li
-                      %a{href: "#"}トップス
+                      = link_to "トップス" , "#"
                     %li
-                      %a{href: "#"}アウター
+                      = link_to "アウター" , "#"
                     %li
-                      %a{href: "#"}インナー
+                      = link_to "インナー" , "#"
                     %li
-                      %a{href: "#"}ワンピース
+                      = link_to "ワンピース" , "#"
                     %li
-                      %a{href: "#"}パンツ/スパッツ
+                      = link_to "パンツ/スパッツ" , "#"
                     %li
-                      %a{href: "#"}スカート
+                      = link_to "スカート" , "#"
                     %li
-                      %a{href: "#"}パジャマ
+                      = link_to "パジャマ" , "#"
                     %li
-                      %a{href: "#"}授乳服
+                      = link_to "授乳服" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}その他
+                  = link_to "その他" , "#"
                   %ul
                     %li
-                      %a{href: "#"}コスプレ
+                      = link_to "コスプレ" , "#"
                     %li
-                      %a{href: "#"}下着
+                      = link_to "下着" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
           %ul
             %li
-              %a{href: "#"}メンズ
+              = link_to "メンズ" , "#"
               %ul
                 %li
-                  %a{href: "#"}トップス
+                  = link_to "トップス" , "#"
                   %ul
                     %li
-                      %a{href: "#"}Tシャツ/カットソー(半袖/袖なし)
+                      = link_to "Tシャツ/カットソー(半袖/袖なし)" , "#"
                     %li
-                      %a{href: "#"}Tシャツ/カットソー(七分/長袖)
+                      = link_to "Tシャツ/カットソー(七分/長袖)" , "#"
                     %li
-                      %a{href: "#"}シャツ
+                      = link_to "シャツ" , "#"
                     %li
-                      %a{href: "#"}ポロシャツ
+                      = link_to "ポロシャツ" , "#"
                     %li
-                      %a{href: "#"}タンクトップ
+                      = link_to "タンクトップ" , "#"
                     %li
-                      %a{href: "#"}ニット/セーター
+                      = link_to "ニット/セーター" , "#"
                     %li
-                      %a{href: "#"}パーカー
+                      = link_to "パーカー" , "#"
                     %li
-                      %a{href: "#"}カーディガン
+                      = link_to "カーディガン" , "#"
                     %li
-                      %a{href: "#"}スウェット
+                      = link_to "スウェット" , "#"
                     %li
-                      %a{href: "#"}ジャージ
+                      = link_to "ジャージ" , "#"
                     %li
-                      %a{href: "#"}ベスト
+                      = link_to "ベスト" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}ジャケット/アウター
+                  = link_to "ジャケット/アウター" , "#"
                   %ul
                     %li
-                      %a{href: "#"}テーラードジャケット
+                      = link_to "テーラードジャケット" , "#"
                     %li
-                      %a{href: "#"}ノーカラージャケット
+                      = link_to "ノーカラージャケット" , "#"
                     %li
-                      %a{href: "#"}Gジャン/デニムジャケット
+                      = link_to "Gジャン/デニムジャケット" , "#"
                     %li
-                      %a{href: "#"}レザージャケット
+                      = link_to "レザージャケット" , "#"
                     %li
-                      %a{href: "#"}ダウンジャケット
+                      = link_to "ダウンジャケット" , "#"
                     %li
-                      %a{href: "#"}ライダースジャケット
+                      = link_to "ライダースジャケット" , "#"
                     %li
-                      %a{href: "#"}ミリタリージャケット
+                      = link_to "ミリタリージャケット" , "#"
                     %li
-                      %a{href: "#"}ダウンジャケット
+                      = link_to "ダウンジャケット" , "#"
                     %li
-                      %a{href: "#"}ライダーズジャケット
+                      = link_to "ライダーズジャケット" , "#"
                     %li
-                      %a{href: "#"}ミリタリージャケット
+                      = link_to "ミリタリージャケット" , "#"
                     %li
-                      %a{href: "#"}ナイロンジャケット
+                      = link_to "ナイロンジャケット" , "#"
                     %li
-                      %a{href: "#"}フライトジャケット
+                      = link_to "フライトジャケット" , "#"
                     %li
-                      %a{href: "#"}ダッフルコート
+                      = link_to "ダッフルコート" , "#"
                     %li
-                      %a{href: "#"}ピーコート
+                      = link_to "ピーコート" , "#"
                     %li
-                      %a{href: "#"}ステントカラーコート
+                      = link_to "ステントカラーコート" , "#"
                     %li
-                      %a{href: "#"}トレンチコート
+                      = link_to "トレンチコート" , "#"
                     %li
-                      %a{href: "#"}チェスターコート
+                      = link_to "チェスターコート" , "#"
                     %li
-                      %a{href: "#"}モッズコート
+                      = link_to "スタジャン" , "#"
                     %li
-                      %a{href: "#"}スタジャン
+                      = link_to "スカジャン" , "#"
                     %li
-                      %a{href: "#"}スカジャン
+                      = link_to "ブルゾン" , "#"
                     %li
-                      %a{href: "#"}ブルゾン
+                      = link_to "マウンテンパーカー" , "#"
                     %li
-                      %a{href: "#"}マウンテンパーカー
+                      = link_to "ダウンベスト" , "#"
                     %li
-                      %a{href: "#"}ダウンベスト
+                      = link_to "ポンチョ" , "#"
                     %li
-                      %a{href: "#"}ポンチョ
+                      = link_to "カバーオール" , "#"
                     %li
-                      %a{href: "#"}カバーオール
-                    %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}パンツ
+                  = link_to "パンツ" , "#"
                   %ul
                     %li
-                      %a{href: "#"}デニム/ジーンズ
+                      = link_to "デニム/ジーンズ" , "#"
                     %li
-                      %a{href: "#"}ワークパンツ/カーゴパンツ
+                      = link_to "ワークパンツ/カーゴパンツ" , "#"
                     %li
-                      %a{href: "#"}スラックス
+                      = link_to "スラックス" , "#"
                     %li
-                      %a{href: "#"}チノパン
+                      = link_to "チノパン" , "#"
                     %li
-                      %a{href: "#"}ショートパンツ
+                      = link_to "ショートパンツ" , "#"
                     %li
-                      %a{href: "#"}ペインターパンツ
+                      = link_to "ペインターパンツ" , "#"
                     %li
-                      %a{href: "#"}サルエルパンツ
+                      = link_to "サルエルパンツ" , "#"
                     %li
-                      %a{href: "#"}オーバーオール
+                      = link_to "オーバーオール" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}靴
+                  = link_to "靴" , "#"
                   %ul
                     %li
-                      %a{href: "#"}スニーカー
+                      = link_to "スニーカー" , "#"
                     %li
-                      %a{href: "#"}サンダル
+                      = link_to "サンダル" , "#"
                     %li
-                      %a{href: "#"}ブーツ
+                      = link_to "ブーツ" , "#"
                     %li
-                      %a{href: "#"}モカシン
+                      = link_to "モカシン" , "#"
                     %li
-                      %a{href: "#"}ドレス/ビジネス
+                      = link_to "ドレス/ビジネス" , "#"
                     %li
-                      %a{href: "#"}長靴/レインシューズ
+                      = link_to "長靴/レインシューズ" , "#"
                     %li
-                      %a{href: "#"}デッキシューズ
+                      = link_to "デッキシューズ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}バッグ
+                  = link_to "バッグ" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ショルダーバック
+                      = link_to "ショルダーバック" , "#"
                     %li
-                      %a{href: "#"}トートバック
+                      = link_to "トートバック" , "#"
                     %li
-                      %a{href: "#"}ボストンバック
+                      = link_to "ボストンバック" , "#"
                     %li
-                      %a{href: "#"}リュック/バックパック
+                      = link_to "リュック/バックパック" , "#"
                     %li
-                      %a{href: "#"}ウエストポーチ
+                      = link_to "ウエストポーチ" , "#"
                     %li
-                      %a{href: "#"}ボディーバック
+                      = link_to "ボディーバック" , "#"
                     %li
-                      %a{href: "#"}ドラムバック
+                      = link_to "ドラムバック" , "#"
                     %li
-                      %a{href: "#"}ビジネスバック
+                      = link_to "ビジネスバック" , "#"
                     %li
-                      %a{href: "#"}トララベルバック
+                      = link_to "トララベルバック" , "#"
                     %li
-                      %a{href: "#"}メッセンジャーバック
+                      = link_to "メッセンジャーバック" , "#"
                     %li
-                      %a{href: "#"}エコバック
+                      = link_to "エコバック" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}スーツ
+                  = link_to "スーツ" , "#"
                   %ul
                     %li
-                      %a{href: "#"}スーツジャケット
+                      = link_to "スーツジャケット" , "#"
                     %li
-                      %a{href: "#"}スーツベスト
+                      = link_to "スーツベスト" , "#"
                     %li
-                      %a{href: "#"}スラックス
+                      = link_to "スラックス" , "#"
                     %li
-                      %a{href: "#"}セットアップ
+                      = link_to "セットアップ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}帽子
+                  = link_to "帽子" , "#"
                   %ul
                     %li
-                      %a{href: "#"}キャップ
+                      = link_to "キャップ" , "#"
                     %li
-                      %a{href: "#"}ハット
+                      = link_to "ハット" , "#"
                     %li
-                      %a{href: "#"}ニットキャップ/ビーニー
+                      = link_to "ニットキャップ/ビーニー" , "#"
                     %li
-                      %a{href: "#"}ハンチング/ベレー帽
+                      = link_to "ハンチング/ベレー帽" , "#" 
                     %li
-                      %a{href: "#"}キャスケット
+                      = link_to "キャスケット" , "#"  
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"  
                 %li
-                  %a{href: "#"}アクセサリー
+                  = link_to "アクセサリー" , "#"  
                   %ul
                     %li
-                      %a{href: "#"}ネックレス
+                      = link_to "ネックレス" , "#"  
                     %li
-                      %a{href: "#"}ブレスレット
+                      = link_to "ブレスレット" , "#" 
                     %li
-                      %a{href: "#"}バングル/リストバンド
+                      = link_to "バングル/リストバンド" , "#"
                     %li
-                      %a{href: "#"}リング
+                      = link_to "リング" , "#" 
                     %li
-                      %a{href: "#"}ピアス(片耳用)
+                      = link_to "ピアス(片耳用)" , "#"
                     %li
-                      %a{href: "#"}ピアス(両耳用)
+                      = link_to "ピアス(両耳用)" , "#"
                     %li
-                      %a{href: "#"}アンクレット
+                      = link_to "アンクレット" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}小物
+                  = link_to "小物" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}長財布
+                      = link_to "長財布" , "#" 
                     %li
-                      %a{href: "#"}折り財布
+                      = link_to "折り財布" , "#" 
                     %li
-                      %a{href: "#"}マネークリップ
+                      = link_to "マネークリップ" , "#" 
                     %li
-                      %a{href: "#"}コインケース/小銭入れ
+                      = link_to "コインケース/小銭入れ" , "#"
                     %li
-                      %a{href: "#"}名刺入れ/定期入れ
+                      = link_to "名刺入れ/定期入れ" , "#"
                     %li
-                      %a{href: "#"}キーケース
+                      = link_to "キーケース" , "#" 
                     %li
-                      %a{href: "#"}キーホルダー
+                      = link_to "キーホルダー" , "#" 
                     %li
-                      %a{href: "#"}ネクタイ
+                      = link_to "ネクタイ" , "#"
                     %li
-                      %a{href: "#"}手袋
+                      = link_to "手袋" , "#" 
                     %li
-                      %a{href: "#"}ハンカチ
+                      = link_to "ハンカチ" , "#" 
                     %li
-                      %a{href: "#"}ベルト
+                      = link_to "ベルト" , "#" 
                     %li
-                      %a{href: "#"}マフラー
+                      = link_to "マフラー" , "#" 
                     %li
-                      %a{href: "#"}ストール
+                      = link_to "ストール" , "#" 
                     %li
-                      %a{href: "#"}バンダナ
+                      = link_to "バンダナ" , "#" 
                     %li
-                      %a{href: "#"}ネックウォーマー
+                      = link_to "ネックウォーマー" , "#" 
                     %li
-                      %a{href: "#"}サスペンダー
+                      = link_to "サスペンダー" , "#" 
                     %li
-                      %a{href: "#"}ウオレットチェーン
+                      = link_to "ウオレットチェーン" , "#" 
                     %li
-                      %a{href: "#"}サングラス/メガネ
+                      = link_to "サングラス/メガネ" , "#"
                     %li
-                      %a{href: "#"}モバイルケース/カバー
+                      = link_to "モバイルケース/カバー" , "#"
                     %li
-                      %a{href: "#"}手帳
+                      = link_to "手帳" , "#" 
                     %li
-                      %a{href: "#"}ストラップ
+                      = link_to "ストラップ" , "#" 
                     %li
-                      %a{href: "#"}ネクタイピン
+                      = link_to "ネクタイピン" , "#" 
                     %li
-                      %a{href: "#"}カフリンクス
+                      = link_to "カフリンクス" , "#" 
                     %li
-                      %a{href: "#"}イヤマフラー
+                      = link_to "イヤマフラー" , "#" 
                     %li
-                      %a{href: "#"}傘
+                      = link_to "傘" , "#" 
                     %li
-                      %a{href: "#"}レインコート
+                      = link_to "レインコート" , "#" 
                     %li
-                      %a{href: "#"}ミラー
+                      = link_to "ミラー" , "#" 
                     %li
-                      %a{href: "#"}タバコグッズ
+                      = link_to "タバコグッズ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}時計
+                  = link_to "時計" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}腕時計(アナログ)
+                      = link_to "腕時計(アナログ)" , "#"
                     %li
-                      %a{href: "#"}腕時計(デジタル)
+                      = link_to "腕時計(デジタル)" , "#"
                     %li
-                      %a{href: "#"}ラバーベルト
+                      = link_to "ラバーベルト" , "#" 
                     %li
-                      %a{href: "#"}レザーベルト
+                      = link_to "レザーベルト" , "#"
                     %li
-                      %a{href: "#"}金属ベルト
+                      = link_to "金属ベルト" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}水着
+                  = link_to "水着" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}一般水着
+                      = link_to "一般水着" , "#" 
                     %li
-                      %a{href: "#"}スポーツ用
+                      = link_to "スポーツ用" , "#" 
                     %li
-                      %a{href: "#"}アクセサリー
+                      = link_to "アクセサリー" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}レッグウェア
+                  = link_to "レッグウェア" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ソックス
+                      = link_to "ソックス" , "#" 
                     %li
-                      %a{href: "#"}レギンス/スパッツ
+                      = link_to "レギンス/スパッツ" , "#"
                     %li
-                      %a{href: "#"}レッグウォーマー
+                      = link_to "レッグウォーマー" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}アンダーウェア
+                  = link_to "アンダーウェア" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}トランクス
+                      = link_to "トランクス" , "#" 
                     %li
-                      %a{href: "#"}ボクサーパンツ
+                      = link_to "ボクサーパンツ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}その他
+                  = link_to "その他" , "#" 
           %ul
             %li
-              %a{href: "#"}ベビー・キッズ
+              = link_to "ベビー・キッズ" , "#"
               %ul
                 %li
-                  %a{href: "#"}ベビー服(女の子用) ~95cm
+                  = link_to "ベビー服(女の子用) ~95cm" , "#"
                   %ul
                     %li
-                      %a{href: "#"}トップス
+                      = link_to "トップス" , "#" 
                     %li
-                      %a{href: "#"}アウター
+                      = link_to "アウター" , "#" 
                     %li
-                      %a{href: "#"}パンツ
+                      = link_to "パンツ" , "#" 
                     %li
-                      %a{href: "#"}スカート
+                      = link_to "スカート" , "#"
                     %li
-                      %a{href: "#"}ワンピース
+                      = link_to "ワンピース" , "#" 
                     %li
-                      %a{href: "#"}ベビードレス
+                      = link_to "ベビードレス" , "#" 
                     %li
-                      %a{href: "#"}おくるみ
+                      = link_to "おくるみ" , "#" 
                     %li
-                      %a{href: "#"}下着/肌着
+                      = link_to "下着/肌着" , "#"
                     %li
-                      %a{href: "#"}パジャマ
+                      = link_to "パジャマ" , "#" 
                     %li
-                      %a{href: "#"}ロンパース
+                      = link_to "ロンパース" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ベビー服(男の子用）~95cm
+                  = link_to "ビー服(男の子用）~95cm" , "#"
                   %ul
                     %li
-                      %a{href: "#"}トップス
+                      = link_to "トップス" , "#" 
                     %li
-                      %a{href: "#"}アウター
+                      = link_to "アウター" , "#" 
                     %li
-                      %a{href: "#"}パンツ
+                      = link_to "パンツ" , "#" 
                     %li
-                      %a{href: "#"}おくるみ
+                      = link_to "おくるみ" , "#" 
                     %li
-                      %a{href: "#"}下着/肌着
+                      = link_to "下着/肌着" , "#"
                     %li
-                      %a{href: "#"}パジャマ
+                      = link_to "パジャマ" , "#" 
                     %li
-                      %a{href: "#"}ロンパース
+                      = link_to "ロンパース" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ベビー服(男女兼用)~95cm
+                  = link_to "ベビー服(男女兼用)~95cm" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}トップス
+                      = link_to "トップス" , "#" 
                     %li
-                      %a{href: "#"}アウター
+                      = link_to "アウター" , "#" 
                     %li
-                      %a{href: "#"}パンツ
+                      = link_to "パンツ" , "#" 
                     %li
-                      %a{href: "#"}おくるみ
+                      = link_to "おくるみ" , "#" 
                     %li
-                      %a{href: "#"}下着/肌着
+                      = link_to "下着/肌着" , "#" 
                     %li
-                      %a{href: "#"}パジャマ
+                      = link_to "パジャマ" , "#" 
                     %li
-                      %a{href: "#"}ロンパース
+                      = link_to "ロンパース" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}キッズ服(女の子用)100cm~
+                  = link_to "キッズ服(女の子用)100cm~" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}コート
+                      = link_to "コート" , "#" 
                     %li
-                      %a{href: "#"}ジャケット/上着
+                      = link_to "ジャケット/上着" , "#" 
                     %li
-                      %a{href: "#"}トップス(Tシャツ/カットソー)
+                      = link_to "トップス(Tシャツ/カットソー)" , "#" 
                     %li
-                      %a{href: "#"}トップス(トレーナー)
+                      = link_to "トップス(トレーナー)" , "#" 
                     %li
-                      %a{href: "#"}トップス(チュニック)
+                      = link_to "トップス(チュニック)" , "#" 
                     %li
-                      %a{href: "#"}トップス(タンクトップ)
+                      = link_to "トップス(タンクトップ)" , "#" 
                     %li
-                      %a{href: "#"}トップス(その他)
+                      = link_to "トップス(その他)" , "#" 
                     %li
-                      %a{href: "#"}スカート
+                      = link_to "スカート" , "#" 
                     %li
-                      %a{href: "#"}パンツ
+                      = link_to "パンツ" , "#" 
                     %li
-                      %a{href: "#"}セットアップ
+                      = link_to "セットアップ" , "#" 
                     %li
-                      %a{href: "#"}フォーマル/ドレス
+                      = link_to "フォーマル/ドレス" , "#" 
                     %li
-                      %a{href: "#"}和服
+                      = link_to "和服" , "#" 
                     %li
-                      %a{href: "#"}浴衣
+                      = link_to "浴衣" , "#" 
                     %li
-                      %a{href: "#"}甚平
+                      = link_to "甚平" , "#" 
                     %li
-                      %a{href: "#"}水着
+                      = link_to "水着" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}キッズ服(男の子用)100cm~
+                  = link_to "キッズ服(男の子用)100cm~" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}コート
+                      = link_to "コート" , "#" 
                     %li
-                      %a{href: "#"}ジャケット/上着
+                      = link_to "ジャケット/上着" , "#" 
                     %li
-                      %a{href: "#"}トップス(Tシャツ/カットソー)
+                      = link_to "トップス(Tシャツ/カットソー)" , "#" 
                     %li
-                      %a{href: "#"}トップス(トレーナー)
+                      = link_to "トップス(トレーナー)" , "#" 
                     %li
-                      %a{href: "#"}トップス(その他)
+                      = link_to "トップス(その他)" , "#" 
                     %li
-                      %a{href: "#"}パンツ
+                      = link_to "パンツ" , "#" 
                     %li
-                      %a{href: "#"}セットアップ
+                      = link_to "セットアップ" , "#" 
                     %li
-                      %a{href: "#"}パジャマ
+                      = link_to "パジャマ" , "#" 
                     %li
-                      %a{href: "#"}フォーマル/ドレス
+                      = link_to "フォーマル/ドレス" , "#" 
                     %li
-                      %a{href: "#"}和服
+                      = link_to "和服" , "#" 
                     %li
-                      %a{href: "#"}浴衣
+                      = link_to "浴衣" , "#" 
                     %li
-                      %a{href: "#"}甚平
+                      = link_to "甚平" , "#" 
                     %li
-                      %a{href: "#"}水着
+                      = link_to "水着" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}キッズ服(男女兼用)100cm~
+                  = link_to "キッズ服(男女兼用)100cm~" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}コート
+                      = link_to "コート" , "#" 
                     %li
-                      %a{href: "#"}ジャケット/上着
+                      = link_to "ジャケット/上着" , "#" 
                     %li
-                      %a{href: "#"}トップス(Tシャツ/カットソー)
+                      = link_to "トップス(Tシャツ/カットソー)" , "#" 
                     %li
-                      %a{href: "#"}トップス(トレーナー)
+                      = link_to "トップス(トレーナー)" , "#" 
                     %li
-                      %a{href: "#"}トップス(その他)
+                      = link_to "トップス(その他)" , "#" 
                     %li
-                      %a{href: "#"}ボトムス
+                      = link_to "ボトムス" , "#" 
                     %li
-                      %a{href: "#"}パジャマ
+                      = link_to "パジャマ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}キッズ靴
+                  = link_to "キッズ靴" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}スニーカー
+                      = link_to "スニーカー" , "#" 
                     %li
-                      %a{href: "#"}サンダル
+                      = link_to "サンダル" , "#" 
                     %li
-                      %a{href: "#"}ブーツ
+                      = link_to "ブーツ" , "#" 
                     %li
-                      %a{href: "#"}長靴
+                      = link_to "長靴" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}子ども用ファッション小物
+                  = link_to "子ども用ファッション小物" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}靴下/スパッツ
+                      = link_to "靴下/スパッツ" , "#" 
                     %li
-                      %a{href: "#"}帽子
+                      = link_to "帽子" , "#" 
                     %li
-                      %a{href: "#"}エプロン
+                      = link_to "エプロン" , "#" 
                     %li
-                      %a{href: "#"}サスペンダー
+                      = link_to "サスペンダー" , "#" 
                     %li
-                      %a{href: "#"}タイツ
+                      = link_to "タイツ" , "#" 
                     %li
-                      %a{href: "#"}ハンカチ
+                      = link_to "ハンカチ" , "#" 
                     %li
-                      %a{href: "#"}バンダナ
+                      = link_to "バンダナ" , "#" 
                     %li
-                      %a{href: "#"}ベルト
+                      = link_to "ベルト" , "#" 
                     %li
-                      %a{href: "#"}マフラー
+                      = link_to "マフラー" , "#" 
                     %li
-                      %a{href: "#"}傘
+                      = link_to "傘" , "#" 
                     %li
-                      %a{href: "#"}手袋
+                      = link_to "手袋" , "#" 
                     %li
-                      %a{href: "#"}スタイ
+                      = link_to "スタイ" , "#" 
                     %li
-                      %a{href: "#"}バッグ
+                      = link_to "バッグ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}おむつ/トイレ/バス
+                  = link_to "おむつ/トイレ/バス" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}おむつ用品
+                      = link_to "おむつ用品" , "#"  
                     %li
-                      %a{href: "#"}おまる/補助便座
+                      = link_to "おまる/補助便座" , "#" 
                     %li
-                      %a{href: "#"}トレーニングパンツ
+                      = link_to "トレーニングパンツ" , "#" 
                     %li
-                      %a{href: "#"}ベビーバス
+                      = link_to "ベビーバス" , "#" 
                     %li
-                      %a{href: "#"}お風呂用品
+                      = link_to "お風呂用品" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}外出/移動用品
+                  = link_to "外出/移動用品" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ベビーカー
+                      = link_to "ベビーカー" , "#" 
                     %li
-                      %a{href: "#"}抱っこひも/スリング
+                      = link_to "抱っこひも/スリング" , "#"  
                     %li
-                      %a{href: "#"}チャイルドシート
+                      = link_to "チャイルドシート" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}授乳/食事
+                  = link_to "授乳/食事" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ミルク
+                      = link_to "ミルク" , "#" 
                     %li
-                      %a{href: "#"}ベビーフード
+                      = link_to "ベビーフード" , "#" 
                     %li
-                      %a{href: "#"}ベビー用食器
+                      = link_to "ベビー用食器" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ベビー家具/寝具/室内用品
+                  = link_to "ベビー家具/寝具/室内用品" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ベッド
+                      = link_to "ベッド" , "#" 
                     %li
-                      %a{href: "#"}布団/毛布
+                      = link_to "布団/毛布" , "#"  
                     %li
-                      %a{href: "#"}イス
+                      = link_to "イス" , "#"
                     %li
-                      %a{href: "#"}たんす
+                      = link_to "たんす" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}おもちゃ
+                  = link_to "おもちゃ" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}おふろのおもちゃ
+                      = link_to "おふろのおもちゃ" , "#" 
                     %li
-                      %a{href: "#"}がらがら
+                      = link_to "がらがら" , "#" 
                     %li
-                      %a{href: "#"}オルゴール
+                      = link_to "オルゴール" , "#" 
                     %li
-                      %a{href: "#"}ベビージム
+                      = link_to "ベビージム" , "#" 
                     %li
-                      %a{href: "#"}手押し車/カタカタ
+                      = link_to "手押し車/カタカタ" , "#" 
                     %li
-                      %a{href: "#"}知育玩具
+                      = link_to "知育玩具" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}行事/記念品
+                  = link_to "行事/記念品" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}お宮参り用品
+                      = link_to "お宮参り用品" , "#" 
                     %li
-                      %a{href: "#"}お食い染め用品
+                      = link_to "お食い染め用品" , "#" 
                     %li
-                      %a{href: "#"}アルバム
+                      = link_to "アルバム" , "#" 
                     %li
-                      %a{href: "#"}手形/足形
+                      = link_to "手形/足形" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}その他
+                  = link_to "その他" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}母子手帳用品
+                      = link_to "母子手帳用品" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
           %ul
             %li
-              %a{href: "#"}インテリア・住まい・小物
+              = link_to "インテリア・住まい・小物" , "#" 
               %ul
                 %li
-                  %a{href: "#"}キッチン/食器
+                  = link_to "キッチン/食器" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}食器
+                      = link_to "食器" , "#"  
                     %li
-                      %a{href: "#"}調理器具
+                      = link_to "調理器具" , "#" 
                     %li
-                      %a{href: "#"}収納キッチン
+                      = link_to "収納キッチン" , "#" 
                     %li
-                      %a{href: "#"}弁当用品
+                      = link_to "弁当用品" , "#" 
                     %li
-                      %a{href: "#"}カトラリー(スプーン等)
+                      = link_to "カトラリー(スプーン等)" , "#"  
                     %li
-                      %a{href: "#"}テーブル用品
+                      = link_to "テーブル用品" , "#" 
                     %li
-                      %a{href: "#"}容器
+                      = link_to "容器" , "#" 
                     %li
-                      %a{href: "#"}エプロン
+                      = link_to "エプロン" , "#" 
                     %li
-                      %a{href: "#"}アルコールグッズ
+                      = link_to "アルコールグッズ" , "#" 
                     %li
-                      %a{href: "#"}浄水器
+                      = link_to "浄水器" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ベッド/マットレス
+                  = link_to "ベッド/マットレス" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}セミシングルベッド
+                      = link_to "セミシングルベッド" , "#" 
                     %li
-                      %a{href: "#"}シングルベッド
+                      = link_to "シングルベッド" , "#" 
                     %li
-                      %a{href: "#"}セミダブルベッド
+                      = link_to "セミダブルベッド" , "#" 
                     %li
-                      %a{href: "#"}ダブルベッド
+                      = link_to "ダブルベッド" , "#" 
                     %li
-                      %a{href: "#"}ワイドダブルベッド
+                      = link_to "ワイドダブルベッド" , "#" 
                     %li
-                      %a{href: "#"}クイーンベッド
+                      = link_to "クイーンベッド" , "#" 
                     %li
-                      %a{href: "#"}キングベッド
+                      = link_to "キングベッド" , "#" 
                     %li
-                      %a{href: "#"}脚付きマットレスベッド
+                      = link_to "脚付きマットレスベッド" , "#" 
                     %li
-                      %a{href: "#"}マットレス
+                      = link_to "マットレス" , "#" 
                     %li
-                      %a{href: "#"}すのこベッド
+                      = link_to "すのこベッド" , "#" 
                     %li
-                      %a{href: "#"}ロフトベッド/システムベッド
+                      = link_to "ロフトベッド/システムベッド" , "#" 
                     %li
-                      %a{href: "#"}簡易ベッド/折りたたみベッド
+                      = link_to "簡易ベッド/折りたたみベッド" , "#" 
                     %li
-                      %a{href: "#"}収納付き
+                      = link_to "収納付き" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ソファ/ソファベット
+                  = link_to "ソファ/ソファベット" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ソファセット
+                      = link_to "ソファセット" , "#" 
                     %li
-                      %a{href: "#"}シングルソファ
+                      = link_to "シングルソファ" , "#" 
                     %li
-                      %a{href: "#"}ラブソファ
+                      = link_to "ラブソファ" , "#" 
                     %li
-                      %a{href: "#"}トリプルソファ
+                      = link_to "トリプルソファ" , "#" 
                     %li
-                      %a{href: "#"}オットマン
+                      = link_to "オットマン" , "#" 
                     %li
-                      %a{href: "#"}コーナーソファ
+                      = link_to "コーナーソファ" , "#" 
                     %li
-                      %a{href: "#"}ビーズソファクションソファ
+                      = link_to "ビーズソファクションソファ" , "#" 
                     %li
-                      %a{href: "#"}ローソファフロアソファ
+                      = link_to "ローソファフロアソファ" , "#" 
                     %li
-                      %a{href: "#"}ソファベット
+                      = link_to "ソファベット" , "#" 
                     %li
-                      %a{href: "#"}応接セット
+                      = link_to "応接セット" , "#" 
                     %li
-                      %a{href: "#"}ソファカバー
+                      = link_to "ソファカバー" , "#" 
                     %li
-                      %a{href: "#"}リクライニングソファ
+                      = link_to "リクライニングソファ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}椅子/チェア
+                  = link_to "椅子/チェア" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}一般
+                      = link_to "一般" , "#" 
                     %li
-                      %a{href: "#"}スツール
+                      = link_to "スツール" , "#" 
                     %li
-                      %a{href: "#"}ダイニングチェア
+                      = link_to "ダイニングチェア" , "#" 
                     %li
-                      %a{href: "#"}ハイバックチェア
+                      = link_to "ハイバックチェア" , "#" 
                     %li
-                      %a{href: "#"}ロッキングチェア
+                      = link_to "ロッキングチェア" , "#" 
                     %li
-                      %a{href: "#"}座椅子
+                      = link_to "座椅子" , "#" 
                     %li
-                      %a{href: "#"}折り畳みイス
+                      = link_to "折り畳みイス" , "#" 
                     %li
-                      %a{href: "#"}デスクチェア
+                      = link_to "デスクチェア" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}机/テーブル
+                  = link_to "机/テーブル" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}こたつ
+                      = link_to "こたつ" , "#" 
                     %li
-                      %a{href: "#"}カウンターテーブル
+                      = link_to "カウンターテーブル" , "#" 
                     %li
-                      %a{href: "#"}サイドテーブル
+                      = link_to "サイドテーブル" , "#" 
                     %li
-                      %a{href: "#"}ダイニングテーブル
+                      = link_to "ダイニングテーブル" , "#" 
                     %li
-                      %a{href: "#"}座卓/ちゃぶ台
+                      = link_to "座卓/ちゃぶ台" , "#" 
                     %li
-                      %a{href: "#"}アウトドア用
+                      = link_to "アウトドア用" , "#" 
                     %li
-                      %a{href: "#"}パソコン用
+                      = link_to "パソコン用" , "#" 
                     %li
-                      %a{href: "#"}事務机/学習机
+                      = link_to "事務机/学習机" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}収納家具
+                  = link_to "収納家具" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}リビング収納
+                      = link_to "リビング収納" , "#" 
                     %li
-                      %a{href: "#"}キッチン収納
+                      = link_to "キッチン収納" , "#" 
                     %li
-                      %a{href: "#"}玄関/屋外収納
+                      = link_to "玄関/屋外収納" , "#" 
                     %li
-                      %a{href: "#"}バス/トイレ収納
+                      = link_to "バス/トイレ収納" , "#" 
                     %li
-                      %a{href: "#"}本収納
+                      = link_to "本収納" , "#" 
                     %li
-                      %a{href: "#"}本/CD/DVD収納
+                      = link_to "本/CD/DVD収納" , "#" 
                     %li
-                      %a{href: "#"}洋服タンス/押入れ収納
+                      = link_to "洋服タンス/押入れ収納" , "#" 
                     %li
-                      %a{href: "#"}電話台/ファックス台
+                      = link_to "電話台/ファックス台" , "#" 
                     %li
-                      %a{href: "#"}ドレッサー/鏡台
+                      = link_to "ドレッサー/鏡台" , "#"  
                     %li
-                      %a{href: "#"}棚/ラック
+                      = link_to "棚/ラック" , "#" 
                     %li
-                      %a{href: "#"}ケース/ボックス
+                      = link_to "ケース/ボックス" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ラグ/カーペットマット
+                  = link_to "ラグ/カーペットマット" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ラグ
+                      = link_to "ラグ" , "#" 
                     %li
-                      %a{href: "#"}カーペット
+                      = link_to "カーペット" , "#" 
                     %li
-                      %a{href: "#"}ホットカーペット
+                      = link_to "ホットカーペット" , "#" 
                     %li
-                      %a{href: "#"}玄関/キッチンマット
+                      = link_to "玄関/キッチンマット" , "#" 
                     %li
-                      %a{href: "#"}トイレ/バスマット
+                      = link_to "トイレ/バスマット" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}カーテン/ブラインド
+                  = link_to "カーテン/ブラインド" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}カーテン
+                      = link_to "カーテン" , "#" 
                     %li
-                      %a{href: "#"}ブラインド
+                      = link_to "ブラインド" , "#" 
                     %li
-                      %a{href: "#"}ロールスクリーン
+                      = link_to "ロールスクリーン" , "#" 
                     %li
-                      %a{href: "#"}のれん
+                      = link_to "のれん" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ライト/照明
+                  = link_to "ライト/照明" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}蛍光灯
+                      = link_to "蛍光灯" , "#" 
                     %li
-                      %a{href: "#"}天井照明
+                      = link_to "天井照明" , "#" 
                     %li
-                      %a{href: "#"}フロアスタンド
+                      = link_to "フロアスタンド" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他", "#" 
                 %li
-                  %a{href: "#"}寝具
+                  = link_to "寝具" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}布団/毛布
+                      = link_to "布団/毛布" , "#" 
                     %li
-                      %a{href: "#"}枕
+                      = link_to "枕" , "#"  
                     %li
-                      %a{href: "#"}シーツ/カバー
+                      = link_to "シーツ/カバー" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}インテリア小物
+                  = link_to "インテリア小物" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ゴミ箱
+                      = link_to "ゴミ箱" , "#" 
                     %li
-                      %a{href: "#"}ウエルカムボード
+                      = link_to "ウエルカムボード" , "#" 
                     %li
-                      %a{href: "#"}オルゴール
+                      = link_to "オルゴール" , "#"   
                     %li
-                      %a{href: "#"}クッション
+                      = link_to "クッション" , "#" 
                     %li
-                      %a{href: "#"}クッションカバー
+                      = link_to "クッションカバー" , "#" 
                     %li
-                      %a{href: "#"}スリッパラック
+                      = link_to "スリッパラック" , "#" 
                     %li
-                      %a{href: "#"}ティッシュボックス
+                      = link_to "ティッシュボックス" , "#" 
                     %li
-                      %a{href: "#"}バスケット/かご
+                      = link_to "バスケット/かご" , "#" 
                     %li
-                      %a{href: "#"}フォトフレーム
+                      = link_to "フォトフレーム" , "#" 
                     %li
-                      %a{href: "#"}マガジンラック
+                      = link_to "マガジンラック" , "#" 
                     %li
-                      %a{href: "#"}モビール
+                      = link_to "モビール" , "#" 
                     %li
-                      %a{href: "#"}花瓶
+                      = link_to "花瓶" , "#" 
                     %li
-                      %a{href: "#"}灰皿
+                      = link_to "灰皿" , "#" 
                     %li
-                      %a{href: "#"}傘立て
+                      = link_to "傘立て" , "#" 
                     %li
-                      %a{href: "#"}小物入れ
+                      = link_to "小物入れ" , "#" 
                     %li
-                      %a{href: "#"}置時計
+                      = link_to "置時計" , "#" 
                     %li
-                      %a{href: "#"}掛時計/柱時計
+                      = link_to "掛時計/柱時計" , "#" 
                     %li
-                      %a{href: "#"}鏡(立て掛け式)
+                      = link_to "鏡(立て掛け式)" , "#" 
                     %li
-                      %a{href: "#"}鏡(壁掛け式)
+                      = link_to "鏡(壁掛け式)" , "#" 
                     %li
-                      %a{href: "#"}置物
+                      = link_to "置物" , "#" 
                     %li
-                      %a{href: "#"}風鈴
+                      = link_to "風鈴" , "#" 
                     %li
-                      %a{href: "#"}植物/観葉植物
+                      = link_to "植物/観葉植物" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}季節/年中行事
+                  = link_to "季節/年中行事" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}正月
+                      = link_to "正月" , "#" 
                     %li
-                      %a{href: "#"}成人式
+                      = link_to "成人式" , "#" 
                     %li
-                      %a{href: "#"}バレンタイン
+                      = link_to "バレンタイン" , "#" 
                     %li
-                      %a{href: "#"}ひな祭り
+                      = link_to "ひな祭り" , "#" 
                     %li
-                      %a{href: "#"}こどもの日
+                      = link_to "こどもの日" , "#" 
                     %li
-                      %a{href: "#"}母の日
+                      = link_to "母の日" , "#" 
                     %li
-                      %a{href: "#"}父の日
+                      = link_to "父の日" , "#" 
                     %li
-                      %a{href: "#"}サマーギフト/お中元
+                      = link_to "サマーギフト/お中元" , "#" 
                     %li
-                      %a{href: "#"}夏/夏休み
+                      = link_to "夏/夏休み" , "#" 
                     %li
-                      %a{href: "#"}ハロウィン
+                      = link_to "ハロウィン" , "#" 
                     %li
-                      %a{href: "#"}敬老の日
+                      = link_to "敬老の日" , "#" 
                     %li
-                      %a{href: "#"}七五三
+                      = link_to "七五三" , "#" 
                     %li
-                      %a{href: "#"}お歳暮
+                      = link_to "お歳暮" , "#" 
                     %li
-                      %a{href: "#"}クリスマス
+                      = link_to "クリスマス" , "#" 
                     %li
-                      %a{href: "#"}冬一般
+                      = link_to "冬一般" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}その他
+                  = link_to "その他" , "#" 
           %ul
             %li
-              %a{href: "#"}本・音楽・ゲーム
+              = link_to "本・音楽・ゲーム" , "#" 
               %ul
                 %li
-                  %a{href: "#"}本
+                  = link_to "本" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}文学/小説
+                      = link_to "文学/小説" , "#" 
                     %li
-                      %a{href: "#"}人文/社会
+                      = link_to "人文/社会" , "#"  
                     %li
-                      %a{href: "#"}ノンフィクション/教養
+                      = link_to "ノンフィクション/教養" , "#"  
                     %li
-                      %a{href: "#"}地図/旅行ガイド
+                      = link_to "地図/旅行ガイド" , "#" 
                     %li
-                      %a{href: "#"}ビジネス/経済
+                      = link_to "ビジネス/経済" , "#" 
                     %li
-                      %a{href: "#"}健康/医学
+                      = link_to "健康/医学" , "#" 
                     %li
-                      %a{href: "#"}コンピュータ/IT
+                      = link_to "コンピュータ/IT" , "#" 
                     %li
-                      %a{href: "#"}趣味/スポーツ/実用
+                      = link_to "趣味/スポーツ/実用" , "#" 
                     %li
-                      %a{href: "#"}住まい/暮らし/子育て
+                      = link_to "住まい/暮らし/子育て" , "#" 
                     %li
-                      %a{href: "#"}アート/エンタメ
+                      = link_to "アート/エンタメ" , "#" 
                     %li
-                      %a{href: "#"}洋書
+                      = link_to "洋書" , "#" 
                     %li
-                      %a{href: "#"}絵本
+                      = link_to "絵本" , "#" 
                     %li
-                      %a{href: "#"}参考書
+                      = link_to "参考書" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}漫画
+                  = link_to "漫画" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}全巻セット
+                      = link_to "全巻セット" , "#" 
                     %li
-                      %a{href: "#"}少年漫画
+                      = link_to "少年漫画" , "#" 
                     %li
-                      %a{href: "#"}少女漫画
+                      = link_to "少女漫画" , "#" 
                     %li
-                      %a{href: "#"}青年漫画
+                      = link_to "青年漫画" , "#" 
                     %li
-                      %a{href: "#"}女性漫画
+                      = link_to "女性漫画" , "#" 
                     %li
-                      %a{href: "#"}同人誌
+                      = link_to "同人誌" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}雑誌
+                  = link_to "雑誌" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}アート/エンタメ/ホビー
+                      = link_to "アート/エンタメ/ホビー" , "#" 
                     %li
-                      %a{href: "#"}ファッション
+                      = link_to "ファッション" , "#" 
                     %li
-                      %a{href: "#"}ニュース/総合
+                      = link_to "ニュース/総合" , "#" 
                     %li
-                      %a{href: "#"}趣味/スポーツ
+                      = link_to "趣味/スポーツ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}CD
+                  = link_to "CD" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}邦楽
+                      = link_to "邦楽" , "#" 
                     %li
-                      %a{href: "#"}洋楽
+                      = link_to "洋楽" , "#" 
                     %li
-                      %a{href: "#"}アニメ
+                      = link_to "アニメ" , "#" 
                     %li
-                      %a{href: "#"}クラシック
+                      = link_to "クラシック" , "#" 
                     %li
-                      %a{href: "#"}K-POP/アジア
+                      = link_to "K-POP/アジア" , "#" 
                     %li
-                      %a{href: "#"}キッズ/ファミリー
+                      = link_to "キッズ/ファミリー" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}DVD／ブルーレイ
+                  = link_to "DVD／ブルーレイ" , "#"  
                   %ul
                     %li
-                      %a{href: "#"}外国映画
+                      = link_to "外国映画" , "#" 
                     %li
-                      %a{href: "#"}日本映画
+                      = link_to "日本映画" , "#" 
                     %li
-                      %a{href: "#"}アニメ
+                      = link_to "アニメ" , "#" 
                     %li
-                      %a{href: "#"}TVドラマ
+                      = link_to "TVドラマ" , "#" 
                     %li
-                      %a{href: "#"}ミュージック
+                      = link_to "ミュージック" , "#" 
                     %li
-                      %a{href: "#"}お笑い/バラエティ
+                      = link_to "お笑い/バラエティ" , "#" 
                     %li
-                      %a{href: "#"}スポーツ/フィットネス
+                      = link_to "ポーツ/フィットネス" , "#" 
                     %li
-                      %a{href: "#"}キッズ/ファミリー
+                      = link_to "キッズ/ファミリー" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}レコード
+                  = link_to "レコード" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}邦楽
+                      = link_to "邦楽" , "#" 
                     %li
-                      %a{href: "#"}洋楽
+                      = link_to "洋楽" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}テレビゲーム
+                  = link_to "テレビゲーム" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}家庭用ゲーム機本体
+                      = link_to "家庭用ゲーム機本体" , "#" 
                     %li
-                      %a{href: "#"}家庭用ゲームソフト
+                      = link_to "家庭用ゲームソフト" , "#" 
                     %li
-                      %a{href: "#"}携帯用ゲーム機本体
+                      = link_to "携帯用ゲーム機本体" , "#" 
                     %li
-                      %a{href: "#"}携帯用ゲームソフト
+                      = link_to "携帯用ゲームソフト" , "#" 
                     %li
-                      %a{href: "#"}PCゲーム
+                      = link_to "PCゲーム" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
           %ul
             %li
-              %a{href: "#"}おもちゃ・ホビー・グッズ
+              = link_to "おもちゃ・ホビー・グッズ" , "#" 
               %ul
                 %li
-                  %a{href: "#"}おもちゃ
+                  = link_to "おもちゃ" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}キャラクターグッズ
+                      = link_to "キャラクターグッズ" , "#" 
                     %li
-                      %a{href: "#"}ぬいぐるみ
+                      = link_to "ぬいぐるみ" , "#" 
                     %li
-                      %a{href: "#"}小物/アクセサリー
+                      = link_to "小物/アクセサリー" , "#" 
                     %li
-                      %a{href: "#"}模型/プラモデル
+                      = link_to "模型/プラモデル" , "#" 
                     %li
-                      %a{href: "#"}ミニカー
+                      = link_to "ミニカー" , "#" 
                     %li
-                      %a{href: "#"}トイラジコン
+                      = link_to "トイラジコン" , "#" 
                     %li
-                      %a{href: "#"}プラモデル
+                      = link_to "プラモデル" , "#" 
                     %li
-                      %a{href: "#"}ホビーラジコン
+                      = link_to "ホビーラジコン" , "#" 
                     %li
-                      %a{href: "#"}鉄道模型
+                      = link_to "鉄道模型" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}タレントグッズ
+                  = link_to "タレントグッズ" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}アイドル
+                      = link_to "アイドル" , "#" 
                     %li
-                      %a{href: "#"}ミュージシャン
+                      = link_to "ミュージシャン" , "#" 
                     %li
-                      %a{href: "#"}タレント/お笑い芸人
+                      = link_to "タレント/お笑い芸人" , "#" 
                     %li
-                      %a{href: "#"}スポーツ選手
+                      = link_to "スポーツ選手" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}コミック/アニメグッズ
+                  = link_to "コミック/アニメグッズ" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ストラップ
+                      = link_to "ストラップ" , "#" 
                     %li
-                      %a{href: "#"}キーホルダー
+                      = link_to "キーホルダー" , "#" 
                     %li
-                      %a{href: "#"}バッジ
+                      = link_to "バッジ" , "#" 
                     %li
-                      %a{href: "#"}カード
+                      = link_to "カード" , "#" 
                     %li
-                      %a{href: "#"}クリアファイル
+                      = link_to "クリアファイル" , "#" 
                     %li
-                      %a{href: "#"}ポスター
+                      = link_to "ポスター" , "#" 
                     %li
-                      %a{href: "#"}タオル
+                      = link_to "タオル" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}トレーディングカード
+                  = link_to "トレーディングカード" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}遊戯王
+                      = link_to "遊戯王" , "#" 
                     %li
-                      %a{href: "#"}マジック:ザ・ギャザリング
+                      = link_to "マジック:ザ・ギャザリング" , "#" 
                     %li
-                      %a{href: "#"}ポケモンカードゲーム
+                      = link_to "ポケモンカードゲーム" , "#" 
                     %li
-                      %a{href: "#"}デュエルマスターズ
+                      = link_to "デュエルマスターズ" , "#" 
                     %li
-                      %a{href: "#"}バトルスピリッツ
+                      = link_to "バトルスピリッツ" , "#" 
                     %li
-                      %a{href: "#"}プリパラ
+                      = link_to "プリパラ" , "#" 
                     %li
-                      %a{href: "#"}アイカツ
+                      = link_to "アイカツ" , "#" 
                     %li
-                      %a{href: "#"}カードファイト!!ヴァンガード
+                      = link_to "カードファイト!!ヴァンガード" , "#"  
                     %li
-                      %a{href: "#"}ヴァイスシュバルツ
+                      = link_to "ヴァイスシュバルツ" , "#" 
                     %li
-                      %a{href: "#"}プロ野球オーナーズリーグ
+                      = link_to "プロ野球オーナーズリーグ" , "#" 
                     %li
-                      %a{href: "#"}ベースボールヒーローズ
+                      = link_to "ベースボールヒーローズ" , "#" 
                     %li
-                      %a{href: "#"}ドラゴンボール
+                      = link_to "ドラゴンボール" , "#" 
                     %li
-                      %a{href: "#"}スリーブ
+                      = link_to "スリーブ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}フィギュア
+                  = link_to "フィギュア" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}コミック/アニメ
+                      = link_to "コミック/アニメ" , "#" 
                     %li
-                      %a{href: "#"}特撮
+                      = link_to "特撮" , "#" 
                     %li
-                      %a{href: "#"}ゲームキャラクター
+                      = link_to "ゲームキャラクター" , "#" 
                     %li
-                      %a{href: "#"}SF/ファンタジー/ホラー
+                      = link_to "SF/ファンタジー/ホラー" , "#" 
                     %li
-                      %a{href: "#"}アメコミ
+                      = link_to "アメコミ" , "#" 
                     %li
-                      %a{href: "#"}スポーツ
+                      = link_to "スポーツ" , "#" 
                     %li
-                      %a{href: "#"}ミリタリー
+                      = link_to "ミリタリー" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}楽器/機材
+                  = link_to "楽器/機材" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}エレキギター
+                      = link_to "エレキギター" , "#" 
                     %li
-                      %a{href: "#"}アコースティックギター
+                      = link_to "アコースティックギター" , "#" 
                     %li
-                      %a{href: "#"}ベース
+                      = link_to "ベース" , "#" 
                     %li
-                      %a{href: "#"}エフェクター
+                      = link_to "エフェクター" , "#" 
                     %li
-                      %a{href: "#"}アンプ
+                      = link_to "アンプ" , "#" 
                     %li
-                      %a{href: "#"}弦楽器
+                      = link_to "弦楽器" , "#" 
                     %li
-                      %a{href: "#"}管楽器
+                      = link_to "管楽器" , "#" 
                     %li
-                      %a{href: "#"}鍵盤楽器
+                      = link_to "鍵盤楽器" , "#" 
                     %li
-                      %a{href: "#"}打楽器
+                      = link_to "打楽器" , "#" 
                     %li
-                      %a{href: "#"}和楽器
+                      = link_to "和楽器" , "#" 
                     %li
-                      %a{href: "#"}楽譜/スコア
+                      = link_to "楽譜/スコア" , "#" 
                     %li
-                      %a{href: "#"}レコーディング/AP機器
+                      = link_to "レコーディング/AP機器" , "#" 
                     %li
-                      %a{href: "#"}DJ機器
+                      = link_to "DJ機器" , "#" 
                     %li
-                      %a{href: "#"}DTM/DAW
+                      = link_to "DTM/DAW" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}コレクション
+                  = link_to "コレクション" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}武具
+                      = link_to "武具" , "#" 
                     %li
-                      %a{href: "#"}使用済切手/官製はがき
+                      = link_to "使用済切手/官製はがき" , "#" 
                     %li
-                      %a{href: "#"}旧貨幣/金貨/銀貨/記念硬貨
+                      = link_to "旧貨幣/金貨/銀貨/記念硬貨" , "#" 
                     %li
-                      %a{href: "#"}印刷物
+                      = link_to "印刷物" , "#" 
                     %li
-                      %a{href: "#"}ノベルティグッズ
+                      = link_to "ノベルティグッズ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ミリタリー
+                  = link_to "ミリタリー" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}トイガン
+                      = link_to "トイガン" , "#" 
                     %li
-                      %a{href: "#"}個別装備
+                      = link_to "個別装備" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}美術品
+                  = link_to "美術品" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}陶芸
+                      = link_to "陶芸" , "#" 
                     %li
-                      %a{href: "#"}ガラス
+                      = link_to "ガラス" , "#" 
                     %li
-                      %a{href: "#"}漆芸
+                      = link_to "漆芸" , "#" 
                     %li
-                      %a{href: "#"}金属工芸
+                      = link_to "金属工芸" , "#" 
                     %li
-                      %a{href: "#"}絵画/タペストリー
+                      = link_to "絵画/タペストリー" , "#" 
                     %li
-                      %a{href: "#"}版画
+                      = link_to "版画" , "#" 
                     %li
-                      %a{href: "#"}彫刻/オブジェクト
+                      = link_to "彫刻/オブジェクト" , "#" 
                     %li
-                      %a{href: "#"}書
+                      = link_to "書" , "#" 
                     %li
-                      %a{href: "#"}写真
+                      = link_to "写真" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}アート用品
+                  = link_to "アート用品" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}画材
+                      = link_to "画材" , "#" 
                     %li
-                      %a{href: "#"}額縁
+                      = link_to "額縁" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}その他
+                  = link_to "その他" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}トランプ/UNO
+                      = link_to "トランプ/UNO" , "#" 
                     %li
-                      %a{href: "#"}カルタ/百人一首
+                      = link_to "カルタ/百人一首" , "#" 
                     %li
-                      %a{href: "#"}ダーツ
+                      = link_to "ダーツ" , "#" 
                     %li
-                      %a{href: "#"}ビリヤード
+                      = link_to "ビリヤード" , "#" 
                     %li
-                      %a{href: "#"}麻雀
+                      = link_to "麻雀" , "#" 
                     %li
-                      %a{href: "#"}パズル/ジグソーパズル
+                      = link_to "パズル/ジグソーパズル" , "#" 
                     %li
-                      %a{href: "#"}囲碁/将棋
+                      = link_to "囲碁/将棋" , "#" 
                     %li
-                      %a{href: "#"}オセロ/チェス
+                      = link_to "オセロ/チェス" , "#" 
                     %li
-                      %a{href: "#"}人生ゲーム
+                      = link_to "人生ゲーム" , "#" 
                     %li
-                      %a{href: "#"}野球/サッカーゲーム
+                      = link_to "野球/サッカーゲーム" , "#" 
                     %li
-                      %a{href: "#"}スポーツ
+                      = link_to "スポーツ" , "#" 
                     %li
-                      %a{href: "#"}三輪車/乗り物
+                      = link_to "三輪車/乗り物" , "#" 
                     %li
-                      %a{href: "#"}ヨーヨー
+                      = link_to "ヨーヨー" , "#" 
                     %li
-                      %a{href: "#"}模型製作用品
+                      = link_to "模型製作用品" , "#" 
                     %li
-                      %a{href: "#"}鉄道
+                      = link_to "鉄道" , "#" 
                     %li
-                      %a{href: "#"}航空機
+                      = link_to "航空機" , "#" 
                     %li
-                      %a{href: "#"}アマチュア無線
+                      = link_to "アマチュア無線" , "#" 
                     %li
-                      %a{href: "#"}パチンコ/スロット
+                      = link_to "パチンコ/スロット" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
             %li
-              %a{href: "#"}コスメ・香水・美容
+              = link_to "コスメ・香水・美容" , "#" 
               %ul
                 %li
-                  %a{href: "#"}ベースメイク
+                  = link_to "ベースメイク" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ファンデーション
+                      = link_to "ファンデーション" , "#" 
                     %li
-                      %a{href: "#"}化粧下地
+                      = link_to "化粧下地" , "#" 
                     %li
-                      %a{href: "#"}コントロール
+                      = link_to "コントロール" , "#" 
                     %li
-                      %a{href: "#"}BBクリーム
+                      = link_to "BBクリーム" , "#" 
                     %li
-                      %a{href: "#"}CCクリーム
+                      = link_to "CCクリーム" , "#" 
                     %li
-                      %a{href: "#"}コンシーラー
+                      = link_to "コンシーラー" , "#" 
                     %li
-                      %a{href: "#"}フェイスパウダー
+                      = link_to "フェイスパウダー" , "#" 
                     %li
-                      %a{href: "#"}トライアルセット/サンプル
+                      = link_to "トライアルセット/サンプル" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}メイクアップ
+                  = link_to "メイクアップ" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}アイシャドウ
+                      = link_to "アイシャドウ" , "#" 
                     %li
-                      %a{href: "#"}口紅
+                      = link_to "口紅" , "#" 
                     %li
-                      %a{href: "#"}リップグロス
+                      = link_to "リップグロス" , "#" 
                     %li
-                      %a{href: "#"}リップライナー
+                      = link_to "リップライナー" , "#" 
                     %li
-                      %a{href: "#"}チーク
+                      = link_to "チーク" , "#" 
                     %li
-                      %a{href: "#"}フェイスカラー
+                      = link_to "フェイスカラー" , "#" 
                     %li
-                      %a{href: "#"}マスカラ
+                      = link_to "マスカラ" , "#" 
                     %li
-                      %a{href: "#"}アイライナー
+                      = link_to "アイライナー" , "#" 
                     %li
-                      %a{href: "#"}つけまつげ
+                      = link_to "つけまつげ" , "#" 
                     %li
-                      %a{href: "#"}アイブロウペンシル
+                      = link_to "アイブロウペンシル" , "#" 
                     %li
-                      %a{href: "#"}パウダーアイブロウ
+                      = link_to "パウダーアイブロウ" , "#" 
                     %li
-                      %a{href: "#"}眉マスカラ
+                      = link_to "眉マスカラ" , "#" 
                     %li
-                      %a{href: "#"}トライアルセット/サンプル
+                      = link_to "トライアルセット/サンプル" , "#"  
                     %li
-                      %a{href: "#"}メイク道具/化粧小物
+                      = link_to "メイク道具/化粧小物" , "#" 
                     %li
-                      %a{href: "#"}美顔用品/美顔ローラー
+                      = link_to "美顔用品/美顔ローラー" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ネイルケア
+                  = link_to "ネイルケア" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ネイルカラー
+                      = link_to "ネイルカラー" , "#" 
                     %li
-                      %a{href: "#"}カラージェル
+                      = link_to "カラージェル" , "#" 
                     %li
-                      %a{href: "#"}ネイルベースコード/トップコード
+                      = link_to "ネイルベースコード/トップコード" , "#" 
                     %li
-                      %a{href: "#"}ネイルアート用品
+                      = link_to "ネイルアート用品" , "#" 
                     %li
-                      %a{href: "#"}ネイルパーツ
+                      = link_to "ネイルパーツ" , "#" 
                     %li
-                      %a{href: "#"}ネイルチップ/つけ爪
+                      = link_to "ネイルチップ/つけ爪" , "#" 
                     %li
-                      %a{href: "#"}手入れ用具
+                      = link_to "手入れ用具" , "#" 
                     %li
-                      %a{href: "#"}除光液
+                      = link_to "除光液" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}香水
+                  = link_to "香水" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}香水(女性用)
+                      = link_to "香水(女性用)" , "#" 
                     %li
-                      %a{href: "#"}香水(男性用)
+                      = link_to "香水(男性用)" , "#" 
                     %li
-                      %a{href: "#"}ユニセックス
+                      = link_to "ユニセックス" , "#" 
                     %li
-                      %a{href: "#"}ボディミスト
+                      = link_to "ボディミスト" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}スキンケア基礎用品
+                  = link_to "スキンケア基礎用品" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}化粧水/ローション
+                      = link_to "化粧水/ローション" , "#" 
                     %li
-                      %a{href: "#"}乳液/ミルク
+                      = link_to "乳液/ミルク" , "#" 
                     %li
-                      %a{href: "#"}美容液
+                      = link_to "美容液" , "#" 
                     %li
-                      %a{href: "#"}フェイスクリーム
+                      = link_to "フェイスクリーム" , "#" 
                     %li
-                      %a{href: "#"}洗顔料
+                      = link_to "洗顔料" , "#" 
                     %li
-                      %a{href: "#"}クレンジング/メイク落とし
+                      = link_to "クレンジング/メイク落とし" , "#" 
                     %li
-                      %a{href: "#"}パック/フェイスマスク
+                      = link_to "パック/フェイスマスク" , "#" 
                     %li
-                      %a{href: "#"}ジェル/ゲル
+                      = link_to "ジェル/ゲル" , "#" 
                     %li
-                      %a{href: "#"}ブースター導入液
+                      = link_to "ブースター導入液" , "#" 
                     %li
-                      %a{href: "#"}アイケア
+                      = link_to "アイケア" , "#" 
                     %li
-                      %a{href: "#"}リップケア
+                      = link_to "リップケア" , "#" 
                     %li
-                      %a{href: "#"}トライアルセット/サンプル
+                      = link_to "トライアルセット/サンプル" , "#" 
                     %li
-                      %a{href: "#"}洗顔グッズ
+                      = link_to "洗顔グッズ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ヘアケア
+                  = link_to "ヘアケア" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}シャンプー
+                      = link_to "シャンプー" , "#" 
                     %li
-                      %a{href: "#"}トリートメント
+                      = link_to "トリートメント" , "#" 
                     %li
-                      %a{href: "#"}コンディショナー
+                      = link_to "コンディショナー" , "#" 
                     %li
-                      %a{href: "#"}リンス
+                      = link_to "リンス" , "#" 
                     %li
-                      %a{href: "#"}スタイリング剤
+                      = link_to "スタイリング剤" , "#" 
                     %li
-                      %a{href: "#"}カラーリング剤
+                      = link_to "カラーリング剤" , "#" 
                     %li
-                      %a{href: "#"}ブラシ
+                      = link_to "ブラシ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ボディケア
+                  = link_to "ボディケア" , "#"
                   %ul
                     %li
-                      %a{href: "#"}オイル/クリーム
+                      = link_to "オイル/クリーム" , "#" 
                     %li
-                      %a{href: "#"}ハンドクリーム
+                      = link_to "ハンドクリーム" , "#" 
                     %li
-                      %a{href: "#"}ローション
+                      = link_to "ローション" , "#" 
                     %li
-                      %a{href: "#"}日焼け止め/サンオイル
+                      = link_to "日焼け止め/サンオイル" , "#" 
                     %li
-                      %a{href: "#"}ボディソープ
+                      = link_to "ボディソープ" , "#" 
                     %li
-                      %a{href: "#"}入浴剤
+                      = link_to "入浴剤" , "#" 
                     %li
-                      %a{href: "#"}制汗/デオドラント
+                      = link_to "制汗/デオドラント" , "#" 
                     %li
-                      %a{href: "#"}フットケア
+                      = link_to "フットケア" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}オーラルケア
+                  = link_to "オーラルケア" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}口臭防止/エチケット用品
+                      = link_to "口臭防止/エチケット用品" , "#" 
                     %li
-                      %a{href: "#"}歯ブラシ
+                      = link_to "歯ブラシ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}リラクゼーション
+                  = link_to "リラクゼーション" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}エッセンシャルオイル
+                      = link_to "エッセンシャルオイル" , "#" 
                     %li
-                      %a{href: "#"}芳香剤
+                      = link_to "芳香剤" , "#" 
                     %li
-                      %a{href: "#"}お香/香炉
+                      = link_to "お香/香炉" , "#" 
                     %li
-                      %a{href: "#"}キャンドル
+                      = link_to "キャンドル" , "#" 
                     %li
-                      %a{href: "#"}リラクゼーショングッズ
+                      = link_to "リラクゼーショングッズ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ダイエット
+                  = link_to "ダイエット" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ダイエット食品
+                      = link_to "ダイエット食品" , "#" 
                     %li
-                      %a{href: "#"}エクササイズ用品
+                      = link_to "エクササイズ用品" , "#" 
                     %li
-                      %a{href: "#"}体重計
+                      = link_to "体重計" , "#" 
                     %li
-                      %a{href: "#"}体脂肪計
+                      = link_to "体脂肪計" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}その他
+                  = link_to "その他" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}健康用品
+                      = link_to "健康用品" , "#" 
                     %li
-                      %a{href: "#"}看護/介護用品
+                      = link_to "看護/介護用品" , "#"  
                     %li
-                      %a{href: "#"}救急/衛生用品
+                      = link_to "救急/衛生用品" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
           %ul
             %li
-              %a{href: "#"}家電・スマホ・カメラ
+              = link_to "家電・スマホ・カメラ" , "#" 
               %ul
                 %li
-                  %a{href: "#"}スマートフォン/携帯電話
+                  = link_to "スマートフォン/携帯電話" , "#"  
                   %ul
                     %li
-                      %a{href: "#"}スマートフォン本体
+                      = link_to "スマートフォン本体" , "#" 
                     %li
-                      %a{href: "#"}バッテリー/充電器
+                      = link_to "バッテリー/充電器" , "#" 
                     %li
-                      %a{href: "#"}携帯電話本体
+                      = link_to "携帯電話本体" , "#" 
                     %li
-                      %a{href: "#"}PHS本体
+                      = link_to "PHS本体" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}スマホアクセサリー
+                  = link_to "スマホアクセサリー" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}Andoroid用ケース
+                      = link_to "Andoroid用ケース" , "#" 
                     %li
-                      %a{href: "#"}iPhone用ケース
+                      = link_to "iPhone用ケース" , "#" 
                     %li
-                      %a{href: "#"}カバー
+                      = link_to "カバー" , "#" 
                     %li
-                      %a{href: "#"}イヤホンジャック
+                      = link_to "イヤホンジャック" , "#" 
                     %li
-                      %a{href: "#"}ストラップ
+                      = link_to "ストラップ" , "#" 
                     %li
-                      %a{href: "#"}フィルム
+                      = link_to "フィルム" , "#" 
                     %li
-                      %a{href: "#"}自撮り棒
+                      = link_to "自撮り棒" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}PC/タブレット
+                  = link_to "PC/タブレット" , "#"  
                   %ul
                     %li
-                      %a{href: "#"}タブレット
+                      = link_to "タブレット" , "#" 
                     %li
-                      %a{href: "#"}ノートPC
+                      = link_to "ノートPC" , "#" 
                     %li
-                      %a{href: "#"}デスクトップ型PC
+                      = link_to "デスクトップ型PC" , "#" 
                     %li
-                      %a{href: "#"}ディスプレイ
+                      = link_to "ディスプレイ" , "#" 
                     %li
-                      %a{href: "#"}電子ブックリーダー
+                      = link_to "電子ブックリーダー" , "#" 
                     %li
-                      %a{href: "#"}PC周辺機器
+                      = link_to "PC周辺機器" , "#" 
                     %li
-                      %a{href: "#"}PCパーツ
+                      = link_to "PCパーツ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}カメラ
+                  = link_to "カメラ" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}デジタルカメラ
+                      = link_to "デジタルカメラ" , "#" 
                     %li
-                      %a{href: "#"}ビデオカメラ
+                      = link_to "ビデオカメラ" , "#" 
                     %li
-                      %a{href: "#"}レンズ(単焦点)
+                      = link_to "レンズ(単焦点)" , "#" 
                     %li
-                      %a{href: "#"}レンズ(ズーム)
+                      = link_to "レンズ(ズーム)" , "#" 
                     %li
-                      %a{href: "#"}フィルムカメラ
+                      = link_to "フィルムカメラ" , "#" 
                     %li
-                      %a{href: "#"}防犯カメラ
+                      = link_to "防犯カメラ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}テレビ/映像機器
+                  = link_to "テレビ/映像機器" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}テレビ
+                      = link_to "テレビ" , "#" 
                     %li
-                      %a{href: "#"}プロジェクター
+                      = link_to "プロジェクター" , "#" 
                     %li
-                      %a{href: "#"}ブルーレイレコーダー
+                      = link_to "ブルーレイレコーダー" , "#" 
                     %li
-                      %a{href: "#"}DVDレコーダー
+                      = link_to "DVDレコーダー" , "#" 
                     %li
-                      %a{href: "#"}ブルーレイプレーヤー
+                      = link_to "ブルーレイプレーヤー" , "#" 
                     %li
-                      %a{href: "#"}DVDプレーヤー
+                      = link_to "DVDプレーヤー" , "#" 
                     %li
-                      %a{href: "#"}映像用ケーブル
+                      = link_to "映像用ケーブル" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}オーディオ機器
+                  = link_to "オーディオ機器" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ポータルプレーヤー
+                      = link_to "ポータルプレーヤー" , "#" 
                     %li
-                      %a{href: "#"}イヤフォン
+                      = link_to "イヤフォン" , "#" 
                     %li
-                      %a{href: "#"}ヘッドフォン
+                      = link_to "ヘッドフォン" , "#" 
                     %li
-                      %a{href: "#"}アンプ
+                      = link_to "アンプ" , "#" 
                     %li
-                      %a{href: "#"}スピーカー
+                      = link_to "スピーカー" , "#" 
                     %li
-                      %a{href: "#"}ケーブル/シールド
+                      = link_to "ケーブル/シールド" , "#" 
                     %li
-                      %a{href: "#"}ラジオ
+                      = link_to "ラジオ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}美容・健康
+                  = link_to "美容・健康" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ヘアドライヤー
+                      = link_to "ヘアドライヤー" , "#" 
                     %li
-                      %a{href: "#"}ヘアアイロン
+                      = link_to "ヘアアイロン" , "#" 
                     %li
-                      %a{href: "#"}美容機器
+                      = link_to "美容機器" , "#" 
                     %li
-                      %a{href: "#"}電気シェーバー
+                      = link_to "電気シェーバー" , "#" 
                     %li
-                      %a{href: "#"}電動歯ブラシ
+                      = link_to "電動歯ブラシ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}冷暖房/空調
+                  = link_to "冷暖房/空調" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}エアコン
+                      = link_to "エアコン" , "#" 
                     %li
-                      %a{href: "#"}空気清浄機
+                      = link_to "空気清浄機" , "#" 
                     %li
-                      %a{href: "#"}加湿器
+                      = link_to "加湿器" , "#" 
                     %li
-                      %a{href: "#"}扇風機
+                      = link_to "扇風機" , "#" 
                     %li
-                      %a{href: "#"}除湿機
+                      = link_to "除湿機" , "#" 
                     %li
-                      %a{href: "#"}ファンヒーター
+                      = link_to "ファンヒーター" , "#" 
                     %li
-                      %a{href: "#"}電気ヒーター
+                      = link_to "電気ヒーター" , "#" 
                     %li
-                      %a{href: "#"}オイルヒーター
+                      = link_to "オイルヒーター" , "#" 
                     %li
-                      %a{href: "#"}ストーブ
+                      = link_to "ストーブ" , "#" 
                     %li
-                      %a{href: "#"}ホットカーペット
+                      = link_to "ホットカーペット" , "#" 
                     %li
-                      %a{href: "#"}こたつ
+                      = link_to "こたつ" , "#" 
                     %li
-                      %a{href: "#"}電気毛布
+                      = link_to "電気毛布" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}生活家電
+                  = link_to "生活家電" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}冷蔵庫
+                      = link_to "冷蔵庫" , "#" 
                     %li
-                      %a{href: "#"}洗濯機
+                      = link_to "洗濯機" , "#" 
                     %li
-                      %a{href: "#"}炊飯器
+                      = link_to "炊飯器" , "#" 
                     %li
-                      %a{href: "#"}電子レンジ/オーブン
+                      = link_to "電子レンジ/オーブン" , "#" 
                     %li
-                      %a{href: "#"}周辺機器
+                      = link_to "周辺機器" , "#" 
                     %li
-                      %a{href: "#"}アイロン
+                      = link_to "アイロン" , "#" 
                     %li
-                      %a{href: "#"}掃除機
+                      = link_to "掃除機" , "#" 
                     %li
-                      %a{href: "#"}エスプレッソマン
+                      = link_to "エスプレッソマン" , "#" 
                     %li
-                      %a{href: "#"}コーヒーメーカー
+                      = link_to "コーヒーメーカー" , "#" 
                     %li
-                      %a{href: "#"}衣類乾燥機
+                      = link_to "衣類乾燥機" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}その他
+                  = link_to "その他" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
           %ul
             %li
-              %a{href: "#"}スポーツ・レジャー
+              = link_to "スポーツ・レジャー" , "#" 
               %ul
                 %li
-                  %a{href: "#"}ゴルフ
+                  = link_to "ゴルフ" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}クラブ
+                      = link_to "クラブ" , "#" 
                     %li
-                      %a{href: "#"}ウエア(男性用)
+                      = link_to "ウエア(男性用)" , "#" 
                     %li
-                      %a{href: "#"}ウエア(女性用)
+                      = link_to "ウエア(女性用)" , "#" 
                     %li
-                      %a{href: "#"}バッグ
+                      = link_to "バッグ" , "#" 
                     %li
-                      %a{href: "#"}シューズ(男性用)
+                      = link_to "シューズ(男性用)" , "#" 
                     %li
-                      %a{href: "#"}シューズ(女性用)
+                      = link_to "シューズ(女性用)" , "#" 
                     %li
-                      %a{href: "#"}アクセサリー
+                      = link_to "アクセサリー" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}フィッシング
+                  = link_to "フィッシング" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ロッド
+                      = link_to "ロッド" , "#" 
                     %li
-                      %a{href: "#"}リール
+                      = link_to "リール" , "#" 
                     %li
-                      %a{href: "#"}ルアー用品
+                      = link_to "ルアー用品" , "#" 
                     %li
-                      %a{href: "#"}ウエア
+                      = link_to "ウエア" , "#" 
                     %li
-                      %a{href: "#"}釣り糸/ライン
+                      = link_to "釣り糸/ライン" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}自転車
+                  = link_to "自転車" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}自転車本体
+                      = link_to "自転車本体" , "#" 
                     %li
-                      %a{href: "#"}ウエア
+                      = link_to "ウエア" , "#" 
                     %li
-                      %a{href: "#"}パーツ
+                      = link_to "パーツ" , "#" 
                     %li
-                      %a{href: "#"}アクセサリー
+                      = link_to "アクセサリー" , "#" 
                     %li
-                      %a{href: "#"}バッグ
+                      = link_to "バッグ" , "#" 
                     %li
-                      %a{href: "#"}工具/メンテナンス
+                      = link_to "工具/メンテナンス" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}トレーニング/エクササイズ
+                  = link_to "トレーニング/エクササイズ" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ランニング
+                      = link_to "ランニング" , "#" 
                     %li
-                      %a{href: "#"}ウォーキング
+                      = link_to "ウォーキング" , "#" 
                     %li
-                      %a{href: "#"}ヨガ
+                      = link_to "ヨガ" , "#"  
                     %li
-                      %a{href: "#"}トレーニング用品
+                      = link_to "トレーニング用品" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}野球
+                  = link_to "野球" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ウェア
+                      = link_to "ウェア" , "#" 
                     %li
-                      %a{href: "#"}シューズ
+                      = link_to "シューズ" , "#" 
                     %li
-                      %a{href: "#"}グローブ
+                      = link_to "グローブ" , "#" 
                     %li
-                      %a{href: "#"}バット
+                      = link_to "バット" , "#" 
                     %li
-                      %a{href: "#"}アクセサリー
+                      = link_to "アクセサリー" , "#" 
                     %li
-                      %a{href: "#"}防具
+                      = link_to "防具" , "#" 
                     %li
-                      %a{href: "#"}練習機器
+                      = link_to "練習機器" , "#" 
                     %li
-                      %a{href: "#"}記念グッズ
+                      = link_to "記念グッズ" , "#" 
                     %li
-                      %a{href: "#"}応援グッズ
+                      = link_to "応援グッズ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}サッカー/フットサル
+                  = link_to "サッカー/フットサル" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ウェア
+                      = link_to "ウェア" , "#" 
                     %li
-                      %a{href: "#"}シューズ
+                      = link_to "シューズ" , "#" 
                     %li
-                      %a{href: "#"}ボール
+                      = link_to "ボール" , "#" 
                     %li
-                      %a{href: "#"}アクセサリー
+                      = link_to "アクセサリー" , "#" 
                     %li
-                      %a{href: "#"}記念グッズ
+                      = link_to "記念グッズ" , "#" 
                     %li
-                      %a{href: "#"}応援グッズ
+                      = link_to "応援グッズ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}テニス
+                  = link_to "テニス" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ラケット(硬式用)
+                      = link_to "ラケット(硬式用)" , "#" 
                     %li
-                      %a{href: "#"}ラケット(軟式用)
+                      = link_to "ラケット(軟式用)" , "#" 
                     %li
-                      %a{href: "#"}ウェア
+                      = link_to "ウェア" , "#" 
                     %li
-                      %a{href: "#"}シューズ
+                      = link_to "シューズ" , "#" 
                     %li
-                      %a{href: "#"}ボール
+                      = link_to "ボール" , "#" 
                     %li
-                      %a{href: "#"}アクセサリー
+                      = link_to "アクセサリー" , "#" 
                     %li
-                      %a{href: "#"}記念グッズ
+                      = link_to "記念グッズ" , "#" 
                     %li
-                      %a{href: "#"}応援グッズ
+                      = link_to "応援グッズ" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}スノーボード
+                  = link_to "スノーボード" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ボード
+                      = link_to "ボード" , "#" 
                     %li
-                      %a{href: "#"}バインディング
+                      = link_to "バインディング" , "#" 
                     %li
-                      %a{href: "#"}ブーツ(男性用)
+                      = link_to "ブーツ(男性用)" , "#" 
                     %li
-                      %a{href: "#"}ブーツ(女性用)
+                      = link_to "ブーツ(女性用)" , "#" 
                     %li
-                      %a{href: "#"}ブーツ(子供用)
+                      = link_to "ブーツ(子供用)" , "#" 
                     %li
-                      %a{href: "#"}ウエア/装備(男性用)
+                      = link_to "ウエア/装備(男性用)" , "#" 
                     %li
-                      %a{href: "#"}ウエア/装備(女性用)
+                      = link_to "ウエア/装備(女性用)" , "#"
                     %li
-                      %a{href: "#"}ウエア/装備(子ども用)
+                      = link_to "ウエア/装備(子ども用)" , "#" 
                     %li
-                      %a{href: "#"}アクセサリー
+                      = link_to "アクセサリー" , "#"  
                     %li
-                      %a{href: "#"}バック
+                      = link_to "バック" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}スキー
+                  = link_to "スキー" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}板
+                      = link_to "板" , "#" 
                     %li
-                      %a{href: "#"}ブーツ(男性用)
+                      = link_to "ブーツ(男性用)" , "#" 
                     %li
-                      %a{href: "#"}ブーツ(女性用)
+                      = link_to "ブーツ(女性用)" , "#" 
                     %li
-                      %a{href: "#"}ブーツ(子ども用)
+                      = link_to "ブーツ(子ども用)" , "#" 
                     %li
-                      %a{href: "#"}ビンディング
+                      = link_to "ビンディング" , "#" 
                     %li
-                      %a{href: "#"}ウエア(男性用)
+                      = link_to "ウエア(男性用)" , "#" 
                     %li
-                      %a{href: "#"}ウエア(女性用)
+                      = link_to "ウエア(女性用)" , "#" 
                     %li
-                      %a{href: "#"}ウエア(子ども用)
+                      = link_to "ウエア(子ども用)" , "#" 
                     %li
-                      %a{href: "#"}ストック
+                      = link_to "ストック" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}その他スポーツ
+                  = link_to "その他スポーツ" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ダンス/バレエ
+                      = link_to "ダンス/バレエ" , "#" 
                     %li
-                      %a{href: "#"}サーフィン
+                      = link_to "サーフィン" , "#" 
                     %li
-                      %a{href: "#"}バスケットボール
+                      = link_to "バスケットボール" , "#" 
                     %li
-                      %a{href: "#"}バドミントン
+                      = link_to "バドミントン" , "#" 
                     %li
-                      %a{href: "#"}バレーボール
+                      = link_to "バレーボール" , "#" 
                     %li
-                      %a{href: "#"}スケートボード
+                      = link_to "スケートボード" , "#" 
                     %li
-                      %a{href: "#"}陸上競技
+                      = link_to "陸上競技" , "#" 
                     %li
-                      %a{href: "#"}ラグビー
+                      = link_to "ラグビー" , "#" 
                     %li
-                      %a{href: "#"}アメリカンフットボール
+                      = link_to "アメリカンフットボール" , "#" 
                     %li
-                      %a{href: "#"}ボクシング
+                      = link_to "ボクシング" , "#" 
                     %li
-                      %a{href: "#"}ボウリング
+                      = link_to "ボウリング" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}アウトドア
+                  = link_to "アウトドア" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}テント/タープ
+                      = link_to "テント/タープ" , "#" 
                     %li
-                      %a{href: "#"}ライト/ランタン
+                      = link_to "ライト/ランタン" , "#"  
                     %li
-                      %a{href: "#"}寝袋/寝具
+                      = link_to "寝袋/寝具" , "#" 
                     %li
-                      %a{href: "#"}テーブル/チェア
+                      = link_to "テーブル/チェア" , "#" 
                     %li
-                      %a{href: "#"}ストーブ/コンロ
+                      = link_to "トーブ/コンロ" , "#" 
                     %li
-                      %a{href: "#"}調理器具
+                      = link_to "調理器具" , "#" 
                     %li
-                      %a{href: "#"}食器
+                      = link_to "食器" , "#" 
                     %li
-                      %a{href: "#"}登山用品
+                      = link_to "登山用品" , "#"   
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}その他
+                  = link_to "その他" , "#"
                   %ul
                     %li
-                      %a{href: "#"}旅行用品
+                      = link_to "旅行用品" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
           %ul
             %li
-              %a{href: "#"}ハンドメイド
+              = link_to "ハンドメイド" , "#" 
               %ul
                 %li
-                  %a{href: "#"}アクセサリー(女性用)
+                  = link_to "アクセサリー(女性用)" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}ピアス
+                      = link_to "ピアス" , "#" 
                     %li
-                      %a{href: "#"}イヤリング
+                      = link_to "イヤリング" , "#" 
                     %li
-                      %a{href: "#"}ネックレス
+                      = link_to "ネックレス" , "#" 
                     %li
-                      %a{href: "#"}ブレスレッド
+                      = link_to "ブレスレッド" , "#" 
                     %li
-                      %a{href: "#"}リング
+                      = link_to "リング" , "#" 
                     %li
-                      %a{href: "#"}チャーム
+                      = link_to "チャーム" , "#" 
                     %li
-                      %a{href: "#"}ヘアゴム
+                      = link_to "ヘアゴム" , "#" 
                     %li
-                      %a{href: "#"}アンクレット
+                      = link_to "アンクレット" , "#" 
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#" 
                 %li
-                  %a{href: "#"}ファッション/小物
+                  = link_to "ファッション/小物" , "#" 
                   %ul
                     %li
-                      %a{href: "#"}バッグ(女性用)
+                      = link_to "バッグ(女性用)" , "#" 
                     %li
-                      %a{href: "#"}バッグ(男性用)
+                      = link_to "バッグ(男性用)" , "#" 
                     %li
-                      %a{href: "#"}財布(女性用)
+                      = link_to "財布(女性用)" , "#"
                     %li
-                      %a{href: "#"}財布(男性用)
+                      = link_to "財布(男性用)" , "#"
                     %li
-                      %a{href: "#"}ファッション雑誌
+                      = link_to "ファッション雑誌" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}アクセサリー/時計
+                  = link_to "アクセサリー/時計" , "#"
                   %ul
                     %li
-                      %a{href: "#"}アクセサリー(男性用)
+                      = link_to "アクセサリー(男性用)" , "#"
                     %li
-                      %a{href: "#"}時計(女性用)
+                      = link_to "時計(女性用)" , "#"
                     %li
-                      %a{href: "#"}時計(男性用)
+                      = link_to "時計(男性用)" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}日用品/インテリア
+                  = link_to "日用品/インテリア" , "#"
                   %ul
                     %li
-                      %a{href: "#"}キッチン用品
+                      = link_to "キッチン用品" , "#"
                     %li
-                      %a{href: "#"}家具
+                      = link_to "家具" , "#"
                     %li
-                      %a{href: "#"}文房具
+                      = link_to "文房具" , "#"
                     %li
-                      %a{href: "#"}アート/写真
+                      = link_to "アート/写真" , "#"
                     %li
-                      %a{href: "#"}アロマ/キャンドル
+                      = link_to "アロマ/キャンドル" , "#"
                     %li
-                      %a{href: "#"}フラワー/ガーデン
+                      = link_to "フラワー/ガーデン" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}趣味/おもちゃ
+                  = link_to "趣味/おもちゃ" , "#"
                   %ul
                     %li
-                      %a{href: "#"}クラフト/布製品
+                      = link_to "クラフト/布製品" , "#"
                     %li
-                      %a{href: "#"}おもちゃ人形
+                      = link_to "おもちゃ人形" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}キッズ/ベビー
+                  = link_to "キッズ/ベビー" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ファッション雑誌
+                      = link_to "ファッション雑誌" , "#"
                     %li
-                      %a{href: "#"}スタイ/よだれかけ
+                      = link_to "スタイ/よだれかけ" , "#"
                     %li
-                      %a{href: "#"}外出用品
+                      = link_to "外出用品" , "#"
                     %li
-                      %a{href: "#"}ネームタグ
+                      = link_to "ネームタグ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}素材
+                  = link_to "素材" , "#"
                   %ul
                     %li
-                      %a{href: "#"}各種パーツ
+                      = link_to "各種パーツ" , "#"
                     %li
-                      %a{href: "#"}生地/糸
+                      = link_to "生地/糸" , "#"
                     %li
-                      %a{href: "#"}型紙/パターン
+                      = link_to "型紙/パターン" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}二次創作物
+                  = link_to "二次創作物" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ingress
+                      = link_to "ingress" , "#"
                     %li
-                      %a{href: "#"}クリエイターズ宇宙兄弟
+                      = link_to "クリエイターズ宇宙兄弟" , "#"
                     %li
-                      %a{href: "#"}シンデレラガールズCPグッズ
+                      = link_to "シンデレラガールズCPグッズ" , "#"
                 %li
-                  %a{href: "#"}その他
+                  = link_to "その他" , "#"
           %ul
             %li
-              %a{href: "#"}チケット
+              = link_to "チケット" , "#"
               %ul
                 %li
-                  %a{href: "#"}音楽
+                  = link_to "音楽" , "#"
                   %ul
                     %li
-                      %a{href: "#"}男性アイドル
+                      = link_to "男性アイドル" , "#"
                     %li
-                      %a{href: "#"}女性アイドル
+                      = link_to "女性アイドル" , "#"
                     %li
-                      %a{href: "#"}韓流
+                      = link_to "韓流" , "#"
                     %li
-                      %a{href: "#"}国内アーティスト
+                      = link_to "国内アーティスト" , "#"
                     %li
-                      %a{href: "#"}海外アーティスト
+                      = link_to "海外アーティスト" , "#"
                     %li
-                      %a{href: "#"}音楽フェス
+                      = link_to "音楽フェス" , "#"
                     %li
-                      %a{href: "#"}声優/アニメ
+                      = link_to "声優/アニメ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}スポーツ
+                  = link_to "スポーツ" , "#"
                   %ul
                     %li
-                      %a{href: "#"}サッカー
+                      = link_to "サッカー" , "#"
                     %li
-                      %a{href: "#"}野球
+                      = link_to "野球" , "#"
                     %li
-                      %a{href: "#"}テニス
+                      = link_to "テニス" , "#"
                     %li
-                      %a{href: "#"}格闘技
+                      = link_to "格闘技" , "#"
                     %li
-                      %a{href: "#"}格闘技/プロレス
+                      = link_to "格闘技/プロレス" , "#"
                     %li
-                      %a{href: "#"}相撲/武道
+                      = link_to "相撲/武道" , "#"
                     %li
-                      %a{href: "#"}ゴルフ
+                      = link_to "ゴルフ" , "#"
                     %li
-                      %a{href: "#"}バレーボール
+                      = link_to "バレーボール" , "#"
                     %li
-                      %a{href: "#"}バスケットボール
+                      = link_to "バスケットボール" , "#"
                     %li
-                      %a{href: "#"}モータースポーツ
+                      = link_to "モータースポーツ" , "#"
                     %li
-                      %a{href: "#"}ウィンタースポーツ
+                      = link_to "ウィンタースポーツ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}演劇/芸能
+                  = link_to "演劇/芸能" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ミュージカル
+                      = link_to "ミュージカル" , "#"
                     %li
-                      %a{href: "#"}演劇
+                      = link_to "演劇" , "#"
                     %li
-                      %a{href: "#"}伝統芸能
+                      = link_to "伝統芸能" , "#"
                     %li
-                      %a{href: "#"}落語
+                      = link_to "落語" , "#"
                     %li
-                      %a{href: "#"}お笑い
+                      = link_to "お笑い" , "#"
                     %li
-                      %a{href: "#"}オペラ
+                      = link_to "オペラ" , "#"
                     %li
-                      %a{href: "#"}サーカス
+                      = link_to "サーカス" , "#"
                     %li
-                      %a{href: "#"}バレエ
+                      = link_to "バレエ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}イベント
+                  = link_to "イベント" , "#"
                   %ul
                     %li
-                      %a{href: "#"}声優/アニメ
+                      = link_to "声優/アニメ" , "#"
                     %li
-                      %a{href: "#"}キッズ/ファミリー
+                      = link_to "キッズ/ファミリー" , "#"
                     %li
-                      %a{href: "#"}トークショー/講演会
+                      = link_to "トークショー/講演会" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}映画
+                  = link_to "映画" , "#"
                   %ul
                     %li
-                      %a{href: "#"}邦画
+                      = link_to "邦画" , "#"
                     %li
-                      %a{href: "#"}洋画
+                      = link_to "洋画" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}施設利用券
+                  = link_to "施設利用券" , "#"
                   %ul
                     %li
-                      %a{href: "#"}遊園地/テーマパーク
+                      = link_to "遊園地/テーマパーク" , "#"
                     %li
-                      %a{href: "#"}美術館/博物館
+                      = link_to "美術館/博物館" , "#"
                     %li
-                      %a{href: "#"}スキー場
+                      = link_to "スキー場" , "#"
                     %li
-                      %a{href: "#"}ゴルフ場
+                      = link_to "ゴルフ場" , "#"
                     %li
-                      %a{href: "#"}フィットネスクラブ
+                      = link_to "フィットネスクラブ" , "#"
                     %li
-                      %a{href: "#"}プール
+                      = link_to "プール" , "#"
                     %li
-                      %a{href: "#"}ボウリング場
+                      = link_to "ボウリング場" , "#"
                     %li
-                      %a{href: "#"}水族館
+                      = link_to "水族館" , "#"
                     %li
-                      %a{href: "#"}動物園
+                      = link_to "動物園" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}優待券/割引券
+                  = link_to "優待券/割引券" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ショッピング
+                      = link_to "ショッピング" , "#"
                     %li
-                      %a{href: "#"}レストラン/食事券
+                      = link_to "レストラン/食事券" , "#"
                     %li
-                      %a{href: "#"}フード/ドリンク券
+                      = link_to "フード/ドリンク券" , "#"
                     %li
-                      %a{href: "#"}宿泊券
+                      = link_to "宿泊券" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}その他
+                  = link_to "その他" , "#"
           %ul
             %li
-              %a{href: "#"}自動車・オートバイ
+              = link_to "自動車・オートバイ" , "#"
               %ul
                 %li
-                  %a{href: "#"}自動車本体
+                  = link_to "自動車本体" , "#"
                   %ul
                     %li
-                      %a{href: "#"}国内自動車本体
+                      = link_to "国内自動車本体" , "#"
                     %li
-                      %a{href: "#"}外国自動車本体
+                      = link_to "外国自動車本体" , "#"
                 %li
-                  %a{href: "#"}自動車タイヤ/ホイール
+                  = link_to "自動車タイヤ/ホイール" , "#"
                   %ul
                     %li
-                      %a{href: "#"}タイヤ/ホイールセット
+                      = link_to "タイヤ/ホイールセット" , "#"
                     %li
-                      %a{href: "#"}タイヤ
+                      = link_to "タイヤ" , "#"
                     %li
-                      %a{href: "#"}ホイール
+                      = link_to "ホイール" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}自動車パーツ
+                  = link_to "自動車パーツ" , "#"
                   %ul
                     %li
-                      %a{href: "#"}サスペンション
+                      = link_to "サスペンション" , "#"
                     %li
-                      %a{href: "#"}ブレーキ
+                      = link_to "ブレーキ" , "#"
                     %li
-                      %a{href: "#"}外装/エアロパーツ
+                      = link_to "外装/エアロパーツ" , "#"
                     %li
-                      %a{href: "#"}ライト
+                      = link_to "ライト" , "#"
                     %li
-                      %a{href: "#"}内装/シート
+                      = link_to "内装/シート" , "#"
                     %li
-                      %a{href: "#"}ステアリング
+                      = link_to "ステアリング" , "#"
                     %li
-                      %a{href: "#"}マフラー・排気系
+                      = link_to "マフラー・排気系" , "#"
                     %li
-                      %a{href: "#"}エンジン、過給機、冷却装置
+                      = link_to "エンジン、過給機、冷却装置" , "#"
                     %li
-                      %a{href: "#"}クラッチ、ミッション、駆動系
+                      = link_to "クラッチ、ミッション、駆動系" , "#"
                     %li
-                      %a{href: "#"}電装品
+                      = link_to "電装品" , "#"
                     %li
-                      %a{href: "#"}補強パーツ
+                      = link_to "補強パーツ" , "#"
                     %li
-                      %a{href: "#"}汎用パーツ
+                      = link_to "汎用パーツ" , "#"
                     %li
-                      %a{href: "#"}外国自動車用パーツ
+                      = link_to "外国自動車用パーツ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}自動車アクセサリー
+                  = link_to "自動車アクセサリー" , "#"
                   %ul
                     %li
-                      %a{href: "#"}車内アクセサリー
+                      = link_to "車内アクセサリー" , "#"
                     %li
-                      %a{href: "#"}カーナビ
+                      = link_to "カーナビ" , "#"
                     %li
-                      %a{href: "#"}カーオーディオ
+                      = link_to "カーオーディオ" , "#"
                     %li
-                      %a{href: "#"}車外アクセサリー
+                      = link_to "車外アクセサリー" , "#"
                     %li
-                      %a{href: "#"}メンテナンス用品
+                      = link_to "メンテナンス用品" , "#"
                     %li
-                      %a{href: "#"}チャイルドシート
+                      = link_to "チャイルドシート" , "#"
                     %li
-                      %a{href: "#"}ドライブレコーダー
+                      = link_to "ドライブレコーダー" , "#"
                     %li
-                      %a{href: "#"}レーダー探知機
+                      = link_to "レーダー探知機" , "#"
                     %li
-                      %a{href: "#"}カタログ/マニュアル
+                      = link_to "カタログ/マニュアル" , "#"
                     %li
-                      %a{href: "#"}セキュリティ
+                      = link_to "セキュリティ" , "#"
                     %li
-                      %a{href: "#"}ETC
+                      = link_to "ETC" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}オートバイ車体
+                  = link_to "オートバイ車体" , "#"
                 %li
-                  %a{href: "#"}オートバイパーツ
+                  = link_to "オートバイパーツ" , "#"
                   %ul
                     %li
-                      %a{href: "#"}タイヤ
+                      = link_to "タイヤ" , "#"
                     %li
-                      %a{href: "#"}マフラー
+                      = link_to "マフラー" , "#"
                     %li
-                      %a{href: "#"}エンジン、冷却
+                      = link_to "エンジン、冷却" , "#"
                     %li
-                      %a{href: "#"}カウル、フェンダー、外装
+                      = link_to "カウル、フェンダー、外装" , "#"
                     %li
-                      %a{href: "#"}サスペンション
+                      = link_to "サスペンション" , "#"
                     %li
-                      %a{href: "#"}ホイール
+                      = link_to "ホイール" , "#"
                     %li
-                      %a{href: "#"}シート
+                      = link_to "シート" , "#"
                     %li
-                      %a{href: "#"}ブレーキ
+                      = link_to "ブレーキ" , "#"
                     %li
-                      %a{href: "#"}タンク
+                      = link_to "タンク" , "#"
                     %li
-                      %a{href: "#"}ライト、ウィンカー
+                      = link_to "ライト、ウィンカー" , "#"
                     %li
-                      %a{href: "#"}チェーン、スプロケット駆動系
+                      = link_to "チェーン、スプロケット駆動系" , "#"
                     %li
-                      %a{href: "#"}メーター
+                      = link_to "メーター" , "#"
                     %li
-                      %a{href: "#"}電装系
+                      = link_to "電装系" , "#"
                     %li
-                      %a{href: "#"}ミラー
+                      = link_to "ミラー" , "#"
                     %li
-                      %a{href: "#"}外国オートバイ用パーツ
+                      = link_to "外国オートバイ用パーツ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}オートバイアクセサリー
+                  = link_to "オートバイアクセサリー" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ヘルメット/シールド
+                      = link_to "ヘルメット/シールド" , "#"
                     %li
-                      %a{href: "#"}バイクウエア/装備
+                      = link_to "バイクウエア/装備" , "#"
                     %li
-                      %a{href: "#"}アクセサリー
+                      = link_to "アクセサリー" , "#"
                     %li
-                      %a{href: "#"}メンテナンス
+                      = link_to "メンテナンス" , "#"
                     %li
-                      %a{href: "#"}カタログ/マニュアル
+                      = link_to "カタログ/マニュアル" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
           %ul
             %li
-              %a{href: "#"}その他
+              = link_to "その他" , "#"
               %ul
                 %li
-                  %a{href: "#"}まとめ売り
+                  = link_to "まとめ売り" , "#"
                 %li
-                  %a{href: "#"}ペット用品
+                  = link_to "ペット用品" , "#"
                   %ul
                     %li
-                      %a{href: "#"}ペットフード
+                      = link_to "ペットフード" , "#"
                     %li
-                      %a{href: "#"}犬用品
+                      = link_to "犬用品" , "#"
                     %li
-                      %a{href: "#"}猫用品
+                      = link_to "猫用品" , "#"
                     %li
-                      %a{href: "#"}魚用品/草類
+                      = link_to "魚用品/草類" , "#"
                     %li
-                      %a{href: "#"}小動物用品
+                      = link_to "小動物用品" , "#"
                     %li
-                      %a{href: "#"}爬虫類/両生類用品
+                      = link_to "爬虫類/両生類用品" , "#"
                     %li
-                      %a{href: "#"}かご/おり
+                      = link_to "かご/おり" , "#"
                     %li
-                      %a{href: "#"}鳥用品
+                      = link_to "鳥用品" , "#"
                     %li
-                      %a{href: "#"}虫類用品
+                      = link_to "虫類用品" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}食品
+                  = link_to "食品" , "#"
                   %ul
                     %li
-                      %a{href: "#"}菓子
+                      = link_to "菓子" , "#"
                     %li
-                      %a{href: "#"}米
+                      = link_to "米" , "#"
                     %li
-                      %a{href: "#"}野菜
+                      = link_to "野菜" , "#"
                     %li
-                      %a{href: "#"}果物
+                      = link_to "果物" , "#"
                     %li
-                      %a{href: "#"}調味料
+                      = link_to "調味料" , "#"
                     %li
-                      %a{href: "#"}魚介類(加工食品)
+                      = link_to "魚介類(加工食品)" , "#"
                     %li
-                      %a{href: "#"}肉類(加工食品)
+                      = link_to "肉類(加工食品)" , "#"
                     %li
-                      %a{href: "#"}その他 加工食品
+                      = link_to "その他 加工食品" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}飲料/酒
+                  = link_to "飲料/酒" , "#"
                   %ul
                     %li
-                      %a{href: "#"}コーヒー
+                      = link_to "コーヒー" , "#"
                     %li
-                      %a{href: "#"}ソフトドリンク
+                      = link_to "ソフトドリンク" , "#"
                     %li
-                      %a{href: "#"}ミネラルウォーター
+                      = link_to "ミネラルウォーター" , "#"
                     %li
-                      %a{href: "#"}茶
+                      = link_to "茶" , "#"
                     %li
-                      %a{href: "#"}ウイスキー
+                      = link_to "ウイスキー" , "#"
                     %li
-                      %a{href: "#"}ワイン
+                      = link_to "ワイン" , "#"
                     %li
-                      %a{href: "#"}ブランデー
+                      = link_to "ブランデー" , "#"
                     %li
-                      %a{href: "#"}焼酎
+                      = link_to "焼酎" , "#"
                     %li
-                      %a{href: "#"}日本酒
+                      = link_to "日本酒" , "#"
                     %li
-                      %a{href: "#"}ビール/発泡酒
+                      = link_to "ビール/発泡酒" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}日用品/生活雑貨/旅行
+                  = link_to "用品/生活雑貨/旅行" , "#"
                   %ul
                     %li
-                      %a{href: "#"}タオル/バス用品
+                      = link_to "タオル/バス用品" , "#"
                     %li
-                      %a{href: "#"}日用品/生活雑貨
+                      = link_to "日用品/生活雑貨" , "#"
                     %li
-                      %a{href: "#"}洗剤/柔軟剤
+                      = link_to "洗剤/柔軟剤" , "#"
                     %li
-                      %a{href: "#"}旅行用品
+                      = link_to "旅行用品" , "#"
                     %li
-                      %a{href: "#"}防災関連グッズ
+                      = link_to "防災関連グッズ" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}アンティーク/コレクション
+                  = link_to "アンティーク/コレクション" , "#"
                   %ul
                     %li
-                      %a{href: "#"}雑貨
+                      = link_to "雑貨" , "#"
                     %li
-                      %a{href: "#"}工芸品
+                      = link_to "工芸品" , "#"
                     %li
-                      %a{href: "#"}家具
+                      = link_to "家具" , "#"
                     %li
-                      %a{href: "#"}印刷物
+                      = link_to "" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "印刷物" , "#"
                 %li
-                  %a{href: "#"}文房具/事務用品
+                  = link_to "文房具/事務用品" , "#"
                   %ul
                     %li
-                      %a{href: "#"}筆記具
+                      = link_to "筆記具" , "#"
                     %li
-                      %a{href: "#"}ノート/メモ帳
+                      = link_to "ノート/メモ帳" , "#"
                     %li
-                      %a{href: "#"}テープ/マスキングテープ
+                      = link_to "テープ/マスキングテープ" , "#"
                     %li
-                      %a{href: "#"}カレンダー/スケジュール
+                      = link_to "カレンダー/スケジュール" , "#"
                     %li
-                      %a{href: "#"}アルバム/スクラップ
+                      = link_to "アルバム/スクラップ" , "#"
                     %li
-                      %a{href: "#"}ファイル/バインダー
+                      = link_to "ファイル/バインダー" , "#"
                     %li
-                      %a{href: "#"}はさみ/カッター
+                      = link_to "はさみ/カッター" , "#"
                     %li
-                      %a{href: "#"}カードホルダー/名刺管理
+                      = link_to "カードホルダー/名刺管理" , "#"
                     %li
-                      %a{href: "#"}のり/ホッチキス
+                      = link_to "のり/ホッチキス" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}事務/店舗用品
+                  = link_to "事務/店舗用品" , "#"
                   %ul
                     %li
-                      %a{href: "#"}オフィス用品一般
+                      = link_to "オフィス用品一般" , "#"
                     %li
-                      %a{href: "#"}オフィス家具
+                      = link_to "オフィス家具" , "#"
                     %li
-                      %a{href: "#"}店舗用品
+                      = link_to "店舗用品" , "#"
                     %li
-                      %a{href: "#"}OA機器
+                      = link_to "OA機器" , "#"
                     %li
-                      %a{href: "#"}ラッピング/包装
+                      = link_to "ラッピング/包装" , "#"
                     %li
-                      %a{href: "#"}その他
+                      = link_to "その他" , "#"
                 %li
-                  %a{href: "#"}その他
+                  = link_to "その他" , "#"
       .left-itemB
-        = link_to "#" do
-          ブランド
+        = link_to "ブランド" , "#"
       %ul.right-items
         %li.right-item-log
-          %a{href: "users/sign-in"}ログイン
+          = link_to "ログイン" , "users/sign_in"
         %li.right-item-new
-          %a{href: "users/sign-up"}新規会員登録
+          = link_to "新規会員登録" , "users/sign_up"
