@@ -16,8 +16,11 @@ $color-item3: #3ccace;
         border-bottom-style: ridge;
         text-align: center;
       }
-      &__form {
-        padding-top: 20px;
+      &__input {
+        display: block;
+        &__form {
+          padding-top: 20px;
+        }
       }
     }
   }

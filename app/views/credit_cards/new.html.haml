@@ -2,15 +2,15 @@
   .SignupCard__box
     .SignupCard__box__body
       %h2.SignupCard__box__body__title カード情報入力
-      = form_with model: @credit_card, url: credit_cards_path, method: :post, local: true do |f|
-        .SignupCard__box__body__form
-          .SignupCard__box__body__form__content
+      = form_with model: @credit_card, url: credit_cards_path, class: "SignupCard__box__body__input", method: :post, local: true do |f|
+        .SignupCard__box__body__input__form
+          .SignupCard__box__body__input__form__content
             %label.card__info カード番号
             %span.notify 必須
             %br
             = f.text_field :credit_card, class: "input", size: "16", placeholder: "半角数字のみ"
-        .SignupCard__box__body__form
-          .SignupCard__box__body__form__content
+        .SignupCard__box__body__input__form
+          .SignupCard__box__body__input__form__content
             %label.card__info 有効期限
             %span.notify 必須
             %br
@@ -43,8 +43,8 @@
               %option{value: "2028"}28
               %option{value: "2029"}29
             %span 年
-        .SignupCard__box__body__form
-          .SignupCard__box__body__form__content
+        .SignupCard__box__body__input__form
+          .SignupCard__box__body__input__form__content
             %label.card__info セキュリティコード
             %span.notify 必須
             %br
