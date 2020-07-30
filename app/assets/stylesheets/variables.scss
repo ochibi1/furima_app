@@ -2,6 +2,7 @@ $color_item1: white;
 $color_item2: whitesmoke;
 $color_item3: #3ccace;
 $color_item4: #dbdbdb;
+$color_item5: #000;
 
 @mixin border() {
   border: 1px solid $color_item4;
