@@ -13,7 +13,7 @@
         = link_to "#",class: "ItemLeft__credit" do
           クレジットカードの登録
       %li.ItemLeft
-        = link_to "#", class: "ItemLeft__logout" do
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "ItemLeft__logout" do
           ログアウト
   .wrapper__Right
     .Icon
