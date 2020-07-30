@@ -13,7 +13,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.integer    :trading_status,   null: false, default: 1
       t.string     :closed_deal_date
       t.integer    :seller_id,        null: false
-      t.integer    :buyer_id,         null: false
+      t.integer    :buyer_id
       t.timestamps
     end
   end
