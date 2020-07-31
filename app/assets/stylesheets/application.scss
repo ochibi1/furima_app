@@ -14,20 +14,13 @@
  *= require_self
  */
 
-
-@import "reset";
+ * {
+  box-sizing: border-box;
+}
 @import "modules/items";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
-
- * {
-   box-sizing: border-box;
- }
-@import "font-awesome-sprockets";
-@import "font-awesome";
 @import "reset";
-
 @import "signup";
 @import "signin";
 @import "home";
