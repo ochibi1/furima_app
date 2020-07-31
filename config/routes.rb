@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
   }
   devise_scope :user do
     get 'deliver_addresses', to: 'users/registrations#new_deliver_address'
@@ -8,8 +9,7 @@ Rails.application.routes.draw do
   end
   root 'items#index'
   resources :users
-  # resources :deliver_addresses, only: [:create, :update, :edit]
-  resources :creditcards, only: [:create, :update, :edit]
+  resources :credit_cards, only: [:create, :update, :edit]
   resources :brands, only: [:create]
   resources :products do 
     resources :comments
