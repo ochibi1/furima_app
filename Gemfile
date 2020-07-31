@@ -75,5 +75,5 @@ gem 'mini_magick'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'ancestry'
-gem "font-awesome-sass"
 gem 'active_hash'
+gem 'payjp'
