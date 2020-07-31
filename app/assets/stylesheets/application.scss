@@ -14,21 +14,14 @@
  *= require_self
  */
 
-
-@import "reset";
-@import "modules/items";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-
-
  * {
-   box-sizing: border-box;
- }
+  box-sizing: border-box;
+}
+@import "modules/products";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "reset";
-
 @import "signup";
 @import "signin";
-@import "home";
+@import "products_new";
 @import "signupCard";

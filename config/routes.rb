@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     get 'deliver_addresses', to: 'users/registrations#new_deliver_address'
     post 'deliver_addresses', to: 'users/registrations#create_deliver_address'
   end
-  root 'items#index'
-  get 'items/home'
+  root 'users#show'
+  get 'users/logout'
   resources :users
   resources :credit_cards
   resources :brands, only: [:create]
