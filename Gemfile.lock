@@ -337,6 +337,9 @@ DEPENDENCIES
   devise
   devise-i18n
   devise-i18n-views
+
+  font-awesome-sass
+
   factory_bot_rails
   font-awesome-sass
   haml-rails (>= 1.0, <= 2.0.1)
