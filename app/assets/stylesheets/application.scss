@@ -13,10 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+
+@import "reset";
+@import "modules/items";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
  * {
   box-sizing: border-box;
 }
 @import "reset";
+
 @import "signup";
 @import "signin";
 @import "signupCard";
