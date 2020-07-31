@@ -2943,6 +2943,9 @@
         = link_to "ブランド" , "#"
       %ul.right-items
         %li.right-item-log
-          = link_to "ログイン" , "users/sign_in"
+          - if user_signed_in?
+            = link_to "ログアウト", "users/sign_out"
+          - else 
+            = link_to "ログイン" , "users/sign_in"
         %li.right-item-new
           = link_to "新規会員登録" , "users/sign_up"
