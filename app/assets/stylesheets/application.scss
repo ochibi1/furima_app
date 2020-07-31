@@ -22,10 +22,13 @@
 
 
  * {
-  box-sizing: border-box;
-}
+   box-sizing: border-box;
+ }
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "reset";
 
 @import "signup";
 @import "signin";
+@import "home";
 @import "signupCard";
