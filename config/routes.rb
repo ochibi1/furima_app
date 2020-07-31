@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     post 'deliver_addresses', to: 'users/registrations#create_deliver_address'
   end
   root 'items#index'
+  get 'items/home'
   resources :users
-  resources :credit_cards, only: [:create, :update, :edit]
+  resources :credit_cards
   resources :brands, only: [:create]
   resources :products do 
     resources :comments
