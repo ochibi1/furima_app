@@ -72,4 +72,12 @@ gem 'devise-i18n-views'
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'carrierwave'
 gem 'mini_magick'
+
+
+gem "font-awesome-sass"
+
 gem 'active_hash'
+
+
+gem 'ancestry'
+
