@@ -1,178 +1,92 @@
 .ProductsNew
   .ProductsNew__header
   .ProductsNew__main
-    .ProductsNew__main__form
+    = form_with model: @product, url: products_path, class: "ProductsNew__main__form", local: true do |product|
       .ProductsNew__main__form__group
-        .ProductsNew__main__form__group__field
-          %label 出品画像
-          %span 必須
-          %h3 最大10枚までアップロードできます
-          .ProductsNew__main__form__group__field__file-input
-            %input#filearea{ type: "file", name: "images[]", multiple: true }
-            %label.filelabel{ for: "filearea" }
-              = icon('fa', 'camera')
-              %p クリックしてファイルをアップロード
+        = product.fields_for :photos, @photos do |photo|
+          .ProductsNew__main__form__group__field
+            %label.field-label 出品画像
+            %span 必須
+            %h3 最大10枚までアップロードできます
+            .ProductsNew__main__form__group__field__file-input
+              #files
+                = photo.file_field :image, name: "product[photos_attributes][0][image]", id: "filearea", class: "fileinput fileinput0"
+                %label{class: "file-label", for: "filearea"}
+                  = icon('fa', 'camera')
+                  %p クリックしてファイルをアップロード
 
       .ProductsNew__main__form__group
         .ProductsNew__main__form__group__field
-          %label 商品名
+          = product.label '商品名', class: "field-label"
           %span 必須
           .ProductsNew__main__form__group__field__input
-            %input{ type: "text", placeholder: '40文字まで' }
+            = product.text_field :name, placeholder: '40文字まで'
         .ProductsNew__main__form__group__field
-          %label 商品の説明
+          = product.label '商品の説明', class: "field-label"
           %span 必須
           .ProductsNew__main__form__group__field__input
-            %textarea{ type: "textarea", maxlength: "1000", placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" }
+            = product.text_area :introduction, maxlength: "1000", placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
 
       .ProductsNew__main__form__group
         .ProductsNew__main__form__group__field
-          %p 商品の詳細
-          %label カテゴリー
+          = product.fields_for :categories, @categories do |category|
+            %p 商品の詳細
+            = category.label 'カテゴリー', class: "field-label"
+            %span 必須
+            .ProductsNew__main__form__group__field__input
+              = category.text_field :name
+        .ProductsNew__main__form__group__field
+          = product.label 'サイズ', class: "field-label"
           %span 必須
           .ProductsNew__main__form__group__field__input
-            %input{ type: "text" }
+            = product.collection_select :size_id, Size.all, :id, :name, prompt: '--'
+        .ProductsNew__main__form__group__field   
+          = product.fields_for :brand, @brand do |brand|
+            = brand.label "ブランド", class: "field-label"
+            %span.optional 任意
+            .ProductsNew__main__form__group__field__input
+              = brand.text_field :name, placeholder: '例) シャネル'
         .ProductsNew__main__form__group__field
-          %label サイズ
+          = product.label '商品の状態', class: "field-label"
           %span 必須
           .ProductsNew__main__form__group__field__input
-            %input{ type: "text" }
-        .ProductsNew__main__form__group__field
-          %label ブランド
-          %span.optional 任意
-          .ProductsNew__main__form__group__field__input
-            %input{ type: "text" }
-        .ProductsNew__main__form__group__field
-          %label 商品の状態
-          %span 必須
-          .ProductsNew__main__form__group__field__input
-            %input{ type: "text" }
+            = product.collection_select :condition_id, Condition.all, :id, :name, prompt: '--'
           
-      .ProductsNew__main__form__group
-        .ProductsNew__main__form__group__field
-          %p
-            配送について
-            = link_to '？', '#', class: "help"
-          %label 配送料の負担
-          %span 必須
-          .ProductsNew__main__form__group__field__input
-            %input{ type: "text" }
-        .ProductsNew__main__form__group__field
-          %label 発送元の地域
-          %span 必須
-          .ProductsNew__main__form__group__field__input
-            %input{ type: "text" }
-        .ProductsNew__main__form__group__field
-          %label 発送までの日数
-          %span 必須
-          .ProductsNew__main__form__group__field__input
-            %input{ type: "text" }
+        .ProductsNew__main__form__group
+          .ProductsNew__main__form__group__field
+            %p
+              配送について
+              = link_to '？', '#', class: "help"
+            = product.label '配送料の負担', class: "field-label"
+            %span 必須
+            .ProductsNew__main__form__group__field__input
+              = product.collection_select :postage_payer_id, PostagePayer.all, :id, :name, prompt: '--'
+          .ProductsNew__main__form__group__field
+            = product.label '発送元の地域', class: "field-label"
+            %span 必須
+            .ProductsNew__main__form__group__field__input
+              = product.select :prefecture_code, Product.prefecture_codes.keys.to_a
+          .ProductsNew__main__form__group__field
+            = product.label '発送までの日数', class: "field-label"
+            %span 必須
+            .ProductsNew__main__form__group__field__input
+              = product.collection_select :prep_date_id, PrepDate.all, :id, :name, prompt: '--'
 
-      .ProductsNew__main__form__group
-        .ProductsNew__main__form__group__field
-          %p
-            価格 (￥300〜9,999,999)
-            = link_to '？', '#', class: "help"
-          .ProductsNew__main__form__group__field__price-input
-            .ProductsNew__main__form__group__field__price-input__label
-              %label 販売価格
-              %span 必須
-            .ProductsNew__main__form__group__field__price-input__value
-              %span.price ￥
-              %input{ type: "number", placeholder: "0" }
-        .ProductsNew__main__form__group__field
-          .ProductsNew__main__form__group__field__button
-            %input{ type: "submit", value: "出品する" }
+        .ProductsNew__main__form__group
+          .ProductsNew__main__form__group__field
+            %p
+              価格(￥300〜9,999,999)
+              = link_to '？', '#', class: "help"
+            .ProductsNew__main__form__group__field__price-input
+              .ProductsNew__main__form__group__field__price-input__label
+                = product.label '販売価格', class: "field-label"
+                %span 必須
+              .ProductsNew__main__form__group__field__price-input__value
+                %span.price ￥
+                = product.number_field :price, placeholder: "0"
+          .ProductsNew__main__form__group__field
+            .ProductsNew__main__form__group__field__button
+              = product.submit '出品する'
           .ProductsNew__main__form__group__field__link
             = link_to 'もどる', '#'
-
-    .ProductsNew__footer
-
--# 以下、Productモデル作成後に使用
--# .ProductsNew
--#   .ProductsNew__header
--#   .ProductsNew__main
--#     = form_with model: product, url: '#', class: ".ProductsNew__main__form", local: true do |product|
--#       = fields_for :photo, class: "ProductsNew__main__form__group" do |photo|
--#         .ProductsNew__main__form__group__field
--#           %label '出品画像'
--#           %span 必須
--#           %h3 最大10枚までアップロードできます
--#           .ProductsNew__main__form__group__field__input
--#             = photo.file_field :image, id: "filearea"
--#             = photo.label '', class: "filelabel", for: "filearea"
-
--#       .ProductsNew__main__form__group
--#         .ProductsNew__main__form__group__field
--#           = product.label '商品名'
--#           %span 必須
--#           .ProductsNew__main__form__group__field__input
--#             = product.text_field :name, placeholder: '40文字まで'
--#         .ProductsNew__main__form__group__field
--#           = product.label '商品の説明'
--#           %span 必須
--#           .ProductsNew__main__form__group__field__input
--#             = product.text_area :introduction, maxlength: "1000", placeholder: "商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-
--#       .ProductsNew__main__form__group
--#         %p 商品の詳細
--#         = fields_for :category, class: "ProductsNew__main__form__group__field" do |category|
--#           = category.label 'カテゴリー'
--#           %span 必須
--#           .ProductsNew__main__form__group__field__input
--#             = category.text_field :name
--#         .ProductsNew__main__form__group__field
--#           = product.label 'サイズ'
--#           %span 必須
--#           .ProductsNew__main__form__group__field__input
--#             = product.text_field :size_id
--#         = fields_for :brand, class: "ProductsNew__main__form__group__field" do |brand|
--#           = brand.label "ブランド"
--#           %span.optional 任意
--#           .ProductsNew__main__form__group__field__input
--#             = brand.text_field :name
--#         .ProductsNew__main__form__group__field
--#           = product.label '商品の状態'
--#           %span 必須
--#           .ProductsNew__main__form__group__field__input
--#             = product.text_field :condition_id
-          
--#         .ProductsNew__main__form__group
--#           .ProductsNew__main__form__group__field
--#             %p
--#               配送について
--#               = link_to '？', '#', class: "help"
--#             = product.label '配送料の負担'
--#             %span 必須
--#             .ProductsNew__main__form__group__field__input
--#               = product.text_field
--#           .ProductsNew__main__form__group__field
--#             = product.label '発送元の地域'
--#             %span 必須
--#             .ProductsNew__main__form__group__field__input
--#               = product.text_field
--#             .ProductsNew__main__form__group__field
--#               = product.label '発送までの日数'
--#               %span 必須
--#               .ProductsNew__main__form__group__field__input
--#                 = product.text_field :prep_date
-
--#         .ProductsNew__main__form__group
--#           .ProductsNew__main__form__group__field
--#             %p
--#               価格(￥300〜9,999,999)
--#               = link_to '？', '#', class: "help"
--#             .ProductsNew__main__form__group__field__price-input
--#               .ProductsNew__main__form__group__field__price-input__label
--#                 = product.label '販売価格'
--#                 %span 必須
--#               .ProductsNew__main__form__group__field__price-input__value
--#                 %span.price ￥
--#                 = product.number_field :price, placeholder: "0"
--#             .ProductsNew__main__form__group__field
--#               .ProductsNew__main__form__group__field__button
--#               = product.submit '出品する'
--#             .ProductsNew__main__form__group__field__link
--#               = link_to 'もどる', '#'
-
--#     .ProductsNew__footer
+  .ProductsNew__footer
