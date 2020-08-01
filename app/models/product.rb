@@ -4,15 +4,18 @@ class Product < ApplicationRecord
             :postage_payer_id, :prefecture_code, :prep_date_id,
             :price, :trading_status, :seller_id, presence: true
   has_many :photos, dependent: :destroy
-  has_many :categories_products, dependent: :destroy
-  has_many :categories, through: :categories_products
+  has_many :category_products, dependent: :destroy
+  has_many :categories, through: :category_products
   belongs_to :brand, optional: true
-  belongs_to :seller, class_name :"User", optional: true
+  belongs_to :seller, class_name: 'User', optional: true
+  belongs_to :buyer, class_name: 'User', optional: true
   belongs_to_active_hash :size
   belongs_to_active_hash :condition
   belongs_to_active_hash :postage_payer
   belongs_to_active_hash :prep_date
-  accepts_nested_attributes_for :photo
+  accepts_nested_attributes_for :photos, allow_destroy: true
+  accepts_nested_attributes_for :brand
+  accepts_nested_attributes_for :categories
 
   enum prefecture_code: {
     北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
