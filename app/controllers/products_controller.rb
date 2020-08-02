@@ -16,6 +16,9 @@ class ProductsController < ApplicationController
     binding.pry
     unless @product.valid?
       flash.now[:alert] = @product.errors.full_messages
+      @parents = Category.where(ancestry: nil).order(id: "ASC")
+      @photos =  @product.photos.build
+      @brand = @product.build_brand
       render :new and return
     end
     @product.save
