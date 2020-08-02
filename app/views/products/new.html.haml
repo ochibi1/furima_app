@@ -29,17 +29,16 @@
 
       .ProductsNew__main__form__group
         .ProductsNew__main__form__group__field
-          = product.fields_for :category_products, @categories do |category|
-            %p 商品の詳細
-            = category.label 'カテゴリー', class: "field-label"
-            %span 必須
-            .ProductsNew__main__form__group__field__input
-              = category.collection_select :category_id, @parents, :id, :name, {prompt: '--'}, {id: 'category_parent'}
-        .ProductsNew__main__form__group__field
+          %p 商品の詳細
+          = product.label 'カテゴリー', class: "field-label"
+          %span 必須
+          .ProductsNew__main__form__group__field__category-input
+            = product.collection_select :category_id, @parents, :id, :name, {prompt: '---'}, {id: 'category_parent'}
+        .ProductsNew__main__form__group__field#size-field
           = product.label 'サイズ', class: "field-label"
           %span 必須
           .ProductsNew__main__form__group__field__input
-            = product.collection_select :size_id, Size.all, :id, :name, prompt: '--'
+            = product.collection_select :size_id, Size.all, :id, :name, prompt: '---'
         .ProductsNew__main__form__group__field   
           = product.fields_for :brand, @brand do |brand|
             = brand.label "ブランド", class: "field-label"
@@ -50,7 +49,7 @@
           = product.label '商品の状態', class: "field-label"
           %span 必須
           .ProductsNew__main__form__group__field__input
-            = product.collection_select :condition_id, Condition.all, :id, :name, prompt: '--'
+            = product.collection_select :condition_id, Condition.all, :id, :name, prompt: '---'
           
         .ProductsNew__main__form__group
           .ProductsNew__main__form__group__field
@@ -60,7 +59,7 @@
             = product.label '配送料の負担', class: "field-label"
             %span 必須
             .ProductsNew__main__form__group__field__input
-              = product.collection_select :postage_payer_id, PostagePayer.all, :id, :name, prompt: '--'
+              = product.collection_select :postage_payer_id, PostagePayer.all, :id, :name, prompt: '---'
           .ProductsNew__main__form__group__field
             = product.label '発送元の地域', class: "field-label"
             %span 必須
@@ -70,7 +69,7 @@
             = product.label '発送までの日数', class: "field-label"
             %span 必須
             .ProductsNew__main__form__group__field__input
-              = product.collection_select :prep_date_id, PrepDate.all, :id, :name, prompt: '--'
+              = product.collection_select :prep_date_id, PrepDate.all, :id, :name, prompt: '---'
 
         .ProductsNew__main__form__group
           .ProductsNew__main__form__group__field

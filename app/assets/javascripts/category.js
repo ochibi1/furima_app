@@ -4,20 +4,20 @@ $(function() {
     return html;
   };
 
-  function appendChidrenBox(insertHTML){
-    let childSelectHtml = `<select class="sell__item-category" id="category_child" name="product[category_products_attributes][0][category_id]">
+  function appendChildrenBox(insertHTML){
+    let childSelectHtml = `<select id="category_child" name="product[category_id]" style="width: 100%;height: 3.5rem;margin-top: 1rem;padding: 0 0.8rem;border: 1px solid #dbdbdb;border-radius: 0.2rem;">
                              <option value="---" data-category="---">---</option>
                              ${insertHTML}
-                           <select>`;
+                           </select>`;
     $('#category_parent').parent().append(childSelectHtml);
   }
 
-  function appendGrandChidrenBox(insertHTML){
-    let grandChildSelectHtml = `<select class="sell__item-category" id="category_grandchild" name="product[category_products_attributes][0][category_id]">
-                             <option value="---" data-category="---">---</option>
-                             ${insertHTML}
-                           <select>`;
-    $('#category_child').parent().append(grandChildSelectHtml);
+  function appendGrandChildrenBox(insertHTML){
+    let grandChildSelectHtml = `<select id="category_grandchild" name="product[category_id]" style="width: 100%;height: 3.5rem;margin-top: 1rem;padding: 0 0.8rem;border: 1px solid #dbdbdb;border-radius: 0.2rem;">
+                                  <option value="---" data-category="---">---</option>
+                                  ${insertHTML}
+                                </select>`;
+    $('#category_parent').parent().append(grandChildSelectHtml);
   }
 
   $('#category_parent').on('change', function() {
@@ -31,11 +31,12 @@ $(function() {
     .done(function(children) {
       $('#category_child').remove();
       $('#category_grandchild').remove();
+      $('#size-field').attr('style', 'display: none;');
       let insertHTML = '';
         $.each(children,function(i, child) {
           insertHTML += appendOption(child);
         });
-        appendChidrenBox(insertHTML);
+        appendChildrenBox(insertHTML);
     })
     .fail(function() {
       alert('カテゴリー取得に失敗しました');
@@ -52,14 +53,19 @@ $(function() {
     })
     .done(function(grandChildren) {
       $('#category_grandchild').remove();
+      $('#size-field').attr('style', 'display: none;');
       let insertHTML = '';
         $.each(grandChildren,function(i, grandChild) {
           insertHTML += appendOption(grandChild);
         });
-        appendGrandChidrenBox(insertHTML);
+        appendGrandChildrenBox(insertHTML);
     })
     .fail(function() {
       alert('カテゴリー取得に失敗しました');
     })
+  });
+
+  $(document).on('change', '#category_grandchild', function() {
+    $('#size-field').attr('style', 'display: block;');
   });
 });
