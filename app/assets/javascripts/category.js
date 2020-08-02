@@ -33,13 +33,15 @@ $(function() {
       $('#category_grandchild').remove();
       $('#size-field').attr('style', 'display: none;');
       let insertHTML = '';
-        $.each(children,function(i, child) {
+        $.each(children, function(i, child) {
           insertHTML += appendOption(child);
         });
         appendChildrenBox(insertHTML);
     })
     .fail(function() {
-      alert('カテゴリー取得に失敗しました');
+      $('#category_child').remove();
+      $('#category_grandchild').remove();
+      $('#size-field').attr('style', 'display: none;');
     })
   });
 
@@ -55,17 +57,22 @@ $(function() {
       $('#category_grandchild').remove();
       $('#size-field').attr('style', 'display: none;');
       let insertHTML = '';
-        $.each(grandChildren,function(i, grandChild) {
+        $.each(grandChildren, function(i, grandChild) {
           insertHTML += appendOption(grandChild);
         });
         appendGrandChildrenBox(insertHTML);
     })
     .fail(function() {
-      alert('カテゴリー取得に失敗しました');
+      $('#category_grandchild').remove();
+      $('#size-field').attr('style', 'display: none;');
     })
   });
 
   $(document).on('change', '#category_grandchild', function() {
-    $('#size-field').attr('style', 'display: block;');
+    if ($(this).val() == '---') {
+      $('#size-field').attr('style', 'display: none;');
+    } else {
+      $('#size-field').attr('style', 'display: block;');
+    };
   });
 });
