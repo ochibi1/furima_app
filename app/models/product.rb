@@ -1,8 +1,10 @@
 class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  validates_associated :photos
   validates :name, :introduction, :size_id, :condition_id,
             :postage_payer_id, :prefecture_code, :prep_date_id,
-            :price, :trading_status, :seller_id, presence: true
+            :price, :trading_status, :seller_id,
+            :photos, presence: true
   has_many :photos, dependent: :destroy
   belongs_to :brand, optional: true
   belongs_to :seller, class_name: 'User', optional: true
