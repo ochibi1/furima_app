@@ -2,6 +2,7 @@
   .ProductsNew__header
   .ProductsNew__main
     = form_with model: @product, url: products_path, class: "ProductsNew__main__form", local: true do |product|
+      = render 'devise/shared/error_messages', resource: @product
       .ProductsNew__main__form__group
         = product.fields_for :photos, @photos do |photo|
           .ProductsNew__main__form__group__field
@@ -10,7 +11,7 @@
             %h3 最大10枚までアップロードできます
             .ProductsNew__main__form__group__field__file-input
               #files
-                = photo.file_field :image, name: "product[photos_attributes][0][image]", required: true, id: "filearea", class: "fileinput fileinput0"
+                = photo.file_field :image, id: "filearea", class: "fileinput fileinput0"
                 %label{class: "file-label", for: "filearea"}
                   = icon('fa', 'camera')
                   %p クリックしてファイルをアップロード
@@ -64,7 +65,7 @@
             = product.label '発送元の地域', class: "field-label"
             %span 必須
             .ProductsNew__main__form__group__field__input
-              = product.select :prefecture_code, Product.prefecture_codes.keys.to_a
+              = product.select :prefecture_code, Product.prefecture_codes.keys.to_a, prompt: '---'
           .ProductsNew__main__form__group__field
             = product.label '発送までの日数', class: "field-label"
             %span 必須
