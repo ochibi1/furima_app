@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @parents = Category.where(ancestry: nil).order(id: "ASC")
-    @category_products = @product.category_products.build
     @photos =  @product.photos.build
     @brand = @product.build_brand
   end
@@ -46,10 +45,9 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:name, :introduction, :size_id,
                                       :condition_id, :postage_payer_id, :prefecture_code,
                                       :prep_date_id, :price, :trading_status,
-                                      :closed_deal_date,
+                                      :closed_deal_date, :category_id,
                                       photos_attributes:[:image, :product_id],
-                                      brand_attributes:[:name],
-                                      category_products_attributes: [:category_id]
+                                      brand_attributes:[:name]
       ).merge(seller_id: current_user.id)
     end
 end
