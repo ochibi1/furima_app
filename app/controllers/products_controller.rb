@@ -13,7 +13,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    binding.pry
     unless @product.valid?
       flash.now[:alert] = @product.errors.full_messages
       @parents = Category.where(ancestry: nil).order(id: "ASC")
