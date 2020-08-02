@@ -6,8 +6,8 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @parents = Category.all.order("id ASC").limit(13)
-    @categories = @product.categories.build
+    @parents = Category.where(ancestry: nil).order(id: "ASC")
+    @category_products = @product.category_products.build
     @photos =  @product.photos.build
     @brand = @product.build_brand
   end
@@ -23,12 +23,22 @@ class ProductsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def get_category_children
-    @children = Category.find(params[:parent_id]).children
+  def search_category_children
+    respond_to do |format|
+      format.html
+      format.json do
+        @children = Category.find(params[:parent_id]).children
+      end
+    end
   end
 
-  def get_category_grandchildren
-    @grandchildren = Category.find("#{params[:child_id]}").children
+  def search_category_grandchildren
+    respond_to do |format|
+      format.html
+      format.json do
+        @grandchildren = Category.find(params[:child_id]).children
+      end
+    end
   end
 
   private
@@ -39,7 +49,7 @@ class ProductsController < ApplicationController
                                       :closed_deal_date,
                                       photos_attributes:[:image, :product_id],
                                       brand_attributes:[:name],
-                                      categories_attributes:[:name]
+                                      category_products_attributes: [:category_id]
       ).merge(seller_id: current_user.id)
     end
 end

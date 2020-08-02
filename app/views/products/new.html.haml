@@ -10,7 +10,7 @@
             %h3 最大10枚までアップロードできます
             .ProductsNew__main__form__group__field__file-input
               #files
-                = photo.file_field :image, name: "product[photos_attributes][0][image]", id: "filearea", class: "fileinput fileinput0"
+                = photo.file_field :image, name: "product[photos_attributes][0][image]", required: true, id: "filearea", class: "fileinput fileinput0"
                 %label{class: "file-label", for: "filearea"}
                   = icon('fa', 'camera')
                   %p クリックしてファイルをアップロード
@@ -29,12 +29,12 @@
 
       .ProductsNew__main__form__group
         .ProductsNew__main__form__group__field
-          = product.fields_for :categories, @categories do |category|
+          = product.fields_for :category_products, @categories do |category|
             %p 商品の詳細
             = category.label 'カテゴリー', class: "field-label"
             %span 必須
             .ProductsNew__main__form__group__field__input
-              = category.text_field :name
+              = category.collection_select :category_id, @parents, :id, :name, {prompt: '--'}, {id: 'category_parent'}
         .ProductsNew__main__form__group__field
           = product.label 'サイズ', class: "field-label"
           %span 必須
