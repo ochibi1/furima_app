@@ -1,18 +1,21 @@
 class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  validates_associated :photos
   validates :name, :introduction, :size_id, :condition_id,
             :postage_payer_id, :prefecture_code, :prep_date_id,
-            :price, :trading_status, :seller_id, presence: true
+            :price, :trading_status, :seller_id,
+            :photos, presence: true
   has_many :photos, dependent: :destroy
-  has_many :categories_products, dependent: :destroy
-  has_many :categories, through: :categories_products
   belongs_to :brand, optional: true
   belongs_to :seller, class_name: 'User', optional: true
+  belongs_to :buyer, class_name: 'User', optional: true
+  belongs_to :category
   belongs_to_active_hash :size
   belongs_to_active_hash :condition
   belongs_to_active_hash :postage_payer
   belongs_to_active_hash :prep_date
-  accepts_nested_attributes_for :photo
+  accepts_nested_attributes_for :photos, allow_destroy: true
+  accepts_nested_attributes_for :brand
 
   enum prefecture_code: {
     北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
@@ -23,5 +26,9 @@ class Product < ApplicationRecord
     鳥取県:31,島根県:32,岡山県:33,広島県:34,山口県:35,
     徳島県:36,香川県:37,愛媛県:38,高知県:39,
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
+  }
+
+  enum trading_status: {
+    出品中:1,売却済み:2
   }
 end
