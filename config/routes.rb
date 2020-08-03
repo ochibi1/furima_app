@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
   root 'users#show'
   get 'users/logout'
+  get 'products/search_category_children'
+  get 'products/search_category_grandchildren'
   resources :users
   resources :credit_cards
   resources :brands, only: [:create]
