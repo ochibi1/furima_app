@@ -97,6 +97,33 @@
             height: auto;
             margin-top: 1rem;
 
+            &__prevbox {
+              display: flex;
+              flex-wrap: wrap;
+
+              &__image {
+                margin-bottom: 0.3rem;
+                background: $color_item2;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                  width: 7rem;
+                  height: 7rem;
+                }
+
+                p {
+                  margin: 0;
+                  padding: 0.2rem;
+                  color: #4897d8;
+                  font-size: 0.9rem;
+                  font-weight: normal;
+                  cursor: pointer;
+                }
+              }
+            }
             div#files {
               width: 100%;
               height: auto;
@@ -136,6 +163,15 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
+            select {
+              width: 100%;
+              height: 3.5rem;
+              margin-top: 1rem;
+              padding: 0 0.8rem;
+              border: 1px solid #dbdbdb;
+              border-radius: 0.2rem;
+            }
           }
 
           &__price-input {
@@ -233,8 +269,7 @@
             border-radius: 50%;
           }
         }
-
-        #size-field {
+        #size-field-new {
           display: none;
         }
       }

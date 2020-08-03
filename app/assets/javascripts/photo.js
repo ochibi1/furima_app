@@ -1,7 +1,7 @@
 $(function() {
-  $('label[class=file-label]').after('<div class="fileimg" style="display: flex;flex-wrap: wrap;"><div/>');
+  // $('label[class=file-label]').after('<div class="fileimg" style="display: flex;flex-wrap: wrap;"><div/>');
 
-  img_count = 0
+  img_count = 0 + $('.ProductsNew__main__form__group__field__file-input__prevbox__image').length
   img_index = 0
   $('.file-label').on('click', function() {
     $('.fileinput').change(function() {
@@ -21,7 +21,7 @@ $(function() {
           let img_src = $('<img style="width: 7rem;height: 7rem;">').attr('src', reader.result);
           let box = $(`<div class="fileinput${img_index - 1}" style="margin-bottom: 0.3rem;background: whitesmoke;display: flex;flex-direction: column;justify-content: center;align-items: center;"></div>`);
           let box2 =  box.append(img_src).append('<p class="deletefile" style="margin: 0;padding: 0.2rem;color: #4897d8;font-size: 0.9rem;font-weight: normal;cursor: pointer;">削除</p>');
-          $('.fileimg').append(box2);
+          $('.ProductsNew__main__form__group__field__file-input__prevbox').append(box2);
         }
         reader.readAsDataURL(file);
         label.attr('for', `filearea${img_index + 1}`);

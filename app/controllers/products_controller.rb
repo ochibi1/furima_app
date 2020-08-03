@@ -24,6 +24,19 @@ class ProductsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def edit
+    @product = Product.find(params[:id])
+    @parents = Category.where(ancestry: nil).order(id: "ASC")
+    @grandchild = Category.find(@product.category_id)
+    @child = @grandchild.parent
+    @parent = @child.parent
+    @grandchildren = @child.children
+    @children = @child.parent.children
+    @photos =  @product.photos.build
+    @brand = @product.build_brand
+    @prev_images = @product.photos.order(created_at: "ASC")
+  end
+
   def search_category_children
     respond_to do |format|
       format.html
