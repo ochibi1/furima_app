@@ -3,12 +3,22 @@
 .ProductsNew {
   width: 100%;
   height: 100%;
+  padding-bottom: 1rem;
   background: $color_item2;
 
   &__header {
     width: 100%;
-    height: 6rem;
+    height: 8rem;
     padding: 0 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 12rem;
+      height: 3rem;
+      display: inline-block;
+    }
   }
 
   &__main {
@@ -29,7 +39,7 @@
       &__group {
         width: 100%;
         height: auto;
-        padding: 2rem 0;
+        padding-top: 2rem;
         border-bottom: 1px solid $color_item4;
         display: flex;
         flex-direction: column;
@@ -185,7 +195,8 @@
 
           &__link {
             width: 100%;
-            margin-top: 3rem;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
             display: flex;
             justify-content: center;
 
@@ -234,5 +245,41 @@
     width: 100%;
     height: 6rem;
     padding: 0 3rem;
+    margin: 3rem 0;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__links {
+      width: 100%;
+
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        li {
+          margin: 0 0.5rem;
+
+          a {
+            color: $color_item5;
+            font-weight: normal;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    &__logo {
+      margin-top: 2rem;
+
+      img {
+        width: 12rem;
+        height: 3rem;
+        display: inline-block;
+      }
+    }
   }
 }
