@@ -1,5 +1,4 @@
 $(function() {
-  // $('label[class=file-label]').after('<div class="fileimg" style="display: flex;flex-wrap: wrap;"><div/>');
 
   img_count = 0 + $('.ProductsNew__main__form__group__field__file-input__prevbox__image').length
   img_index = 0
