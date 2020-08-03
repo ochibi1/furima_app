@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
     @child = @grandchild.parent
     @parent = @child.parent
     @grandchildren = @child.children
-    @children = @child.parent.children
+    @children = @parent.children
     @prev_images = @product.photos.order(created_at: "ASC")
     @photos =  @product.photos.build
     @brand_name = @product.brand.name
