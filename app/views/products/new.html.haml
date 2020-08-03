@@ -1,5 +1,6 @@
 .ProductsNew
   .ProductsNew__header
+    = link_to image_tag('logo.png'), products_path
   .ProductsNew__main
     = form_with model: @product, url: products_path, class: "ProductsNew__main__form", local: true do |product|
       = render 'devise/shared/error_messages', resource: @product
@@ -90,3 +91,15 @@
           .ProductsNew__main__form__group__field__link
             = link_to 'もどる', '#'
   .ProductsNew__footer
+    .ProductsNew__footer__links
+      %ul
+        %li
+          = link_to 'プライバシーポリシー', '#'
+        %li
+          = link_to 'furima利用規約', '#'
+        %li
+          = link_to '特定商取引に関する表記', '#'
+    .ProductsNew__footer__logo
+      = link_to image_tag('logo-white.png'), products_path
+    .ProductsNew__footer__caption
+      %p © Furima, Inc.
