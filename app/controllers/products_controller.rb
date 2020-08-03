@@ -32,9 +32,10 @@ class ProductsController < ApplicationController
     @parent = @child.parent
     @grandchildren = @child.children
     @children = @child.parent.children
-    @photos =  @product.photos.build
-    @brand = @product.build_brand
     @prev_images = @product.photos.order(created_at: "ASC")
+    @photos =  @product.photos.build
+    @brand_name = @product.brand.name
+    @brand = @product.build_brand
   end
 
   def search_category_children
