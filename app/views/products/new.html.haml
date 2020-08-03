@@ -16,6 +16,7 @@
                 %label{class: "file-label", for: "filearea"}
                   = icon('fa', 'camera')
                   %p クリックしてファイルをアップロード
+                .ProductsNew__main__form__group__field__file-input__prevbox
 
       .ProductsNew__main__form__group
         .ProductsNew__main__form__group__field
@@ -36,7 +37,7 @@
           %span 必須
           .ProductsNew__main__form__group__field__category-input
             = product.collection_select :category_id, @parents, :id, :name, {prompt: '---'}, {id: 'category_parent'}
-        .ProductsNew__main__form__group__field#size-field
+        .ProductsNew__main__form__group__field#size-field-new
           = product.label 'サイズ', class: "field-label"
           %span 必須
           .ProductsNew__main__form__group__field__input
