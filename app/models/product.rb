@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   has_many :categories_products, dependent: :destroy
   has_many :categories, through: :categories_products
   belongs_to :brand, optional: true
-  belongs_to :seller, class_name :"User", optional: true
+  belongs_to :seller, class_name: 'User', optional: true
   belongs_to_active_hash :size
   belongs_to_active_hash :condition
   belongs_to_active_hash :postage_payer
