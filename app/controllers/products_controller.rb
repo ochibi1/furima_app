@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :find_product, only: [:show, :edit, :update]
+  before_action :find_product, only: [:show, :edit, :update, :purchase]
   before_action :adimn_seller, only: [:edit, :destroy]
 
   def index
@@ -72,7 +72,7 @@ class ProductsController < ApplicationController
   end
 
   def purchase
-
+    @deliver_address = current_user.deliver_address
   end
 
   private
