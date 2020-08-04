@@ -107,67 +107,21 @@
           %h3.title
             新規投稿商品
       .lists
-        .list
-          = link_to '#' do
+        - @products.each do |product|
+          .list
             %figure.list--img
-              = image_tag '', class: 'image__category'
+              = image_tag product.photos.first.image.url, class: 'image__category' if product.photos.present?
             .list--body
               %h3.name
-                ee
+                = link_to product.name, product_path(product)
               .content
                 %ul
                   %li
-                    1000円
+                    = "#{product.price}円"
                   %li
                     %i.fa.fa-star.likeIcon 0
                 %p
                   (税込)
-        .list
-          = link_to '#' do
-            %figure.list--img
-              = image_tag '', class: 'image__category'
-            .list--body
-              %h3.name
-                product3
-              .content
-                %ul
-                  %li
-                    30000円
-                  %li
-                    %i.fa.fa-star.likeIcon 0
-                %p
-                  (税込)
-        .list
-          = link_to '#' do
-            %figure.list--img
-              = image_tag '', class: 'image__category'
-            .list--body
-              %h3.name
-                product2
-              .content
-                %ul
-                  %li
-                    20000円
-                  %li
-                    %i.fa.fa-star.likeIcon 0
-                %p
-                  (税込)
-        .list
-          = link_to '#' do
-            %figure.list--img
-              = image_tag '', class: 'image__category'
-            .list--body
-              %h3.name
-                product1
-              .content
-                %ul
-                  %li
-                    100000円
-                  %li
-                    %i.fa.fa-star.likeIcon 1
-                %p
-                  (税込)
-
 
   %section.pickupContainer
     %h2.head
@@ -293,5 +247,3 @@
       %span.text
         出品する
       = image_tag 'icon_camera.png', class: 'camera'
-
-
