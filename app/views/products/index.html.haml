@@ -113,7 +113,7 @@
               = image_tag product.photos.first.image.url, class: 'image__category'
             .list--body
               %h3.name
-                = link_to product.name, "/products/#{product.id}"
+                = link_to product.name, product_path(product)
               .content
                 %ul
                   %li
