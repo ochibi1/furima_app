@@ -56,6 +56,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def purchase
+
+  end
+
   private
     def product_params
       params.require(:product).permit(:name, :introduction, :size_id,
