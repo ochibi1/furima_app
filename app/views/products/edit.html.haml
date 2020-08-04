@@ -17,6 +17,10 @@
                   = icon('fa', 'camera')
                   %p クリックしてファイルをアップロード
                 .ProductsNew__main__form__group__field__file-input__prevbox
+                  - @prev_images.each do |prev_image|
+                    .ProductsNew__main__form__group__field__file-input__prevbox__image
+                      = image_tag prev_image.image.url
+                      %p 削除
 
       .ProductsNew__main__form__group
         .ProductsNew__main__form__group__field
@@ -36,8 +40,10 @@
           = product.label 'カテゴリー', class: "field-label"
           %span 必須
           .ProductsNew__main__form__group__field__category-input
-            = product.collection_select :category_id, @parents, :id, :name, {prompt: '---'}, {id: 'category_parent'}
-        .ProductsNew__main__form__group__field#size-field-new
+            = product.collection_select :category_id, @parents, :id, :name, { selected: @parent.id, prompt: '---' }, { id: 'category_parent' }
+            = product.collection_select :category_id, @children, :id, :name, { selected: @child.id, prompt: '---' }, { id: 'category_child' }
+            = product.collection_select :category_id, @grandchildren, :id, :name, { selected: @grandchild.id, prompt: '---' }, { id: 'category_grandchild' }
+        .ProductsNew__main__form__group__field#size-field-edit
           = product.label 'サイズ', class: "field-label"
           %span 必須
           .ProductsNew__main__form__group__field__input
@@ -47,7 +53,7 @@
             = brand.label "ブランド", class: "field-label"
             %span.optional 任意
             .ProductsNew__main__form__group__field__input
-              = brand.text_field :name, placeholder: '例) シャネル'
+              = brand.text_field :name, value: @brand_name, placeholder: '例) シャネル'
         .ProductsNew__main__form__group__field
           = product.label '商品の状態', class: "field-label"
           %span 必須
@@ -88,7 +94,7 @@
                 = product.number_field :price, placeholder: "0"
           .ProductsNew__main__form__group__field
             .ProductsNew__main__form__group__field__button
-              = product.submit '出品する'
+              = product.submit '更新する'
           .ProductsNew__main__form__group__field__link
             = link_to 'もどる', '#'
   .ProductsNew__footer
