@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: :new
   before_action :find_product, only: [:show, :edit, :update]
+  before_action :adimn_seller, only: [:edit, :destroy]
 
   def index
     @products = Product.includes(:photos).order(created_at: :desc).limit(4)
@@ -17,18 +18,12 @@ class ProductsController < ApplicationController
   end
   
   def edit 
-    unless current_user.id == @product.seller_id
-      redirect_to product_path
-    end
   end
   
   def update
   end
 
   def destroy
-    unless current_user.id == @product.seller_id
-      redirect_to product_path
-    end
   end
 
   def create
@@ -75,5 +70,11 @@ class ProductsController < ApplicationController
 
     def find_product
       @product = Product.find(params[:id])
+    end
+
+    def adimn_seller
+      unless current_user.id == @product.seller_id
+        redirect_to product_path
+      end
     end
 end
