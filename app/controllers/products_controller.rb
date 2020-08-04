@@ -1,7 +1,10 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: :new
+  before_action :find_product, only: [:show, :edit, :update]
 
   def index
+    @products = Product.includes(:photos).order(created_at: :desc)
+    @photo = Photo.all.order(created_at: :desc).limit(4)
   end
 
   def new
@@ -9,6 +12,24 @@ class ProductsController < ApplicationController
     @parents = Category.where(ancestry: nil).order(id: "ASC")
     @photos =  @product.photos.build
     @brand = @product.build_brand
+  end
+
+  def show
+  end
+  
+  def edit 
+    if current_user != @product.seller
+      redirect_to product_path
+    end
+  end
+  
+  def update
+  end
+
+  def destory
+    if current_user != @product.seller
+      redirect_to product_path
+    end
   end
 
   def create
@@ -51,5 +72,9 @@ class ProductsController < ApplicationController
                                       photos_attributes:[:image, :product_id],
                                       brand_attributes:[:name]
       ).merge(seller_id: current_user.id)
+    end
+
+    def find_product
+      @product = Product.find_by(id: params[:id])
     end
 end
