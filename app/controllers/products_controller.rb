@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.includes(:photos).order(created_at: :desc)
-    @photo = Photo.all.order(created_at: :desc).limit(4)
   end
 
   def new
