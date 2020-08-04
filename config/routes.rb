@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'users/logout'
   get 'products/search_category_children'
   get 'products/search_category_grandchildren'
+  get 'products/purchase'
   resources :users
   resources :credit_cards
   resources :brands, only: [:create]
