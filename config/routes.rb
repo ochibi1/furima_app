@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   resources :credit_cards
   resources :brands, only: [:create]
   resources :products do 
+    collection do
+      get  'purchase/:id' => 'products#purchase', as: 'purchase'
+    end
     resources :comments
   end
 end
