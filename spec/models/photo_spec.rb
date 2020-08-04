@@ -41,7 +41,7 @@ describe Photo do
     it "is invalid a photo that has more than 11 photo" do
       photo = build(:photo, image: [image, image, image, image, image, image, image, image, image, image,image,])
       photo.valid?
-      expect(photo.errors[:image]).to include("は10枚以内で入力してください")
+      expect(photo.errors[:image]).to include("は10より小さい値にしてください")
     end
   end
 end
