@@ -10,7 +10,7 @@ describe Product do
     it "is invalid without a name" do
       product = build(:product, name: "")
       product.valid?
-      expect(product.errors[:name]).to include("を入力してください")
+      expect(product.errors[:name]).to include( "を入力してください" )
     end
 
     it "is invalid without a introduction" do
@@ -69,6 +69,39 @@ describe Product do
     end
 
 
+    it " is valid with a introduction that has less than 1000 characters" do
+      product = build(:product, introduction: "a"*1000 )
+      expect(product).to be_valid
+    end
+
+    it " is invalid with a introduction that has more than 1001characters" do
+      product = build(:product, introduction: "a"*1001 )
+      product.valid?
+      expect(product.errors[:introduction]).to include("は1000文字以内で入力してください")
+    end
+  
+    it " is valid with a name that has less than 40 characters" do
+      product = build(:product, name: "a"*40)
+      expect(product).to be_valid
+    end
+
+    it " is invalid with a name that has more than 41characters" do
+      product = build(:product, name: "a"*42 )
+      product.valid?
+      expect(product.errors[:name]).to include("は40文字以内で入力してください")
+    end
+ 
+    it "is invalid with a price that has less than 299characters " do
+      product = build(:product, price: 299)
+      product.valid?
+      expect(product.errors[:price]).to include("は300以上の値にしてください")
+    end
+    
+    it "is invalid with price that has more than 9999999characters " do
+      product = build(:product, price: 99999999)
+      product.valid?
+      expect(product.errors[:price]).to include("は9999999以下の値にしてください")
+    end
   end
 
   describe "#update" do
