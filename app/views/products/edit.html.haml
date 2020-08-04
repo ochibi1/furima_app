@@ -1,5 +1,5 @@
 .ProductsNew
-  .ProductsNew__header
+  %header.ProductsNew__header
     = link_to image_tag('logo.png'), products_path
   .ProductsNew__main
     = form_with model: @product, url: products_path, class: "ProductsNew__main__form", local: true do |product|
@@ -97,7 +97,7 @@
               = product.submit '更新する'
           .ProductsNew__main__form__group__field__link
             = link_to 'もどる', '#'
-  .ProductsNew__footer
+  %footer.ProductsNew__footer
     .ProductsNew__footer__links
       %ul
         %li
