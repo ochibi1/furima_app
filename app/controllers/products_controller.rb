@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   end
   
   def edit 
-    if current_user != @product.seller
+    unless current_user.id == @product.seller_id
       redirect_to product_path
     end
   end
@@ -25,8 +25,8 @@ class ProductsController < ApplicationController
   def update
   end
 
-  def destory
-    if current_user != @product.seller
+  def destroy
+    unless current_user.id == @product.seller_id
       redirect_to product_path
     end
   end
