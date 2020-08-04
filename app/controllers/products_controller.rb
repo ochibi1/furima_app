@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [:show, :edit, :update]
 
   def index
-    @products = Product.includes(:photos).order(created_at: :desc)
+    @products = Product.includes(:photos).order(created_at: :desc).limit(4)
   end
 
   def new
