@@ -110,7 +110,7 @@
         - @products.each do |product|
           .list
             %figure.list--img
-              = image_tag product.photos.first.image.url, class: 'image__category'
+              = image_tag product.photos.first.image.url, class: 'image__category' if product.photos.present?
             .list--body
               %h3.name
                 = link_to product.name, product_path(product)
