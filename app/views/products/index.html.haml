@@ -110,8 +110,7 @@
         - @products.each do |product|
           .list
             %figure.list--img
-              - product.photos.first(1).each do |photo|
-                = image_tag asset_path("#{photo.image}"), class: 'image__category'
+              = image_tag product.photos.first.image.url, class: 'image__category'
             .list--body
               %h3.name
                 = link_to product.name, "/products/#{product.id}"
