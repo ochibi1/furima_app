@@ -33,15 +33,5 @@ describe Photo do
       expect(photo).to be_valid
     end
 
-    it "is valid with 10 photos" do
-      photo = build(:photo, image: [image, image, image, image, image, image, image, image, image, image, ])
-      expect(photo).to be_valid
-    end
-
-    it "is invalid a photo that has more than 11 photo" do
-      photo = build(:photo, image: [image, image, image, image, image, image, image, image, image, image,image,])
-      photo.valid?
-      expect(photo.errors[:image]).to include("は10より小さい値にしてください")
-    end
   end
 end
