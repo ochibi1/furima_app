@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :adimn_seller, only: [:edit, :destroy]
 
   def index
-    @products = Product.includes(:photos).order(created_at: :desc).limit(4)
+    @products = Product.includes(:photos).order(created_at: :desc).first(5)
   end
 
   def new
