@@ -4,6 +4,7 @@ class CreditCardsController < ApplicationController
   require "payjp"
 
   def new
+    @card = CreditCard.new
     card = CreditCard.where(user: current_user.id)
     redirect_to credit_card_path if card.exists?
   end
@@ -14,7 +15,6 @@ class CreditCardsController < ApplicationController
   def create
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     if params['payjp-token'].blank?
-      binding.pry
       redirect_to new_credit_card_path
     else
       customer = Payjp::Customer.create(
