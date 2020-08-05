@@ -4,6 +4,9 @@ class ProductsController < ApplicationController
   def index
   end
 
+  def show
+  end
+
   def new
     @product = Product.new
     @parents = Category.where(ancestry: nil).order(id: "ASC")
