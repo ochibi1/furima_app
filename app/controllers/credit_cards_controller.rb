@@ -11,7 +11,7 @@ class CreditCardsController < ApplicationController
   def edit
   end
 
-  def pay
+  def create
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     if params['payjp-token'].blank?
       redirect_to new_credit_card_path
@@ -26,7 +26,7 @@ class CreditCardsController < ApplicationController
       if @card.save
         redirect_to  credit_card_path
       else
-        redirect_to action: "pay"
+        redirect_to action: "create"
       end
     end
   end
