@@ -14,7 +14,7 @@
             %label.card__info 有効期限
             %span.notify 必須
             %br
-            %select#exp_month{name: "exp_month", type: "text", class: "input_half"}
+            %select#exp_month{name: "exp_month", type: "text", class: "input_half", id: "exp_month"}
               %option{value: ""} -----
               %option{value: "1"}01
               %option{value: "2"}02
@@ -29,7 +29,7 @@
               %option{value: "11"}11
               %option{value: "12"}12
             %span 月
-            %select#exp_year{name: "exp_year", type: "text",  class: "input_half"}
+            %select#exp_year{name: "exp_year", type: "text",  class: "input_half", id: "exp_year"}
               %option{value: ""} -----
               %option{value: "2020"}20
               %option{value: "2021"}21
