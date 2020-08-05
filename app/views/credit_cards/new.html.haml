@@ -2,13 +2,13 @@
   .SignupCard__box
     .SignupCard__box__body
       %h2.SignupCard__box__body__title カード情報入力
-      = form_with model: @credit_card, url: credit_cards_path, class: "SignupCard__box__body__input", method: :post, local: true do |f|
+      = form_with model: @card, id: 'card_token', url: credit_cards_path, class: "SignupCard__box__body__input", method: :post, local: true do |f|
         .SignupCard__box__body__input__form
           .SignupCard__box__body__input__form__content
             %label.card__info カード番号
             %span.notify 必須
             %br
-            = f.text_field :credit_card, class: "input", size: "16", placeholder: "半角数字のみ"
+            = f.text_field :credit_card, class: "input", size: "16", placeholder: "半角数字のみ", id: "card_number"
         .SignupCard__box__body__input__form
           .SignupCard__box__body__input__form__content
             %label.card__info 有効期限
@@ -48,5 +48,6 @@
             %span.notify 必須
             %br
             = text_field "cvc", "", class: "input", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-            #card_token
-            = f.submit 'カードを登録する', class: "SignUp-btn", url: credit_cards_path
+        .SignupCard__box__body__input__form
+          .SignupCard__box__body__input__form__content
+            = f.submit 'カードを登録する', class: "SignUp-btn", id: "token_submit"
