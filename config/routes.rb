@@ -12,7 +12,13 @@ Rails.application.routes.draw do
   get 'products/search_category_children'
   get 'products/search_category_grandchildren'
   resources :users
-  resources :credit_cards
+  resources :credit_cards do
+    collection do 
+      post 'show', to: 'credit_cards#show'
+      post 'create', to: 'credit_cards#create'
+      post 'delete', to: 'credit_cards#delete'
+    end
+  end
   resources :brands, only: [:create]
   resources :products do 
     resources :comments
