@@ -8,13 +8,21 @@ Rails.application.routes.draw do
     post 'deliver_addresses', to: 'users/registrations#create_deliver_address'
   end
   root 'users#show'
-  get 'users/logout'
-  get 'products/search_category_children'
-  get 'products/search_category_grandchildren'
-  resources :users
+  resources :users do
+    collection do
+      get 'logout'
+    end
+  end
   resources :credit_cards
   resources :brands, only: [:create]
   resources :products do 
+    member do
+     get 'purchase' 
+    end
+    collection do
+      get 'search_category_children'
+      get 'search_category_grandchildren'
+    end
     resources :comments
   end
 end
