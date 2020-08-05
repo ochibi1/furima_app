@@ -145,6 +145,21 @@
                   %p
                     (税込)
 
+  = render partial: "shared/header"
+
+-# .nav パンくず機能実装の場合必要になるdiv要素
+
+.main 
+  = @product.name
+  .product__info
+    %h2.product__info__price
+      出品商品の値段
+    %h2.product__info__table
+      出品商品の情報詳細（出品者・カテゴリ・ブランド・サイズ・商品状態・配送料負担・地域・発送準備日数）
+    %h2.product__info__options
+      お気に入り数
+    %h2.product__info__comment
+      コメント
 
 
 .appbar
@@ -193,6 +208,7 @@
     = link_to '#', class: 'logo' do
       = image_tag "logo-white.png"
   %p ©  FURIMA
+
 
 .exhibition
   = link_to "#", class:'link' do

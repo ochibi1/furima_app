@@ -5,6 +5,9 @@ class Product < ApplicationRecord
             :postage_payer_id, :prefecture_code, :prep_date_id,
             :price, :trading_status, :seller_id,
             :photos, presence: true
+  validates :name, length: { maximum: 40}
+  validates :introduction, length: { maximum: 1000}
+  validates :price, numericality: { only_integer:true, greater_than_or_equal_to:300, less_than_or_equal_to:9999999}
   has_many :photos, dependent: :destroy
   belongs_to :brand, optional: true
   belongs_to :seller, class_name: 'User', optional: true
