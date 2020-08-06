@@ -4,13 +4,10 @@
   background-color: $color_item2;
   &__show{
     padding: 40px;
-    margin: auto;
+    margin: 0 auto;
     .contents{
       width: 700px;
       margin: auto;
-      &__cont{
-        margin: 0;
-        padding: 0;
         .itemBox{
           background-color: $color_item1;
           padding: 24px 40px 40px 40px;
@@ -193,4 +190,3 @@
       }
     }
   }
-}
