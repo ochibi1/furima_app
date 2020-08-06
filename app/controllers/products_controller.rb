@@ -58,12 +58,12 @@ class ProductsController < ApplicationController
         render :edit and return
       end
     else
-      unless @product.brand.nil?
-        @product.brand.destroy
-        @product.brand_id = nil
-      end
       params[:product].delete(:brand_attributes)
       if @product.update(product_params)
+        unless @product.brand.nil?
+          @product.brand.destroy
+          @product.update_attribute(:brand_id, nil)
+        end
         redirect_to user_path(current_user)
       else
         flash.now[:alert] = @product.errors.full_messages
