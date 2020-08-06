@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :adimn_seller, only: [:edit, :destroy]
 
   def index
-    @products = Product.includes(:photos).order(created_at: :desc).first(5)
+    @products = Product.includes(:photos).order(created_at: :desc).limit(5)
   end
 
   def show
@@ -31,6 +31,9 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    unless @product.brand.valid?
+      @product.brand.destroy
+    end
     unless @product.valid?
       flash.now[:alert] = @product.errors.full_messages
       @parents = Category.where(ancestry: nil).order(id: "ASC")
