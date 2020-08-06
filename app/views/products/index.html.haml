@@ -1,5 +1,4 @@
-
-.header
+%header.header-index
   = render 'shared/header'
 
 .main
@@ -99,99 +98,50 @@
 
 
   %section.pickupContainer
-    %h2.head
-      ピックアップカテゴリー
-    .box
-      .head
-        = link_to '#' do
-          %h3.title
-            新規投稿商品
-      .lists
+    .pickupContainer__group
+      .pickupContainer__group__title
+        %h2 ピックアップカテゴリー
+        %p 新規投稿商品
+      .pickupContainer__group__field
         - @products.each do |product|
-          .list
-            %figure.list--img
-              = image_tag product.photos.first.image.url, class: 'image__category' if product.photos.present?
-            .list--body
-              %h3.name
-                = link_to product.name, product_path(product)
-              .content
-                %ul
-                  %li
-                    = "#{product.price}円"
-                  %li
-                    %i.fa.fa-star.likeIcon 0
+          .pickupContainer__group__field__product
+            = link_to '', product_path(product), class: ".pickupContainer__group__field__product__link"
+            .pickupContainer__group__field__product__img
+              - if product.photos.present?
+                = image_tag product.photos.first.image.url
+              - else
+                = image_tag 'member_photo_noimage_thumb.png'
+            .pickupContainer__group__field__product__info
+              %p
+                = product.name
+              .pickupContainer__group__field__product__info__price
                 %p
-                  (税込)
+                  = "#{product.price}円"
+                %p
+                  = icon('fa', 'star')
+                  1
+              %p.tax (税込)
 
-  %section.pickupContainer
-    %h2.head
-      ピックアップブランド
-    .box
-      .head
-        = link_to '#' do
-          %h3.title
-            アーカイバ
-      .lists
-        .list
-          = link_to '#' do
-            %figure.list--img
-              = image_tag '', class: 'image__category'
-            .list--body
-              %h3.name
-                ee
-              .content
-                %ul
-                  %li
-                    1000円
-                  %li
-                    %i.fa.fa-star.likeIcon 0
+    .pickupContainer__group
+      .pickupContainer__group__title
+        %h2 ピックアップブランド
+        %p アーカイバ
+      .pickupContainer__group__field
+        - @products.each do |product|
+          .pickupContainer__group__field__product
+            = link_to '', product_path(product), class: ".pickupContainer__group__field__product__link"
+            .pickupContainer__group__field__product__img
+              = image_tag product.photos.first.image.url
+            .pickupContainer__group__field__product__info
+              %p
+                = product.name
+              .pickupContainer__group__field__product__info__price
                 %p
-                  (税込)
-        .list
-          = link_to '#' do
-            %figure.list--img
-              = image_tag '', class: 'image__category'
-            .list--body
-              %h3.name
-                product3
-              .content
-                %ul
-                  %li
-                    30000円
-                  %li
-                    %i.fa.fa-star.likeIcon 0
+                  = "#{product.price}円"
                 %p
-                  (税込)
-        .list
-          = link_to '#' do
-            %figure.list--img
-              = image_tag '', class: 'image__category'
-            .list--body
-              %h3.name
-                product2
-              .content
-                %ul
-                  %li
-                    20000円
-                  %li
-                    %i.fa.fa-star.likeIcon 0
-                %p
-                  (税込)
-        .list
-          = link_to '#' do
-            %figure.list--img
-              = image_tag '', class: 'image__category'
-            .list--body
-              %h3.name
-                product1
-              .content
-                %ul
-                  %li
-                    100000円
-                  %li
-                    %i.fa.fa-star.likeIcon 1
-                %p 
-                  (税込)
+                  = icon('fa', 'star')
+                  1
+              %p.tax (税込)
 
 .appbar
   .content

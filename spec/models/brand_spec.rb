@@ -1,5 +1,14 @@
 require 'rails_helper'
-
-RSpec.describe Brand, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Brand do
+  describe "#create" do
+    it "is valid with a name" do
+      brand = build(:brand)
+      expect(brand).to be_valid
+    end
+    it "is invalid without a name" do
+      brand = build(:brand, name: "")
+      brand.valid?
+      expect(brand.errors[:name]).to include( "を入力してください" )
+    end
+  end
 end

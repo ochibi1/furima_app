@@ -1,19 +1,19 @@
 .serch-header
-  .headermain
-    .header-list
-      .icon
+  .serch-header__headermain
+    .serch-header__headermain__header-list
+      .serch-header__headermain__header-list__icon
         = link_to products_path, class: 'logo' do
           = image_tag "logo.png"
-      .searchBox
-        = form_with(url: "#", local: true, method: :get, class: "form") do |form|
+      .serch-header__headermain__header-list__searchBox
+        = form_with(url: "#", local: true, method: :get) do |form|
           = form.text_field :keyword, placeholder: "キーワードから探す", class: "searchBox-input"
         %button{type: "submit"}
           .search-btn
             = image_tag ("icon-search 1.png")
-    .nav
+    .serch-header__headermain__nav
       %ul.left-items
-        %li.left-itemA
-          = link_to "カテゴリー", "#" , class: 'category-btn' 
+        %li.left-item
+          = link_to "カテゴリー", "#" , class: 'item-btn' 
           %ul
             %li
               = link_to "レディース" , "#"
@@ -21,42 +21,6 @@
                 %li
                   = link_to "トップス" , "#"
                   %ul
-                    %li
-                      = link_to "Tシャツ/カットソー(半袖/袖なし)" , "#"
-                    %li
-                      = link_to "Tシャツ/カットソー(七分/長袖)" , "#"
-                    %li
-                      = link_to "シャツ/ブラウス(半袖/袖なし)" , "#"
-                    %li
-                      = link_to "シャツ/ブラウス(七部/長袖)" , "#"
-                    %li
-                      = link_to "ポロシャツ" , "#"
-                    %li
-                      = link_to "キャミソール" , "#"
-                    %li
-                      = link_to "タンクトップ" , "#"
-                    %li
-                      = link_to "ホルターネック" , "#"
-                    %li
-                      = link_to "ニット/セーター" , "#"
-                    %li
-                      = link_to "チュニック" , "#"
-                    %li
-                      = link_to "カーディガン/ボレロ" , "#"
-                    %li
-                      = link_to "アンサブル" , "#"
-                    %li
-                      = link_to "ベスト/ジレ" , "#"
-                    %li
-                      = link_to "パーカー" , "#"
-                    %li
-                      = link_to "トレーナー/スウェット" , "#"
-                    %li
-                      = link_to "ベアトップ/チューブトップ" , "#"
-                    %li
-                      = link_to "ジャージ" , "#"
-                    %li
-                      = link_to "その他" , "#"
                     %li
                       = link_to "Tシャツ/カットソー(半袖/袖なし)" , "#"
                     %li
@@ -138,75 +102,9 @@
                       = link_to "スカジャン" , "#"
                     %li
                       = link_to "その他" , "#"
-                    %li
-                      = link_to "テーラードジャケット" , "#"
-                    %li
-                      = link_to "ノーカラージャケット" , "#"
-                    %li
-                      = link_to "Gジャン/デニム" , "#"
-                    %li
-                      = link_to "レザージャケット" , "#"
-                    %li
-                      = link_to "ダウンジャケット" , "#"
-                    %li
-                      = link_to "ライダースジャケット" , "#"
-                    %li
-                      = link_to "ミリタリージャケット" , "#"
-                    %li
-                      = link_to "ダウンベスト" , "#"
-                    %li
-                      = link_to "ジャンパー/ブルゾン" , "#"
-                    %li
-                      = link_to "ポンチョ" , "#"
-                    %li
-                      = link_to "ロングコート" , "#"
-                    %li
-                      = link_to "トレンチコート" , "#"
-                    %li
-                      = link_to "ダッフルコート" , "#"
-                    %li
-                      = link_to "ピーコート" , "#"
-                    %li
-                      = link_to "チェスターコート" , "#"
-                    %li
-                      = link_to "モッズコート" , "#"
-                    %li
-                      = link_to "スタジャン" , "#"
-                    %li
-                      = link_to "毛皮/ファーコート" , "#"
-                    %li
-                      = link_to "スプリングコード" , "#"
-                    %li
-                      = link_to "スカジャン" , "#"
-                    %li
-                      = link_to "その他" , "#"
                 %li
                   = link_to "パンツ" , "#"
                   %ul
-                    %li
-                      = link_to "デニム/ジーンズ" , "#"
-                    %li
-                      = link_to "ショートパンツ" , "#"
-                    %li
-                      = link_to "カジュアルパンツ" , "#"
-                    %li
-                      = link_to "ハーフパンツ" , "#"
-                    %li
-                      = link_to "チノパン" , "#"
-                    %li
-                      = link_to "ワークパンツ/カーゴパンツ" , "#"
-                    %li
-                      = link_to "クロップドパンツ" , "#"
-                    %li
-                      = link_to "サロペット/オーバーオール" , "#"
-                    %li
-                      = link_to "オールインワン" , "#"
-                    %li
-                      = link_to "サルエルパンツ" , "#"
-                    %li
-                      = link_to "ガウチョパンツ" , "#"
-                    %li
-                      = link_to "その他" , "#"
                     %li
                       = link_to "デニム/ジーンズ" , "#"
                     %li
@@ -1795,6 +1693,7 @@
                       = link_to "パチンコ/スロット" , "#" 
                     %li
                       = link_to "その他" , "#" 
+          %ul
             %li
               = link_to "コスメ・香水・美容" , "#" 
               %ul
@@ -2186,6 +2085,7 @@
                       = link_to "衣類乾燥機" , "#" 
                     %li
                       = link_to "その他" , "#" 
+              %ul
                 %li
                   = link_to "その他" , "#" 
                   %ul
@@ -2939,13 +2839,21 @@
                       = link_to "その他" , "#"
                 %li
                   = link_to "その他" , "#"
-      .left-itemB
-        = link_to "ブランド" , "#"
+        %li.left-item
+          = link_to "ブランド", "#", class: "item-btn"
+          - Brand.all.each do |brand|
+            - unless brand.name.empty?
+              %ul
+                %li
+                  = link_to "#{brand.name}" , "#"
       %ul.right-items
-        %li.right-item-log
-          - if user_signed_in?
-            = link_to "ログアウト", "users/sign_out"
-          - else 
-            = link_to "ログイン" , "users/sign_in"
-        %li.right-item-new
-          = link_to "新規会員登録" , "users/sign_up"
+        - if user_signed_in?
+          %li.right-item-log
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+          %li.right-item-new
+            = link_to "マイページ" , user_path(current_user)
+        - else 
+          %li.right-item-log
+            = link_to "ログイン" , new_user_session_path
+          %li.right-item-new
+            = link_to "新規会員登録" , new_user_registration_path
