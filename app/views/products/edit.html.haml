@@ -53,7 +53,10 @@
             = brand.label "ブランド", class: "field-label"
             %span.optional 任意
             .ProductsNew__main__form__group__field__input
-              = brand.text_field :name, value: @brand_name, placeholder: '例) シャネル'
+              - if @brand_name
+                = brand.text_field :name, value: @brand_name, placeholder: '例) シャネル'
+              - else
+                = brand.text_field :name, placeholder: '例) シャネル'
         .ProductsNew__main__form__group__field
           = product.label '商品の状態', class: "field-label"
           %span 必須

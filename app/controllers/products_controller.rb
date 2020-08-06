@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
     @children = @parent.children
     @prev_images = @product.photos.order(created_at: "ASC")
     @photos =  @product.photos.build
-    @brand_name = @product.brand.name
+    @brand_name = @product.brand.name unless @product.brand_id.nil?
     @brand = @product.build_brand
   end
 
