@@ -2,7 +2,7 @@
   %header.ProductsNew__header
     = link_to image_tag('logo.png'), products_path
   .ProductsNew__main
-    = form_with model: @product, url: products_path, class: "ProductsNew__main__form", local: true do |product|
+    = form_with model: @product, url: product_path(@product), class: "ProductsNew__main__form", local: true do |product|
       = render 'devise/shared/error_messages', resource: @product
       .ProductsNew__main__form__group
         = product.fields_for :photos, @photos do |photo|
