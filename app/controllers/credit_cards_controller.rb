@@ -6,7 +6,7 @@ class CreditCardsController < ApplicationController
   def new
     @card = CreditCard.new
     card = CreditCard.where(user: current_user.id)
-    redirect_to credit_card_path if card.exists?
+    redirect_to credit_cards_path if card.exists?
   end
 
   def edit

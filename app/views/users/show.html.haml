@@ -10,7 +10,7 @@
         = link_to "#",class: "ItemLeft__profile" do
           プロフィール
       %li.ItemLeft
-        = link_to credit_cards_path, method: :post, class: "ItemLeft__credit" do
+        = link_to new_credit_card_path, method: :get, class: "ItemLeft__credit" do
           クレジットカードの登録
       %li.ItemLeft
         = link_to destroy_user_session_path, method: :delete, class: "ItemLeft__logout" do
