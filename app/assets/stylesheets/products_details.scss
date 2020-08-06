@@ -150,44 +150,43 @@
         }
         .productLists{
           display: flex;
-        }
-        .productList{
-          margin-bottom: 10px;
-          width: calc(100% / 3);
-          &__link{
-            display: block;
-            margin: 24px 0 8px 0;
-            &__img{
-              width: 220px;
-              height: 150px;
-              margin: 0;
-              .imges{
-                width: 100%;
+          .productList{
+            margin-bottom: 10px;
+            width: calc(100% / 3);
+            &__link{
+              display: block;
+              margin: 24px 0 8px 0;
+              text-decoration: none;
+              &__img{
+                width: 220px;
                 height: 150px;
+                margin: 0;
+                .imges{
+                  width: 100%;
+                  height: 150px;
+                }
               }
             }
-          }
-          &__body{
-            background-color: $color_item1;
-            color: $color_item5;
-            padding: 16px;
-            width: 220px;
-            h3{
-              line-height: 1.5;
-              font-size: 16px;
-              text-decoration: none;
-            }
-            .datails{
-              font-size: 16px;
-            }
-            .datails ul{
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-            }
-            .datails p{
-              font-size: 10px;
-              text-decoration: none;
+            &__body{
+              background-color: $color_item1;
+              color: $color_item5;
+              padding: 16px;
+              width: 220px;
+              h3{
+                line-height: 1.5;
+                font-size: 16px;
+              }
+              .datails{
+                font-size: 16px;
+              }
+              .datails ul{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              }
+              .datails p{
+                font-size: 10px;
+              }
             }
           }
         }
