@@ -125,11 +125,9 @@
       .links{
         height: 24px;
         font-weight: bold;
-        .before{
-          float: left;
-        }
-        .after{
-          float: right;
+        .linksPage{
+          display: flex;
+          justify-content: space-between;
         }
         &__next{
           color: $color_item3;
