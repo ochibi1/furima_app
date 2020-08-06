@@ -16,9 +16,6 @@ class ProductsController < ApplicationController
     @photos =  @product.photos.build
     @brand = @product.build_brand
   end
-
-  def show
-  end
   
   def edit 
   end

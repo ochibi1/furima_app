@@ -2,13 +2,13 @@
 
 .main{
   background-color: $color_item2;
-  .showMain{
+  &__show{
     padding: 40px;
     margin: auto;
     .contents{
       width: 700px;
       margin: auto;
-      .content{
+      &__cont{
         margin: 0;
         padding: 0;
         .itemBox{
