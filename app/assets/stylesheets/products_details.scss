@@ -68,18 +68,18 @@
               }
             }
           }
-          .optionalArea{
+          .anyArea{
             display: flex;
             justify-content: space-between;
-            .optional{
+            .any{
               margin-top: 10px;
-              .optionalBtn{
+              .anyBtn{
                 padding: 6px 10px;
                 border-radius: 40px;
                 border: 1px solid #ffb340;
                 color: $color_item3;
               }
-              .optionalBtn-risk{
+              .anyBtn-risk{
                 font-size: 14px;
                 .riskLink{
                   display: inline-block;
