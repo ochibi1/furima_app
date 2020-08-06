@@ -14,6 +14,10 @@
       お気に入り数
     %h2.product__info__comment
       コメント
+    %h2.product__info__delate
+      - if user_signed_in? && current_user.id == @product.seller_id
+        = link_to product_path(@product), method: :delete, class: "destory" do
+          商品を削除する
 
 
 .appbar
