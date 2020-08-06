@@ -62,7 +62,6 @@ class ProductsController < ApplicationController
         @product.brand.destroy
         @product.brand_id = nil
       end
-      binding.pry
       params[:product].delete(:brand_attributes)
       if @product.update(product_params)
         redirect_to user_path(current_user)
