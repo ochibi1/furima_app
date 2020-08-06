@@ -16,12 +16,6 @@ class ProductsController < ApplicationController
 
   def show
   end
-  
-  def edit 
-  end
-  
-  def update
-  end
 
   def destroy
   end
@@ -40,6 +34,29 @@ class ProductsController < ApplicationController
     end
     @product.save
     redirect_to user_path(current_user)
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    unless @product.valid?
+      flash.now[:alert] = @product.errors.full_messages
+      @parents = Category.where(ancestry: nil).order(id: "ASC")
+      @photos =  @product.photos.build
+      @brand = @product.build_brand
+      render :new and return
+    end
+    unless params[:product][:brand_attributes][:name].empty?
+      binding.pry
+      # @brand_name = params[:product][:brand_attributes][:name]
+      # @brand = @product.build_brand(name: @brand_name)
+      @brand = Brand.new(name: params[:product][:brand_attributes][:name])
+      @brand.save
+      @product.update(product_params)
+      redirect_to user_path(current_user)
+    else
+      @product.update(product_params)
+      redirect_to user_path(current_user)
+    end
   end
 
   def edit
