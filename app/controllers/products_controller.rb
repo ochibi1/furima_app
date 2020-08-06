@@ -46,12 +46,10 @@ class ProductsController < ApplicationController
       render :new and return
     end
     unless params[:product][:brand_attributes][:name].empty?
-      binding.pry
       # @brand_name = params[:product][:brand_attributes][:name]
       # @brand = @product.build_brand(name: @brand_name)
-      @brand = Brand.new(name: params[:product][:brand_attributes][:name])
-      @brand.save
       @product.update(product_params)
+      binding.pry
       redirect_to user_path(current_user)
     else
       @product.update(product_params)
