@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :find_product, only: [:show, :edit, :update, :purchase]
+  before_action :find_product, only: [:show, :edit, :update, :purchase, :destroy]
   before_action :adimn_seller, only: [:edit, :destroy]
 
   def index
@@ -91,9 +91,9 @@ class ProductsController < ApplicationController
       :customer => @card.customer_id,
       :currency => 'jpy',
     )
-    redirect_to root_path
+    redirect_to paid_products_path
   end
-  
+
   private
     def product_params
       params.require(:product).permit(:name, :introduction, :size_id,
