@@ -11,18 +11,6 @@ class CreditCardsController < ApplicationController
   
   def edit
   end
-  
-  def pay
-    Payjp.api_key = Rails.application.credentials[:payjp][:PAYJP_PRIVATE_KEY]
-    @card = CreditCard.find_by(user_id: current_user.id)
-    @product.update(buyer_id: current_user.id)
-    Payjp::Charge.create(
-      :amount => @product.price, 
-      :customer => @card.customer_id,
-      :currency => 'jpy',
-    )
-    redirect_to purchase_products_path(@product.id)
-  end
 
   def create
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']

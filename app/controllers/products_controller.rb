@@ -81,6 +81,19 @@ class ProductsController < ApplicationController
     @card_information = @customer.cards.retrieve(@card.card_id)
   end
 
+  def pay
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    @card = CreditCard.find_by(user_id: current_user.id)
+    @product = Product.find(params[:id])
+    @product.update(buyer_id: current_user.id)
+    Payjp::Charge.create(
+      :amount => @product.price, 
+      :customer => @card.customer_id,
+      :currency => 'jpy',
+    )
+    redirect_to root_path
+  end
+  
   private
     def product_params
       params.require(:product).permit(:name, :introduction, :size_id,
