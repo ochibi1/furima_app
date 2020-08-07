@@ -107,10 +107,10 @@
           .pickupContainer__group__field__product
             = link_to '', product_path(product), class: ".pickupContainer__group__field__product__link"
             .pickupContainer__group__field__product__img
-              - if product.photos.present?
-                = image_tag product.photos.first.image.url
-              - else
-                = image_tag 'member_photo_noimage_thumb.png'
+              = image_tag product.photos.first.image.url
+              -if product.buyer_id.present? 
+                .pickupContainer__group__field__product__sold
+                  .pickupContainer__group__field__product__sold__inner SOLD
             .pickupContainer__group__field__product__info
               %p
                 = product.name
