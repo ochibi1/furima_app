@@ -77,9 +77,13 @@
           %p
             = "#{@deliver_address.destination_family_name} #{@deliver_address.destination_first_name}"
     .ProductsPurchase__main__button-group
-      %p 支払い方法の入力を完了してください。
+      - if @card.blank?
+        %p 支払い方法の入力を完了してください。
       .ProductsPurchase__main__button-group__field
-        %button 購入する
+        - if @product.buyer_id.present?
+          = link_to '売り切れました', pay_product_path, class: "disabled-button"
+        - else 
+          = link_to '購入する', pay_product_path, class: "button"
   %footer.ProductsNew__footer
     .ProductsNew__footer__links
       %ul
