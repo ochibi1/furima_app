@@ -5,11 +5,23 @@ class CreditCardsController < ApplicationController
 
   def new
     @card = CreditCard.new
-    card = CreditCard.where(user: current_user.id)
-    redirect_to credit_cards_path if card.exists?
+    card = CreditCard.where(id: params[current_user.id])
+    redirect_to credit_card_path if card.exists?
   end
-
+  
   def edit
+  end
+  
+  def pay
+    Payjp.api_key = Rails.application.credentials[:payjp][:PAYJP_PRIVATE_KEY]
+    @card = CreditCard.find_by(user_id: current_user.id)
+    @product.update(buyer_id: current_user.id)
+    Payjp::Charge.create(
+      :amount => @product.price, 
+      :customer => @card.customer_id,
+      :currency => 'jpy',
+    )
+    redirect_to purchase_products_path(@product.id)
   end
 
   def create
@@ -25,8 +37,10 @@ class CreditCardsController < ApplicationController
       )
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to  credit_card_path(@card)
+        flash[:notice] = 'クレジットカードを登録しました'
+        redirect_to  root_path
       else
+        flase[:alert] = 'クレジットカードが正しく登録できませんでした'
         render :create
       end
     end
@@ -35,13 +49,13 @@ class CreditCardsController < ApplicationController
   def delete
     card = CreditCard.find_by(user_id: current_user.id)
     if card.blank?
+      redirect_to new_credit_card_path
     else
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
     end
-      redirect_to new_credit_card_path
   end
 
   def show
