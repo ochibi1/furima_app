@@ -76,6 +76,9 @@ class ProductsController < ApplicationController
 
   def purchase
     @deliver_address = current_user.deliver_address
+    @card = CreditCard.find_by(user_id: current_user)
+    @customer = Payjp::Customer.retrieve(@card.customer_id)
+    @card_information = @customer.cards.retrieve(@card.card_id)
   end
 
   private
