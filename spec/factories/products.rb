@@ -14,7 +14,7 @@ FactoryBot.define do
     closed_deal_date   {"2020-08-01"}
     seller_id          {1}
     buyer_id           {1}
-    category
+    category_id        {1}
 
     after(:build) do |product|
       product.photos << FactoryBot.build(:photo, product: product)
