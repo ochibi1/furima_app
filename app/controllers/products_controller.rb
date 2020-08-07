@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: :new
-  before_action :find_product, only: [:show, :edit, :update, :purchase]
+  before_action :find_product, only: [:show, :edit, :update, :purchase, :destroy]
   before_action :adimn_seller, only: [:edit, :destroy]
 
   def index
@@ -18,6 +18,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    if @product.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   def create
