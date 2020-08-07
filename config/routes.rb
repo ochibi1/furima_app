@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get 'purchase'
     end
     collection do
+      get 'paid'
       get 'search_category_children'
       get 'search_category_grandchildren'
     end
