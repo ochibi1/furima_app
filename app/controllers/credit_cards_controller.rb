@@ -1,5 +1,6 @@
 class CreditCardsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_api_key, only: [:edit, :create, :show, :delete]
 
   require "payjp"
 
@@ -13,7 +14,6 @@ class CreditCardsController < ApplicationController
   end
 
   def create
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     if params['payjp-token'].blank?
       redirect_to new_credit_card_path
     else
@@ -26,7 +26,7 @@ class CreditCardsController < ApplicationController
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         flash[:notice] = 'クレジットカードを登録しました'
-        redirect_to  root_path
+        redirect_to root_path
       else
         flase[:alert] = 'クレジットカードが正しく登録できませんでした'
         render :create
@@ -35,25 +35,30 @@ class CreditCardsController < ApplicationController
   end
 
   def delete
-    card = CreditCard.find_by(user_id: current_user.id)
-    if card.blank?
-      redirect_to new_credit_card_path
+    @card = CreditCard.find_by(user_id: current_user.id)
+    if @card.blank?
     else
-      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      customer.delete
-      card.delete
+      @customer = Payjp::Customer.retrieve(@card.customer_id)
+      @customer.delete
+      @card.delete
     end
+      redirect_to new_credit_card_path
   end
 
   def show
-    card = CreditCard.find_by(user_id: current_user.id)
-    if card.blank?
+    @card = CreditCard.find_by(user_id: current_user.id)
+    if @card.blank?
       redirect_to new_credit_card_path
     else
-      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      @customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_information = @customer.cards.retrieve(@card.card_id)
+      @default_card_information = @customer.cards.retrieve(@card.card_id)
     end
+  end
+
+  private 
+  
+  def set_api_key
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
   end
 end
