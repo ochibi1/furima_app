@@ -75,18 +75,23 @@ class ProductsController < ApplicationController
   end
 
   def purchase
-    @deliver_address = current_user.deliver_address
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     @card = CreditCard.find_by(user_id: current_user)
-    @customer = Payjp::Customer.retrieve(@card.customer_id)
-    @card_information = @customer.cards.retrieve(@card.card_id)
-  end
-
-  def pay
     if @card.blank?
       redirect_to new_credit_card_path
     else
-      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-      @card = CreditCard.find_by(user_id: current_user.id)
+      @customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_information = @customer.cards.retrieve(@card.card_id)
+      @deliver_address = current_user.deliver_address
+    end
+  end
+
+  def pay
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    @card = CreditCard.find_by(user_id: current_user.id)
+    if @card.blank?
+      redirect_to new_credit_card_path
+    else
       @product = Product.find(params[:id])
       @product.update(buyer_id: current_user.id)
       Payjp::Charge.create(
