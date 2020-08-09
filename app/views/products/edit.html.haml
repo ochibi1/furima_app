@@ -2,7 +2,7 @@
   %header.ProductsNew__header
     = link_to image_tag('logo.png'), products_path
   .ProductsNew__main
-    = form_with model: @product, url: products_path, class: "ProductsNew__main__form", local: true do |product|
+    = form_with model: @product, url: product_path(@product), class: "ProductsNew__main__form", local: true do |product|
       = render 'devise/shared/error_messages', resource: @product
       .ProductsNew__main__form__group
         = product.fields_for :photos, @photos do |photo|
@@ -53,7 +53,10 @@
             = brand.label "ブランド", class: "field-label"
             %span.optional 任意
             .ProductsNew__main__form__group__field__input
-              = brand.text_field :name, value: @brand_name, placeholder: '例) シャネル'
+              - if @brand_name
+                = brand.text_field :name, value: @brand_name, placeholder: '例) シャネル'
+              - else
+                = brand.text_field :name, placeholder: '例) シャネル'
         .ProductsNew__main__form__group__field
           = product.label '商品の状態', class: "field-label"
           %span 必須

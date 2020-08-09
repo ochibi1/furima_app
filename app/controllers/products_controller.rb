@@ -21,6 +21,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    if @product.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   def create
@@ -39,8 +44,57 @@ class ProductsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def update
+    @brand_name = params[:product][:brand_attributes][:name]
+    unless @brand_name.empty?
+      if @product.update(product_params)
+        redirect_to user_path(current_user)
+      else
+        flash.now[:alert] = @product.errors.full_messages
+        @parents = Category.where(ancestry: nil).order(id: "ASC")
+        @grandchild = Category.find(@product.category_id)
+        @child = @grandchild.parent
+        @parent = @child.parent
+        @grandchildren = @child.children
+        @children = @parent.children
+        @prev_images = @product.photos.order(created_at: "ASC")
+        @photos =  @product.photos.build
+        unless @product.brand.nil?
+          @brand_name = @product.brand.name
+        end
+        @brand = @product.build_brand
+        render :edit and return
+      end
+    else
+      params[:product].delete(:brand_attributes)
+      if @product.update(product_params)
+        unless @product.brand.nil?
+          @product.brand.destroy
+          @product.update_attribute(:brand_id, nil)
+        end
+        redirect_to user_path(current_user)
+      else
+        flash.now[:alert] = @product.errors.full_messages
+        @parents = Category.where(ancestry: nil).order(id: "ASC")
+        @grandchild = Category.find(@product.category_id)
+        @child = @grandchild.parent
+        @parent = @child.parent
+        @grandchildren = @child.children
+        @children = @parent.children
+        @prev_images = @product.photos.order(created_at: "ASC")
+        @photos =  @product.photos.build
+        unless @product.brand.nil?
+          @brand_name = @product.brand.name
+        end
+        @brand = @product.build_brand
+        render :edit and return
+      end
+    end
+  end
+
+    
+
   def edit
-    @product = Product.find(params[:id])
     @parents = Category.where(ancestry: nil).order(id: "ASC")
     @grandchild = Category.find(@product.category_id)
     @child = @grandchild.parent
@@ -49,7 +103,9 @@ class ProductsController < ApplicationController
     @children = @parent.children
     @prev_images = @product.photos.order(created_at: "ASC")
     @photos =  @product.photos.build
-    @brand_name = @product.brand.name
+    unless @product.brand.nil?
+      @brand_name = @product.brand.name
+    end
     @brand = @product.build_brand
   end
 
