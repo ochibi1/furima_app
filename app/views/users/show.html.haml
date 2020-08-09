@@ -13,9 +13,9 @@
         - if @card.blank?
           = link_to 'クレジットカードの登録', new_credit_card_path, method: :get, class: "ItemLeft__credit"
         - else
-          = link_to url: '/credit_cards/:id'
+          = link_to 'クレジットカードの詳細', url: '/credit_cards/:id'
       %li.ItemLeft
-        = link_to 'クレジットカードの編集・削除', credit_card_path, method: :get, class: "ItemLeft__credit"
+        = link_to 'クレジットカードの編集・削除', credit_card_path(@card), method: :get, class: "ItemLeft__credit"
       %li.ItemLeft
         = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "ItemLeft__logout"
   .wrapper__Right
