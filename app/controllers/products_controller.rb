@@ -90,6 +90,9 @@ class ProductsController < ApplicationController
       redirect_to new_credit_card_path
     else
       @product = Product.find(params[:id])
+      if @product.buyer_id.exists?
+        redirect_to purchase_product_path(@product)　and return
+      end
       @product.update(buyer_id: current_user.id)
       Payjp::Charge.create(
         :amount => @product.price, 
