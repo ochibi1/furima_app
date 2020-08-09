@@ -32,5 +32,3 @@ document.addEventListener(
   },
   false
 );
-
-// 4242424242424242
