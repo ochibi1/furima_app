@@ -14,7 +14,6 @@ class CreditCardsController < ApplicationController
   end
 
   def create
-    binding.pry
     if params['payjp-token'].blank?
       redirect_to new_credit_card_path
     else
