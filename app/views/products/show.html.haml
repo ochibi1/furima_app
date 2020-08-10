@@ -131,7 +131,7 @@
               .productList
                 = link_to product_path(product), class: 'productList__link' do
                   %figure.productList__link__img
-                    = image_tag 'product.photos.first.image.url', class: 'imges' 
+                    = image_tag product.photos.first.image.url, class: 'imges' 
                   .productList__body
                     %h3.name
                       = product.name
