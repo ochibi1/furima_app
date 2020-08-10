@@ -16,6 +16,8 @@ class ProductsController < ApplicationController
     @parent = @child.parent
     @parent_category_products = @products.select { |product| product.category.parent.parent.name == @parent.name }
     @user = current_user
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    @card = CreditCard.find_by(user_id: current_user)
   end
 
   def new
