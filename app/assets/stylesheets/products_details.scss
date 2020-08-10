@@ -5,7 +5,7 @@
   &__show{
     padding: 40px;
     margin: 0 auto;
-    .contents{
+    .show__contents{
       width: 700px;
       margin: auto;
         .itemBox{
@@ -122,7 +122,7 @@
           }
         }
       }
-      .links{
+      .show__links{
         height: 24px;
         font-weight: bold;
         .linksPage{
@@ -186,5 +186,11 @@
           }
         }
       }
+    }
+  }
+  .contents__cont {
+    a {
+      color: $color_item3;
+      text-decoration: none;
     }
   }

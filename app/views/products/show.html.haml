@@ -3,7 +3,7 @@
 
 .main
   .main__show
-    .contents
+    .show__contents
       .contents__cont
         .itemBox
           %h2.itemBox__name
@@ -22,8 +22,12 @@
             .itemBox__price-detail
               %span
                 (税込)
-              %span
-                (送料込み)
+              - if @product.postage_payer == 1
+                %span
+                  (送料込み)
+              - else
+                %span
+                  (送料別)
           .itemDetail
             = @product.introduction
           .table
@@ -33,16 +37,26 @@
                   %th.info
                     出品者
                   %td.import
-                    name
+                    = @product.seller.nickname
                 %tr
                   %th.info
                     カテゴリー
-                  %td.import
-                    = @product.category.name
+                  %td.import.product_category
+                    %p
+                      = link_to "#{@parent.name}", '#'
+                    %p
+                      = link_to "#{@child.name}", '#'
+                    %p
+                      = link_to "#{@grandchild.name}", '#'
                 %tr
                   %th.info
                     ブランド
-                  %td.import
+                  - if @product.brand.present?
+                    %td.import
+                      = @product.brand.name
+                  - else
+                    %td.import
+                      なし
                 %tr
                   %th.info
                     商品のサイズ
@@ -62,7 +76,8 @@
                   %th.info
                     発送元の地域
                   %td.import
-                    = @product.prefecture_code
+                    %p
+                      = link_to "#{@product.prefecture_code}", '#'
                 %tr
                   %th.info
                     発送日の目安
@@ -82,8 +97,8 @@
           - unless @user.id == @product.seller_id
             = link_to '購入する', purchase_product_path(@product), class: "purchase-btn"
           - else 
-            = link_to '商品の編集', edit_product_path(@product)
-            = link_to '商品の削除', product_path(@product), method: :delete
+            = link_to '編集', edit_product_path(@product)
+            = link_to '削除', product_path(@product), method: :delete
         .commentBox
           %textarea.commentBox__comment
           %p.commentBox__noticeMsg
@@ -94,75 +109,44 @@
           %button.commentBox__btn
             %i.fa.fa-comment
               コメントする
-      .links
+      .show__links
         %ul.linksPage
           %li.before
-            = link_to "#",class: 'links__next' do
-              %i.fa.fa-angle-left
-                %span
-                  前の商品
+            - unless @prev_product.blank?
+              = link_to product_path(@prev_product), class: 'show__links__next' do
+                %i.fa.fa-angle-left
+                  %span
+                    前の商品
           %li.after
-            = link_to "#", class: 'links__next' do
-              %span
-                後ろの商品
-                %i.fa.fa-angle-right
+            - unless @next_product.blank?
+              = link_to product_path(@next_product), class: 'show__links__next' do
+                %span
+                  後ろの商品
+                  %i.fa.fa-angle-right
       .relatedItem
-        = link_to "#", class: 'relatedItem__watch' do
-          レディースをもっと見る
+        = link_to "#{@parent.name}をもっと見る", '#', class: 'relatedItem__watch'
         .productLists
-          .productList
-            = link_to "#", class: 'productList__link' do
-              %figure.productList__link__img
-                = image_tag '',class: 'imges' 
-              .productList__body
-                %h3.name
-                  テスト
-                .datails
-                  %ul
-                    %li
-                      10000円
-                    %li
-                      = icon('fa', 'star') 
-                      1
-                  %p
-                    (税込)
-          .productList
-            = link_to "#", class: 'productList__link' do
-              %figure.productList__link__img
-                = image_tag '',class: 'imges' 
-              .productList__body
-                %h3.name
-                  テスト
-                .datails
-                  %ul
-                    %li
-                      10000円
-                    %li
-                      = icon('fa', 'star') 
-                      1
-                  %p
-                    (税込)
-          .productList
-            = link_to "#", class: 'productList__link' do
-              %figure.productList__link__img
-                = image_tag '',class: 'imges' 
-              .productList__body
-                %h3.name
-                  テスト
-                .datails
-                  %ul
-                    %li
-                      10000円
-                    %li
-                      = icon('fa', 'star') 
-                      1
-                  %p
-                    (税込)
- 
-
+          - if @parent_category_products.present?
+            - @parent_category_products.each do |product|
+              .productList
+                = link_to product_path(product), class: 'productList__link' do
+                  %figure.productList__link__img
+                    = image_tag product.photos.first.image.url, class: 'imges' 
+                  .productList__body
+                    %h3.name
+                      = product.name
+                    .datails
+                      %ul
+                        %li
+                          = "#{product.price}円"
+                        %li
+                          = icon('fa', 'star') 
+                          1
+                      %p
+                        (税込)
 
 .appbar
-  .content
+  .show__content
     %h2.content_title
       だれでもかんたん、人生を変えるフリマアプリ
     %p.content_text
@@ -209,9 +193,9 @@
   %p ©  FURIMA
 
 
-.exhibition
-  = link_to "#", class:'link' do
-    .exhibition_btn
-      %span.text
-        出品する
-      = image_tag 'icon_camera.png', class: 'camera' 
+  .exhibition
+    = link_to "#", class:'exhibition__link' do
+      .exhibition_btn
+        %span.text
+          出品する
+        = image_tag 'icon_camera.png', class: 'camera' 
