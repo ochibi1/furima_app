@@ -7,14 +7,14 @@ class ProductsController < ApplicationController
     @products = Product.includes(:photos).order(created_at: :desc).limit(5)
   end
 
+  def show
+  end
+
   def new
     @product = Product.new
     @parents = Category.where(ancestry: nil).order(id: "ASC")
     @photos =  @product.photos.build
     @brand = @product.build_brand
-  end
-
-  def show
   end
   
   def update

@@ -1,23 +1,158 @@
 .header
-  = render partial: "shared/header"
+  = render 'shared/header'
 
--# .nav パンくず機能実装の場合必要になるdiv要素
-
-.main 
-  = @product.name
-  .product__info
-    %h2.product__info__price
-      出品商品の値段
-    %h2.product__info__table
-      出品商品の情報詳細（出品者・カテゴリ・ブランド・サイズ・商品状態・配送料負担・地域・発送準備日数）
-    %h2.product__info__options
-      お気に入り数
-    %h2.product__info__comment
-      コメント
-    %h2.product__info__delete
-      - if user_signed_in? && current_user.id == @product.seller_id
-        = link_to product_path(@product), method: :delete, class: "destory" do
-          商品を削除する
+.main
+  .main__show
+    .contents
+      .contents__cont
+        .itemBox
+          %h2.itemBox__name
+            = @product.name
+          .itemBox__body
+            %ul.imges
+              %li
+                = image_tag @product.photos.first.image.url, class: 'itemBox__body__img'
+                %ul.imges
+                  - @product.photos.each do |product_image|
+                    %li
+                      = image_tag product_image.image.url, class: 'imges__picture'
+          .itemBox__price
+            %span
+              = @product.price
+            .itemBox__price-detail
+              %span
+                (税込)
+              %span
+                (送料込み)
+          .itemDetail
+            = @product.introduction
+          .table
+            %table.table__list
+              %tbody
+                %tr
+                  %th.info
+                    出品者
+                  %td.import
+                    name
+                %tr
+                  %th.info
+                    カテゴリー
+                  %td.import
+                    = @product.category.name
+                %tr
+                  %th.info
+                    ブランド
+                  %td.import
+                %tr
+                  %th.info
+                    商品のサイズ
+                  %td.import
+                    = @product.size.name
+                %tr
+                  %th.info
+                    商品の状態
+                  %td.import
+                    = @product.condition.name
+                %tr
+                  %th.info
+                    配送料の負担
+                  %td.import
+                    = @product.postage_payer.name
+                %tr
+                  %th.info
+                    発送元の地域
+                  %td.import
+                    = @product.prefecture_code
+                %tr
+                  %th.info
+                    発送日の目安
+                  %td.import
+                    = @product.prep_date.name
+          .anyArea
+            %ul.any
+              %li.anyBtn
+                = icon('fa', 'star')
+                お気に入り 1
+            %ul.any
+              %li.anyBtn-risk
+                = link_to "#", class: 'riskLink' do
+                  %i.fa.fa-flag
+                    不適切な商品の通報
+        .commentBox
+          %textarea.commentBox__comment
+          %p.commentBox__noticeMsg
+            相手のことを考え丁寧なコメントを心がけましょう。
+            %br/
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %br/
+          %button.commentBox__btn
+            %i.fa.fa-comment
+              コメントする
+      .links
+        %ul.linksPage
+          %li.before
+            = link_to "#",class: 'links__next' do
+              %i.fa.fa-angle-left
+                %span
+                  前の商品
+          %li.after
+            = link_to "#", class: 'links__next' do
+              %span
+                後ろの商品
+                %i.fa.fa-angle-right
+      .relatedItem
+        = link_to "#", class: 'relatedItem__watch' do
+          レディースをもっと見る
+        .productLists
+          .productList
+            = link_to "#", class: 'productList__link' do
+              %figure.productList__link__img
+                = image_tag '',class: 'imges' 
+              .productList__body
+                %h3.name
+                  テスト
+                .datails
+                  %ul
+                    %li
+                      10000円
+                    %li
+                      = icon('fa', 'star') 
+                      1
+                  %p
+                    (税込)
+          .productList
+            = link_to "#", class: 'productList__link' do
+              %figure.productList__link__img
+                = image_tag '',class: 'imges' 
+              .productList__body
+                %h3.name
+                  テスト
+                .datails
+                  %ul
+                    %li
+                      10000円
+                    %li
+                      = icon('fa', 'star') 
+                      1
+                  %p
+                    (税込)
+          .productList
+            = link_to "#", class: 'productList__link' do
+              %figure.productList__link__img
+                = image_tag '',class: 'imges' 
+              .productList__body
+                %h3.name
+                  テスト
+                .datails
+                  %ul
+                    %li
+                      10000円
+                    %li
+                      = icon('fa', 'star') 
+                      1
+                  %p
+                    (税込)
+ 
 
 
 .appbar
@@ -73,4 +208,4 @@
     .exhibition_btn
       %span.text
         出品する
-      = image_tag 'icon_camera.png', class: 'camera'
+      = image_tag 'icon_camera.png', class: 'camera' 
