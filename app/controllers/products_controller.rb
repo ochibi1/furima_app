@@ -9,8 +9,8 @@ class ProductsController < ApplicationController
 
   def show
     @products = Product.all
-    @prev_product = @products.where("id < ?", @product.id).last
-    @next_product = @products.where("id > ?", @product.id).first
+    @prev_product = Product.prev_search(@product)
+    @next_product = Product.next_search(@product)
     @grandchild = Category.find(@product.category_id)
     @child = @grandchild.parent
     @parent = @child.parent
