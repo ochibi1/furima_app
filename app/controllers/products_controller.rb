@@ -147,7 +147,7 @@ class ProductsController < ApplicationController
     else
       @product = Product.find(params[:id])
       if @product.buyer_id.exists?
-        redirect_to purchase_product_path(@product)　and return
+        redirect_to purchase_product_path(@product) and return
       end
       @product.update(buyer_id: current_user.id)
       Payjp::Charge.create(
