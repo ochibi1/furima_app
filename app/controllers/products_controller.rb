@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @products = Product.all
+    @products = Product.where.not(category_id: nil)
     @prev_product = Product.prev_search(@product)
     @next_product = Product.next_search(@product)
     @grandchild = Category.find(@product.category_id)
