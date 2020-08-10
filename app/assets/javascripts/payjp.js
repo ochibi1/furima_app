@@ -1,7 +1,7 @@
 document.addEventListener(
   "DOMContentLoaded", e => {
     if (document.getElementById("token_submit") != null) { 
-      Payjp.setPublicKey("pk_test_ef72b895a95a6baa0e16ec59"); 
+      Payjp.setPublicKey("pk_test_af548a3c63ea70a1f6f33401"); 
       let btn = document.getElementById("token_submit"); 
       btn.addEventListener("click", e => {
         e.preventDefault();
@@ -21,7 +21,6 @@ document.addEventListener(
               $('<input type="hidden" name="payjp-token">').val(response.id)
               );
             document.forms["card_token"].submit();
-            console.log(document)
             alert("登録が完了しました");
           } else {
             alert("カード情報が正しくありません。");
