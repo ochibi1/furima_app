@@ -14,11 +14,8 @@ class ProductsController < ApplicationController
     @grandchild = Category.find(@product.category_id)
     @child = @grandchild.parent
     @parent = @child.parent
-    @parent_category_products = []
-    @products.each do |product|
-      if product.category.parent.parent.name == @parent.name
-        @parent_category_products << product
-      end
+    @parent_category_products = @products.select do |product|
+      product.category.parent.parent.name == @parent.name
     end
     @user = current_user
   end
