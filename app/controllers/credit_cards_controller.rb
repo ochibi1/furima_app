@@ -14,6 +14,7 @@ class CreditCardsController < ApplicationController
   end
 
   def create
+    binding.pry
     if params['payjp-token'].blank?
       redirect_to new_credit_card_path
     else
@@ -26,23 +27,24 @@ class CreditCardsController < ApplicationController
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         flash[:notice] = 'クレジットカードを登録しました'
-        redirect_to root_path
+        redirect_to user_path(current_user)
       else
         flase[:alert] = 'クレジットカードが正しく登録できませんでした'
-        render :create
+        render :new
       end
     end
   end
 
-  def delete
+  def destroy
     @card = CreditCard.find_by(user_id: current_user.id)
     if @card.blank?
+      redirect_to root_path
     else
       @customer = Payjp::Customer.retrieve(@card.customer_id)
       @customer.delete
       @card.delete
+      redirect_to user_path(current_user)
     end
-      redirect_to new_credit_card_path
   end
 
   def show

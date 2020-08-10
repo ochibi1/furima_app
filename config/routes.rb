@@ -13,12 +13,7 @@ Rails.application.routes.draw do
       get 'logout'
     end
   end
-  resources :credit_cards do
-    collection do 
-      post 'show'
-      post 'delete', to: 'credit_cards#delete'
-    end
-  end
+  resources :credit_cards
   resources :brands, only: [:create]
   resources :products do 
     member do

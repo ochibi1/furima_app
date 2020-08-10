@@ -46,14 +46,15 @@
             変更する
             %span >
         .ProductsPurchase__main__group__card-field__info
-          %p <カード情報> 
-          カード番号：
-          = "**** **** **** #{@card_information.last4}"
-          %br
-          有効期限：
-          = "#{@card_information.exp_month.to_s} / #{@card_information.exp_year.to_s.slice(2,3)}"
-          %br
-          - if @card.blank?
+          - unless @card.present?
+            %p <カード情報> 
+            カード番号：
+            = "**** **** **** #{@card_information.last4}"
+            %br
+            有効期限：
+            = "#{@card_information.exp_month.to_s} / #{@card_information.exp_year.to_s.slice(2,3)}"
+            %br
+          - else
             = link_to new_credit_card_path do
               = icon('fa', 'plus-circle')
               ここから登録してください

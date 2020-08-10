@@ -2,7 +2,7 @@
   .SignupCard__box
     .SignupCard__box__body
       %h2.SignupCard__box__body__title カード情報入力
-      = form_with model: @card, url: credit_cards_path, id: 'card_token', class: "SignupCard__box__body__input", method: :post, local: true do |f|
+      = form_with model: @card, url: credit_cards_path, id: 'card_token', class: "SignupCard__box__body__input", local: true do |f|
         .SignupCard__box__body__input__form
           .SignupCard__box__body__input__form__content
             %label.card__info カード番号
