@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     @grandchild = Category.find(@product.category_id)
     @child = @grandchild.parent
     @parent = @child.parent
-    @parent_category_products = @products.select { |product| product.category.parent.parent.name == @parent.name }
+    @parent_category_products = @products.select { |product| product.category.root.name == @parent.name }
     @user = current_user
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     @card = CreditCard.find_by(user_id: current_user)
