@@ -12,15 +12,16 @@
             %h3 最大10枚までアップロードできます
             .ProductsNew__main__form__group__field__file-input
               #files
-                = photo.file_field :image, id: "filearea", class: "fileinput fileinput0"
-                %label{class: "file-label", for: "filearea"}
+                = photo.file_field :image, name: "product[photos_attributes][#{@prev_images.count}][image]", id: "filearea#{@prev_images.count}", class: "fileinput fileinput#{@prev_images.count}"
+                %label{class: "file-label", for: "filearea#{@prev_images.count}"}
                   = icon('fa', 'camera')
                   %p クリックしてファイルをアップロード
-                .ProductsNew__main__form__group__field__file-input__prevbox
+                .ProductsNew__main__form__group__field__file-input__prevbox.prev_box
                   - @prev_images.each do |prev_image|
-                    .ProductsNew__main__form__group__field__file-input__prevbox__image
+                    .ProductsNew__main__form__group__field__file-input__prevbox__image.prev_count
                       = image_tag prev_image.image.url
-                      %p 削除
+                      %p.deleteprev 削除
+                    = check_box_tag :"destroy_photo_id[]", prev_image.id
 
       .ProductsNew__main__form__group
         .ProductsNew__main__form__group__field

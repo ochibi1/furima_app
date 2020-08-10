@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: :new
   before_action :find_product, only: [:show, :edit, :update, :purchase, :destroy]
-  before_action :adimn_seller, only: [:edit, :destroy]
+  before_action :admin_seller, only: [:edit, :destroy]
 
   def index
     @products = Product.includes(:photos).order(created_at: :desc).limit(5)
@@ -42,9 +42,17 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @brand_name = params[:product][:brand_attributes][:name]
-    unless @brand_name.empty?
+    brand_name = params[:product][:brand_attributes][:name]
+    unless brand_name.empty?
       if @product.update(product_params)
+        if params[:destroy_photo_id].present?
+          params[:destroy_photo_id].each do |i|
+            photo = Photo.find(i)
+            if photo.product_id == @product.id
+              photo.destroy
+            end
+          end
+        end
         redirect_to user_path(current_user)
       else
         flash.now[:alert] = @product.errors.full_messages
@@ -57,7 +65,7 @@ class ProductsController < ApplicationController
         @prev_images = @product.photos.order(created_at: "ASC")
         @photos =  @product.photos.build
         unless @product.brand.nil?
-          @brand_name = @product.brand.name
+          brand_name = @product.brand.name
         end
         @brand = @product.build_brand
         render :edit and return
@@ -65,6 +73,14 @@ class ProductsController < ApplicationController
     else
       params[:product].delete(:brand_attributes)
       if @product.update(product_params)
+        if params[:destroy_photo_id].present?
+          params[:destroy_photo_id].each do |i|
+            photo = Photo.find(i)
+            if photo.product_id == @product.id
+              photo.destroy
+            end
+          end
+        end
         unless @product.brand.nil?
           @product.brand.destroy
           @product.update_attribute(:brand_id, nil)
@@ -136,14 +152,14 @@ class ProductsController < ApplicationController
                                       :closed_deal_date, :category_id,
                                       photos_attributes:[:image, :product_id],
                                       brand_attributes:[:name]
-      ).merge(seller_id: current_user.id)
+                                     ).merge(seller_id: current_user.id)
     end
 
     def find_product
       @product = Product.find(params[:id])
     end
 
-    def adimn_seller
+    def admin_seller
       unless current_user.id == @product.seller_id
         redirect_to product_path
       end
