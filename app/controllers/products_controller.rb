@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @parents = Category.where(ancestry: nil).order(id: "ASC")
+    @parents = Category.set_parents
     @photos =  @product.photos.build
     @brand = @product.build_brand
   end
@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
     end
     unless @product.valid?
       flash.now[:alert] = @product.errors.full_messages
-      @parents = Category.where(ancestry: nil).order(id: "ASC")
+      @parents = Category.set_parents
       @photos =  @product.photos.build
       @brand = @product.build_brand
       render :new and return
@@ -72,7 +72,7 @@ class ProductsController < ApplicationController
         redirect_to user_path(current_user)
       else
         flash.now[:alert] = @product.errors.full_messages
-        @parents = Category.where(ancestry: nil).order(id: "ASC")
+        @parents = Category.set_parents
         @grandchild = Category.find(@product.category_id)
         @child = @grandchild.parent
         @parent = @child.parent
@@ -104,7 +104,7 @@ class ProductsController < ApplicationController
         redirect_to user_path(current_user)
       else
         flash.now[:alert] = @product.errors.full_messages
-        @parents = Category.where(ancestry: nil).order(id: "ASC")
+        @parents = Category.set_parents
         @grandchild = Category.find(@product.category_id)
         @child = @grandchild.parent
         @parent = @child.parent
@@ -124,7 +124,7 @@ class ProductsController < ApplicationController
     
 
   def edit
-    @parents = Category.where(ancestry: nil).order(id: "ASC")
+    @parents = Category.set_parents
     @grandchild = Category.find(@product.category_id)
     @child = @grandchild.parent
     @parent = @child.parent
