@@ -11,17 +11,14 @@
           .itemBox__body
             %ul.imges
               %li
-                = image_tag '',class: 'itemBox__body__img'
+                = image_tag @product.photos.first.image.url, class: 'itemBox__body__img'
                 %ul.imges
-                  %li
-                    = image_tag '',class:'imges__picture'
-                  %li
-                    = image_tag '',class:'imges__picture'
-                  %li
-                    = image_tag '',class:'imges__picture'
+                  - @product.photos.each do |product_image|
+                    %li
+                      = image_tag product_image.image.url, class: 'imges__picture'
           .itemBox__price
             %span
-              ¥10000
+              = @product.price
             .itemBox__price-detail
               %span
                 (税込)
@@ -41,6 +38,7 @@
                   %th.info
                     カテゴリー
                   %td.import
+                    = @product.category.name
                 %tr
                   %th.info
                     ブランド
@@ -49,24 +47,27 @@
                   %th.info
                     商品のサイズ
                   %td.import
+                    = @product.size.name
                 %tr
                   %th.info
                     商品の状態
                   %td.import
-                    新品/未使用
+                    = @product.condition.name
                 %tr
                   %th.info
                     配送料の負担
                   %td.import
-                    送料込み（出品者負担）
+                    = @product.postage_payer.name
                 %tr
                   %th.info
                     発送元の地域
                   %td.import
+                    = @product.prefecture_code
                 %tr
                   %th.info
                     発送日の目安
                   %td.import
+                    = @product.prep_date.name
           .anyArea
             %ul.any
               %li.anyBtn
