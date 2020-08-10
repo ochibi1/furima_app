@@ -42,4 +42,12 @@ class Product < ApplicationRecord
   def self.next_search(product)
     Product.where("id > ?", product.id).first
   end
+
+  def self.search(search)
+    if search
+      Product.where('name LIKE(?)', "%#{search}%")
+    else
+      Product.all
+    end
+  end
 end

@@ -24,9 +24,6 @@ class ProductsController < ApplicationController
     @photos =  @product.photos.build
     @brand = @product.build_brand
   end
-  
-  def update
-  end
 
   def destroy
     if @product.destroy
@@ -116,8 +113,6 @@ class ProductsController < ApplicationController
     end
   end
 
-    
-
   def edit
     @parents = Category.set_parents
     @grandchild = Category.find(@product.category_id)
@@ -181,6 +176,12 @@ class ProductsController < ApplicationController
       )
       redirect_to paid_products_path
     end
+  end
+
+  def search
+    @products = Product.search(params[:keyword])
+    @products = @products.page(params[:page])
+    @parents = Category.set_parents
   end
 
   private
