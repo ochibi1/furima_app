@@ -8,6 +8,13 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @products = Product.all
+    @prev_product = @products.where("id < ?", @product.id).last
+    @next_product = @products.where("id > ?", @product.id).first
+    @grandchild = Category.find(@product.category_id)
+    @child = @grandchild.parent
+    @parent = @child.parent
+    @parent_category_products = @products.where(category_id: @parent.id).limit(3)
     @user = current_user
   end
 
