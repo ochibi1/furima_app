@@ -166,15 +166,29 @@
         width: auto;
       }
 
-      button {
+      .button {
         width: 21rem;
         height: 3rem;
-        background: $color_item4;
+        padding: 1rem 2rem;
+        background: red;
+        text-decoration: none;
         border: none;
         border-radius: 0.2rem;
-        color: gray;
+        color: white;
         font-size: 1rem;
         font-weight: bolder;
+        cursor: pointer;
+      }
+      .disabled-button{
+        text-align: center;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        background: #888888;
+        color: #fff;
+        border-radius: 0.2rem;
+        width: 21rem;
+        font-size: 1rem;
+        cursor: not-allowed;
       }
     }
   }

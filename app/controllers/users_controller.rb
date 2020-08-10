@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   end
 
   def show 
+    @user = User.find(params[:id])
+    @card = CreditCard.find_by(user_id: current_user)
   end
 
   def destroy

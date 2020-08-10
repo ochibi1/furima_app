@@ -46,10 +46,17 @@
             変更する
             %span >
         .ProductsPurchase__main__group__card-field__info
-          %p カード情報 
-          = link_to '#' do
-            = icon('fa', 'plus-circle')
-            登録してください
+          %p <カード情報> 
+          カード番号：
+          = "**** **** **** #{@card_information.last4}"
+          %br
+          有効期限：
+          = "#{@card_information.exp_month.to_s} / #{@card_information.exp_year.to_s.slice(2,3)}"
+          %br
+          - if @card.blank?
+            = link_to new_credit_card_path do
+              = icon('fa', 'plus-circle')
+              ここから登録してください
 
     .ProductsPurchase__main__group
       .ProductsPurchase__main__group__deliver-field
@@ -70,9 +77,13 @@
           %p
             = "#{@deliver_address.destination_family_name} #{@deliver_address.destination_first_name}"
     .ProductsPurchase__main__button-group
-      %p 支払い方法の入力を完了してください。
+      - if @card.blank?
+        %p 支払い方法の入力を完了してください。
       .ProductsPurchase__main__button-group__field
-        %button 購入する
+        - if @product.buyer_id.present?
+          = link_to '売り切れました', pay_product_path, class: "disabled-button"
+        - else 
+          = link_to '購入する', pay_product_path, class: "button"
   %footer.ProductsNew__footer
     .ProductsNew__footer__links
       %ul

@@ -1,14 +1,10 @@
-$color-item1: white;
-$color-item2: whitesmoke;
-$color-item3: #3ccace;
-
+@import "variables";
 .SignupCard {
-  box-sizing: border-box;
   &__box{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 30px 0 auto;
     &__body {
       background-color: $color-item2;
       padding: 30px;

@@ -10,20 +10,22 @@
         = link_to "#",class: "ItemLeft__profile" do
           プロフィール
       %li.ItemLeft
-        = link_to credit_cards_path, method: :post, class: "ItemLeft__credit" do
-          クレジットカードの登録
+        - if @card.blank?
+          = link_to 'クレジットカードの登録', new_credit_card_path, method: :get, class: "ItemLeft__credit"
+        - else
+          = link_to 'クレジットカードの詳細', url: '/credit_cards/:id'
       %li.ItemLeft
-        = link_to destroy_user_session_path, method: :delete, class: "ItemLeft__logout" do
-          ログアウト
+        = link_to 'クレジットカードの編集・削除', credit_card_path(@card), method: :get, class: "ItemLeft__credit"
+      %li.ItemLeft
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "ItemLeft__logout"
   .wrapper__Right
     .Icon
       = image_tag 'cat.jpg', alt: 'img', height: '100px', width: '100px', class: "Icon__img"
     .nickname
-      sample
+      = @user.nickname
     %ul.Item
       %li.ItemRight
-        = link_to new_product_path, class: "ItemRight__sell" do
-          出品する
+        = link_to '出品する', new_product_path, class: "ItemRight__sell"
       %li.ItemRight
         = link_to "#", class: "ItemRight__buyhistory" do
           購入した商品

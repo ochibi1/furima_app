@@ -16,6 +16,9 @@ class ProductsController < ApplicationController
 
   def show
   end
+  
+  def update
+  end
 
   def destroy
     if @product.destroy
@@ -141,7 +144,35 @@ class ProductsController < ApplicationController
   end
 
   def purchase
-    @deliver_address = current_user.deliver_address
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    @card = CreditCard.find_by(user_id: current_user)
+    if @card.blank?
+      redirect_to new_credit_card_path
+    else
+      @customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_information = @customer.cards.retrieve(@card.card_id)
+      @deliver_address = current_user.deliver_address
+    end
+  end
+
+  def pay
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    @card = CreditCard.find_by(user_id: current_user.id)
+    if @card.blank?
+      redirect_to new_credit_card_path
+    else
+      @product = Product.find(params[:id])
+      if @product.buyer_id.exists?
+        redirect_to purchase_product_path(@product) and return
+      end
+      @product.update(buyer_id: current_user.id)
+      Payjp::Charge.create(
+        :amount => @product.price, 
+        :customer => @card.customer_id,
+        :currency => 'jpy',
+      )
+      redirect_to paid_products_path
+    end
   end
 
   private
