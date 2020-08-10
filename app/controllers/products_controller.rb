@@ -8,6 +8,13 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @products = Product.all
+    @prev_product = Product.prev_search(@product)
+    @next_product = Product.next_search(@product)
+    @grandchild = Category.find(@product.category_id)
+    @child = @grandchild.parent
+    @parent = @child.parent
+    @parent_category_products = @products.select { |product| product.category.parent.parent.name == @parent.name }
     @user = current_user
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     @card = CreditCard.find_by(user_id: current_user)
@@ -15,7 +22,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @parents = Category.where(ancestry: nil).order(id: "ASC")
+    @parents = Category.set_parents
     @photos =  @product.photos.build
     @brand = @product.build_brand
   end
@@ -38,7 +45,7 @@ class ProductsController < ApplicationController
     end
     unless @product.valid?
       flash.now[:alert] = @product.errors.full_messages
-      @parents = Category.where(ancestry: nil).order(id: "ASC")
+      @parents = Category.set_parents
       @photos =  @product.photos.build
       @brand = @product.build_brand
       render :new and return
@@ -62,7 +69,7 @@ class ProductsController < ApplicationController
         redirect_to user_path(current_user)
       else
         flash.now[:alert] = @product.errors.full_messages
-        @parents = Category.where(ancestry: nil).order(id: "ASC")
+        @parents = Category.set_parents
         @grandchild = Category.find(@product.category_id)
         @child = @grandchild.parent
         @parent = @child.parent
@@ -94,7 +101,7 @@ class ProductsController < ApplicationController
         redirect_to user_path(current_user)
       else
         flash.now[:alert] = @product.errors.full_messages
-        @parents = Category.where(ancestry: nil).order(id: "ASC")
+        @parents = Category.set_parents
         @grandchild = Category.find(@product.category_id)
         @child = @grandchild.parent
         @parent = @child.parent
@@ -114,7 +121,7 @@ class ProductsController < ApplicationController
     
 
   def edit
-    @parents = Category.where(ancestry: nil).order(id: "ASC")
+    @parents = Category.set_parents
     @grandchild = Category.find(@product.category_id)
     @child = @grandchild.parent
     @parent = @child.parent
