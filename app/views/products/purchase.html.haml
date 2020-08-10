@@ -46,7 +46,7 @@
             変更する
             %span >
         .ProductsPurchase__main__group__card-field__info
-          - unless @card.present?
+          - if @card.present?
             %p <カード情報> 
             カード番号：
             = "**** **** **** #{@card_information.last4}"
