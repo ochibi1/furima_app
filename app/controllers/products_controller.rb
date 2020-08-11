@@ -9,8 +9,14 @@ class ProductsController < ApplicationController
 
   def show
     @products = Product.all
-    @prev_product = Product.prev_search(@product)
-    @next_product = Product.next_search(@product)
+    if @product == @products.first
+      @next_product = Product.next_search(@product)
+    elsif @product == @products.last
+      @prev_product = Product.prev_search(@product)
+    else
+      @prev_product = Product.prev_search(@product)
+      @next_product = Product.next_search(@product)
+    end
     @grandchild = Category.find(@product.category_id)
     if @grandchild.ancestors?
       @child = @grandchild.parent
@@ -183,8 +189,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.search(params[:keyword])
-    @products = @products.page(params[:page])
+    @products = Product.search(params[:keyword]).page(params[:page])
     @parents = Category.set_parents
   end
 
