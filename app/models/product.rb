@@ -41,12 +41,4 @@ class Product < ApplicationRecord
   enum trading_status: {
     出品中:1,売却済み:2
   }
-
-  # def self.prev_search(product)
-  #   Product.where("id < ?", product.id).last
-  # end
-
-  # def self.next_search(product)
-  #   Product.where("id > ?", product.id).first
-  # end
 end
