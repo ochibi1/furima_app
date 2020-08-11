@@ -12,9 +12,11 @@ class ProductsController < ApplicationController
     @prev_product = Product.prev_search(@product)
     @next_product = Product.next_search(@product)
     @grandchild = Category.find(@product.category_id)
-    @child = @grandchild.parent
-    @parent = @child.parent
-    @parent_category_products = @products.select { |product| product.category.root.name == @parent.name }
+    if @grandchild.ancestors?
+      @child = @grandchild.parent
+      @parent = @child.parent
+      @parent_category_products = @products.select { |product| product.category.root.name == @parent.name }
+    end
     @user = current_user
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     @card = CreditCard.find_by(user_id: current_user)
