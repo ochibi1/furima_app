@@ -111,6 +111,15 @@
                 font-weight: bold;
               }
             }
+            &__sold {
+              background-color: $color_item3;
+              padding: 15px;
+              @include border();
+              border-radius: 15px;
+              text-decoration: none;
+              color: white;
+              font-weight: bold;
+            }
           }
         }
         .commentBox{
