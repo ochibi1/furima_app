@@ -126,13 +126,13 @@
       .show__links
         %ul.linksPage
           %li.before
-            - unless @prev_product.blank?
+            - if @prev_product
               = link_to product_path(@prev_product), class: 'show__links__next' do
                 %i.fa.fa-angle-left
                   %span
                     前の商品
           %li.after
-            - unless @next_product.blank?
+            - if @next_product
               = link_to product_path(@next_product), class: 'show__links__next' do
                 %span
                   後ろの商品
