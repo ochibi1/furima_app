@@ -103,10 +103,13 @@
                     不適切な商品の通報
           .anyBtn-purchase
           - unless @user.id == @product.seller_id
-            - if @card.blank?
-              = link_to '購入には、こちらから、クレジットカードの登録が必要です', new_credit_card_path, class: "anyBtn-purchase__link"
-            - else 
-              = link_to '購入する', purchase_product_path(@product), class: "anyBtn-purchase__link"
+            - if @product.buyer_id.nil?
+              - if @card.blank?
+                = link_to '購入には、こちらから、クレジットカードの登録が必要です', new_credit_card_path, class: "anyBtn-purchase__link"
+              - else 
+                = link_to '購入する', purchase_product_path(@product), class: "anyBtn-purchase__link"
+            - else
+              %button.anyBtn-purchase__sold 購入済み
           - else 
             = link_to '商品の編集', edit_product_path(@product), class: "anyBtn-purchase__link"
             = link_to '商品の削除', product_path(@product), method: :delete, class: "anyBtn-purchase__link__delete"
