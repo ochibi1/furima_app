@@ -133,7 +133,7 @@
                   後ろの商品
                   %i.fa.fa-angle-right
       .relatedItem
-        = link_to "#{@parent.name}をもっと見る", '#', class: 'relatedItem__watch'
+        = link_to "#{@grandchild.name}をもっと見る", '#', class: 'relatedItem__watch'
         .productLists
           - if @parent_category_products.present?
             - @parent_category_products.each do |product|
